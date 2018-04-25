@@ -1,0 +1,113 @@
+#+TITLE: DM1 Week 09 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read section THR subsections STE through STK from [[https://rickneff.github.io][The Book]].
+* TODO Answer What is True
+  You know what to do:
+  - [ ] I know that a full binary tree with /n/ leaves always has /2n - 1/
+    total nodes.
+  - [ ] I know that a *complete* binary tree is a binary tree in which every
+    level, except possibly the last, is completely filled, and all nodes are as
+    far left as possible.
+  - [ ] I know why it is *false* to say that a Huffman tree is always complete.
+  - [ ] I know why it is *false* to say that a Huffman tree is always balanced.
+  - [ ] I know that a lisp symbol is a data structure that is even more
+    versatile than a string.
+  - [ ] I know that a symbol\rsquo{}s function can be used to \ldquo{}store a value\rdquo in that
+    symbol.
+  - [ ] I know that a symbol\rsquo{}s value can be a =cons= cell of two other symbols,
+    representing the two children of this tree-node-as-symbol.
+
+* TODO Answer a Question About Tree Construction
+   In the tree constructed by the code block below, is it true that =A= is the
+   root of the tree, =B= is its left child, and =C= is its right child?
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (setq B (cons nil nil)
+        C (cons nil nil)
+        A (cons 'B 'C))
+#+END_SRC
+
+#+begin_info
+  Your answer goes here.
+#+end_info
+
+* TODO Answer a Question About Huffman Encoding/Decoding
+   Decoding the Huffman-encoded bitstring
+
+   "0010000111110011010111011010111110011"
+
+   will result in a readable message (even though the words are smooshed
+   together without spaces separating them) only if the alist given to the
+   =encode= function (implemented below) is which of the following?
+
+  - [ ] (("f" . "001") ("i" . "011") ("s" . "010") ("h" . "000") ("r" . "100") ("t" . "101") ("e" . "11"))
+  - [ ] (("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "11"))
+  - [ ] (("f" . "010") ("i" . "000") ("s" . "011") ("h" . "001") ("r" . "101") ("t" . "100") ("e" . "00"))
+  - [ ] (("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "00"))
+
+#+BEGIN_SRC elisp :results silent
+  (defun encode (str alist)
+    (mapconcat (lambda (c) (cdr (assoc (string c) alist))) str ""))
+#+END_SRC
+
+#+begin_info
+  Your answer goes here.
+#+end_info
+
+* TODO Watch a Video About Pi, Complex Numbers and Prime Numbers
+   In celebration of Tau Day (!), watch and take notes on: [[https://www.youtube.com/watch?v=NaL_Cb42WyY][Pi hiding in prime regularities]].
+#+begin_info
+  Insert your notes here.
+#+end_info
+* TODO Read, Consider and Write
+  Remember [[file:../week07/07-prepare.org][Steve Olson]] and [[file:../week02/exercises-versus-problems.org][Paul Zietz]]? Here is an excerpt from Steve Olson\rsquo{}s
+  book where he introduces Paul Zietz and quotes him on his approach to teaching
+  /creative problem solving/, which Paul Zietz believes *can be taught* --- but
+  his approach may surprise you!
+
+#+BEGIN_QUOTE
+  Paul Zeitz, now a professor of mathematics at the University of San Francisco,
+  was a member of the U.S. Olympiad team that competed [in 1974].
+
+  [\dots]
+
+  Zeitz [is] always interested in applying the problem solving he’d done as an
+  Olympian in his teaching. So he [developed] a series of tough mathematical
+  challenges that his students would work on for extended periods. He found this
+  approach often engaged the least talented kids just as much as the most
+  talented.
+
+  [\dots]
+
+  He [wrote the book] [[https://www.wiley.com/en-us/The+Art+and+Craft+of+Problem+Solving%252C+3rd+Edition-p-9781119094845][The Art and Craft of Problem Solving]], which was [first]
+  published in 1999. It’s a challenging book --- many math Olympians use it to
+  prepare for the competition. Zeitz uses it with all the students in his
+  classes --- including those studying to be teachers --- often by breaking them
+  up into teams and letting them work on specific problems for days at a time.
+  “The level of the math is not really an issue,” he says. “My main goal when I
+  teach this kind of course is to inspire my students to really think hard. It
+  sounds simplistic, but that’s all there is to it. I want to get students used
+  to a mindset that a problem that is worth solving is worth pondering for a
+  long time. It’s hard to train somebody how to think for a long amount of time.
+  Most people think in maybe five-second bursts. I’m talking about spending days
+  thinking about something. So the level of the math is less an issue than is
+  rewiring their brains so they can concentrate better.”
+
+  Rewiring the brains of students is an ambitious goal, Zeitz admits. But it can
+  be done by demonstrating that math is not what people think it is. “To be good
+  at math you have to be both rigorous and a good explorer,” he says. “And this
+  exploration, this organized play, that’s what people don’t understand about
+  math --- it’s a very social activity.”
+#+END_QUOTE
+
+#+begin_info
+  Insert your response here.
+#+end_info

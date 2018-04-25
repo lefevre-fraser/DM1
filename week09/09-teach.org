@@ -1,0 +1,21 @@
+#+TITLE: DM1 Week 09 Teach
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Think and Discuss 
+  Think about and come prepared to discuss with your group (old or new) what you
+  learned about problem solving from the video, and relate it to what Paul Zietz
+  said about problem solving.
+
+  After your in-class discussion, write a paragraph or two to summarize your
+  thoughts.
+
+#+begin_info
+  Your answer goes here.
+#+end_info

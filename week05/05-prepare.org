@@ -1,0 +1,148 @@
+#+TITLE: DM1 Week 05 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read JKL through JKP from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]]. 
+* TODO Answer What is True By Way of Review
+  You know what to do:
+  - [ ] I know that xRy is a shorthand notation for \ldquo{}x is related to y\rdquo (under
+    relation R).
+  - [ ] I know that A \times B, the *Cartesian product* (or just product) of set A
+    with set B is the set of all ordered pairs (a b) where a \in A and b \in B.
+  - [ ] I think I understand how the *Cartesian Product* generalizes to *n*
+    sets.
+  - [ ] I can match the name on the left with the correct definition of a type
+    of relation on the right:
+  | 1. *Reflexive*     | a. \forall x \forall y [xRy \rightarrow yRx]           |
+  | 2. *Symmetric*     | b. \forall x \forall y [xRy \land yRx \rightarrow x = y]   |
+  | 3. *Antisymmetric* | c. \forall x \forall y \forall z [xRy \land yRz \rightarrow xRz] |
+  | 4. *Transitive*    | d. \forall x [x \in U \rightarrow xRx]             |
+  - [ ] I chose the correct matching as one of the following lisp lists of \ldquo{}dotted pairs\rdquo:
+  - [ ] ((1 . a) (2 . b) (3 . c) (4 . d))
+  - [ ] ((1 . a) (2 . b) (3 . d) (4 . c))
+  - [ ] ((1 . a) (2 . c) (3 . b) (4 . d))
+  - [ ] ((1 . a) (2 . c) (3 . d) (4 . b))
+  - [ ] ((1 . a) (2 . d) (3 . b) (4 . c))
+  - [ ] ((1 . a) (2 . d) (3 . c) (4 . b))
+  - [ ] ((1 . b) (2 . a) (3 . c) (4 . d))
+  - [ ] ((1 . b) (2 . a) (3 . d) (4 . c))
+  - [ ] ((1 . b) (2 . c) (3 . a) (4 . d))
+  - [ ] ((1 . b) (2 . c) (3 . d) (4 . a))
+  - [ ] ((1 . b) (2 . d) (3 . a) (4 . c))
+  - [ ] ((1 . b) (2 . d) (3 . c) (4 . a))
+  - [ ] ((1 . c) (2 . a) (3 . b) (4 . d))
+  - [ ] ((1 . c) (2 . a) (3 . d) (4 . b))
+  - [ ] ((1 . c) (2 . b) (3 . a) (4 . d))
+  - [ ] ((1 . c) (2 . b) (3 . d) (4 . a))
+  - [ ] ((1 . c) (2 . d) (3 . a) (4 . b))
+  - [ ] ((1 . c) (2 . d) (3 . b) (4 . a))
+  - [ ] ((1 . d) (2 . a) (3 . b) (4 . c))
+  - [ ] ((1 . d) (2 . a) (3 . c) (4 . b))
+  - [ ] ((1 . d) (2 . b) (3 . a) (4 . c))
+  - [ ] ((1 . d) (2 . b) (3 . c) (4 . a))
+  - [ ] ((1 . d) (2 . c) (3 . a) (4 . b))
+  - [ ] ((1 . d) (2 . c) (3 . b) (4 . a))
+
+* TODO Read A Quote About Combinatorics 
+  --- and the other quotes --- and then answer the questions.
+
+#+BEGIN_QUOTE
+  Combinatorics is a branch of mathematics dealing with problems of combining
+  objects, or sorting them into categories. It originated in the study of
+  probability by Pierre de Fermat, Blaise Pascal, and other 17^{th}-century
+  mathematicians, who were inspired not by the beauty of the math but by a very
+  practical concern: they wanted to calculate the odds associated with gambling.
+
+  During the 18^{th} and 19^{th} centuries, combinatorics was something of a
+  mathematical backwater. Its association with gambling accounted in part for
+  its lack of status, but more fundamental forces were also in play.
+  Combinatorics deals with discrete entities, like the cards in a deck or socks
+  in a drawer. But most of the important problems being investigated by
+  mathematicians at that time involved continuous entities, like lines or
+  surfaces. Mathematicians developed many general techniques to analyze such
+  problems, particularly the methods of calculus.
+
+  They found far fewer general techniques to analyze problems involving discrete
+  entities, because discrete objects can have so many different properties and
+  can be arranged in so many different ways. Each problem has to be broken down
+  into its constituent pieces, from which a useful pattern may or may not
+  emerge.
+
+  In the 20^{th} century combinatorics staged a major comeback for one overriding
+  reason: the invention of electronic computers. The objects manipulated by
+  computers are discrete, not continuous. They are the 1s and 0s of on-off
+  switches, not the smooth curves of continuous surfaces. To analyze the
+  capabilities of computers, mathematicians had to develop new ways of dealing
+  with noncontinuous objects, and that need reinvigorated the field of
+  combinatorics.
+
+  --- Steve Olson
+#+END_QUOTE
+
+  Steve Olson has a lot more to say about the uses of combinatorics that we will
+  consider later. For now, consider this: 
+
+  1. You know (or should) that there are rules of logic that underlie the rules
+     for counting.
+  2. Are there also rules for being creative?
+  3. Or is that a contradiction in terms?
+  4. When you need to find answers, do you find yourself using the rule /Google
+     it!/ a lot?
+
+  Try it on the following two short quotes. Who said the following?
+
+#+BEGIN_QUOTE
+  If you obey all the rules you miss all the fun!
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+  No right, no wrong, no rules for me. I’m free!
+#+END_QUOTE 
+
+  How about this one?
+
+#+BEGIN_VERSE
+  Logicians have but ill defin’d,
+  As rational the human kind;
+  Reason, they say, belongs to man,
+  But let them prove it if they can.
+#+END_VERSE
+
+  The human kind is indeed expert at rationalizing! How reasonable we all are!
+
+#+BEGIN_QUOTE
+  So convenient a thing it is to be a reasonable creature, since it enables one
+  to find or make a reason for every thing one has a mind to do.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+  Good sense is the most equitably distributed of all things because no matter
+  how much or little a person has, everyone feels so abundantly provided with
+  good sense that he feels no desire for more than he already possesses.
+#+END_QUOTE
+
+* TODO Answer What is True
+  You know what to do:
+  - [ ] I found and entered below the author of the first short quote, \ldquo{}If you \dots\rdquo.
+  - [ ] I found and entered below the author of the second short quote, \ldquo{}No right, \dots\rdquo.
+  - [ ] I found and entered below the author of the third short quote, \ldquo{}Logicians have \dots\rdquo.
+  - [ ] I found and entered below the author of the fourth short quote, \ldquo{}So convenient \dots\rdquo.
+  - [ ] I found and entered below the author of the fifth short quote, \ldquo{}Good sense \dots\rdquo.
+  - [ ] I watched Terry Moore’s TED talk /Why is ‘x’ the unknown?/.
+  - [ ] I know why \lsquo{}x\rsquo is the unknown.
+
+  Enter the author(s) you found (and where) in the table below:
+
+  | Which? | Author of Quote | Where Found (link to website) |
+  |--------+-----------------+-------------------------------|
+  | First  |                 |                               |
+  | Second |                 |                               |
+  | Third  |                 |                               |
+  | Fourth |                 |                               |
+  | Fifth  |                 |                               |

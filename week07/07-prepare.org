@@ -1,0 +1,61 @@
+#+TITLE: DM1 Week 07 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read PQR through PQX from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+* TODO Answer What is True By Way of Review (and Preview)
+   You know what to do.
+  - [ ] I know that a prime is an integer greater than 1 that is divisible only
+    by 1 and itself.
+  - [ ] I know that a prime is an integer greater than 1 that has exactly two
+    factors.
+  - [ ] I know that a composite is an integer greater than 1 that has three or
+    more factors.
+  - [ ] I know that the number 1 is the loneliest number --- it is neither prime
+    nor composite.
+  - [ ] I know that every integer greater than 1 can be written uniquely as a
+    prime or as the product of two or more primes where the prime factors are
+    written in order of nondecreasing size.
+  - [ ] I know what the theorem mentioned in the previous assertion is called.
+  - [ ] I know why it is that if n is a composite integer, then n has a prime
+    divisor less than or equal to \radic{}n.
+  - [ ] I know why it is *false* to say that the product of any two primes is
+    odd.
+  - [ ] I know how big or how to find out how big the largest known prime is
+    (big as in how many decimal digits it has).
+  - [ ] I know how ENT meets up with the methods of continuous mathematics
+    (e.g., calculus) in the statement of the PNT.
+  - [ ] I know what the TLAs ENT and PNT expand to.
+  - [ ] I know how to compute the GCD and the LCM of two numbers.
+  - [ ] I know what the TLAs GCD and LCM expand to.
+  - [ ] I know how to create an efficient =is-prime= predicate (at least up to
+    the prime 179424673) given a vector containing the first ten million primes.
+  - [ ] I am ready to learn how the RSA cryptosystem works.
+  - [ ] I am ready to learn why the RSA cryptosystem works.
+* TODO Read About Creativity
+  [[https://firstthreeodds.org/17657741833134731255/creativity.html][This excerpt]] from Steve Olson\rsquo{}s book that you first encountered (a different
+  excerpt from) in [[file:../week05/05-prepare.org][Week 05]] has some bearing on your last week\rsquo{}s *Teach*
+  activity. Ponder what the connection is, and prepare to write what you think
+  it is.
+* TODO Answer What is True
+   You know what to do.
+  - [ ] I discovered that the formidable-looking problem that opened the second
+    day of the 42^{nd} International Mathematical Olympiad is the same problem as
+    the one in FDK, which was part of last week\rsquo{}s Ponder/Prove, and was
+    optional.
+  - [ ] I discovered that a way to think about creativity is to compare it to
+    biological evolution.
+  - [ ] I thought about how \ldquo{}[my] mind takes apart old ideas and observations and
+    juxtaposes their elements in new ways.\rdquo
+  - [ ] I know what word goes in the blank: \ldquo{}What keeps a lot of people from
+    being creative is that they are too _________. \rdquo
+  - [ ] I know what my personal selection process looks like, as in: \ldquo{}With so
+    many ways of combining things, creators cannot consider every possibility.
+    They must go through a selection process by which they first consider the
+    most promising options.\rdquo

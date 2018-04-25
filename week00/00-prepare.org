@@ -1,0 +1,53 @@
+#+TITLE: DM1 Week 00 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+  Hints and rubrics (how to get points) for each gradebook item are available
+  --- come to class to learn how to access them.
+
+  Master Hint: To get full credit, you are required to:
+  - track your time for each task (TODO);
+  - mark each task DONE when done (type t to toggle its state); and
+  - include a time-tracking summary report.
+
+  With your cursor on a TODO line, comma I (, I) runs the =org-clock-in=
+  command, and comma O (, O) runs the =org-clock-out= command.
+
+  Afterwards, clicking/confirming the link below will insert a table with a
+  clock report right below the link. Once inserted, running the link again
+  (which can also be done by hitting the Return/Enter key with the cursor in the
+  link) will update the table. For your convenience, this link will appear in
+  every file.
+
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Answer What is True
+  If you can truthfully assert that you did any of the following, put an X in
+  the box. (With Spacemacs bindings, putting the cursor anywhere on the line and
+  typing , , (two commas) will toggle the X for you.)
+
+  - [ ] I got a GitHub account, or I already had one.
+  - [ ] I found and worked through an introductory git/GitHub tutorial, or I am
+    already git/GitHub-literate.
+  - [ ] I followed instructions to get to my personal GitHub repository, and
+    thus got access to this file.
+  - [ ] I read the textbook\rsquo{}s introductory material (everything before ABC ---
+    which means everything up to and including section ONE subsubsection ONI,
+    which ends just when subsection ABC begins).
+
+* TODO Take Note
+  Please read \lsquo{}I\rsquo or \lsquo{}We\rsquo as you, the reader(s) rather than me, the writer of
+  these \ldquo{}Answer What Is True\rdquo (and other) assertions. These say \lsquo{}I\rsquo, but be
+  thinking about \lsquo{}We\rsquo as you look around for three other classmates you would be
+  comfortable working in a group with.
+
+* TODO Export to See Formatted File
+  If you want to see what your file will look like when formatted like The Book,
+  run the link below:
+
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+
+  Note that, again for your convenience, one of these links will appear in every
+  file.

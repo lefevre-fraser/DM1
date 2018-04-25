@@ -1,0 +1,77 @@
+#+TITLE: DM1 Week 10 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read section THR subsections VWX through VWO from [[https://rickneff.github.io][The Book]].
+* TODO Answer What is True
+    Unlike those of previous weeks, the assertions below are not about your
+    knowledge of facts, but are instead about the facts (or non-facts)
+    themselves. If true, check the box (, ,) and cite a reference in the book or
+    elsewhere to give the source of your knowledge of that fact. If false, leave
+    the box unchecked, and insert a short explanation of why it is false, or
+    give a counterexample.
+  - [ ] A node/vertex is an intersection between lines in a graph.
+  - [ ] A complete graph is one where each node is connected to every other
+    node.
+  - [ ] A cycle graph is one with n \ge 3 nodes where every node is connected to
+    exactly two other nodes.
+  - [ ] The connection between nodes in a graph is called a link or an edge.
+  - [ ] In a directed graph, the links only go one way.
+  - [ ] Graphs can be represented as sets of pairs.
+  - [ ] The pairs need to be ordered for directed graphs, but they do not need
+    to be ordered for undirected graphs.
+  - [ ] A path in a graph is an unbroken series of nodes connected by vertices.
+  - [ ] A cycle in a graph is a path that reconnects to itself.
+  - [ ] You can calculate how many edges are in different kinds of graphs if you
+    know how many nodes there are.
+  - [ ] A wheel graph is created by taking a cycle, adding another node, and
+    adding an edge between that node and every other node.
+  - [ ] In a directed graph, the in-degree of a node is the number of edges
+    going into that node.
+  - [ ] In a directed graph, the out-degree of a node is the number of edges
+    going out of that node.
+  - [ ] In a directed graph, the degree of a node is the number of edges going
+    into or out of that node.
+  - [ ] Adjacent, neighbors and connected are synonymous terms in graph theory.
+  - [ ] Undirected graphs map pairs of members of symmetric binary relations.
+  - [ ] In a multigraph, more than one edge can connect two given nodes.
+  - [ ] In a simple graph, there cannot be more than one edge between two given
+    nodes.
+  - [ ] In pseudographs, there can be loops (edges connecting nodes to
+    themselves).
+  - [ ] In directed graphs, the relation between nodes need not be symmetric.
+  - [ ] In directed multigraphs, it is allowed to have more than one edge
+    between two nodes.
+
+** TODO Watch a Video                                                 :crypt:
+   :PROPERTIES:
+   :CRYPTKEY: dm1prepare10
+   :END:
+-----BEGIN PGP MESSAGE-----
+
+hQIMA8rsHOfNGk1VAQ//Vs+tbFyaJsRPFjkPKgo8WHiDDroEnMmmrPLMnr415mkv
+UFwQbqvYXaiL819b5IHkxHm/sf7fjF5j0f3HZlH0AcvtBYnQV7fB5aAKBiFCaXl0
+aUOmmzZ4S9CWWwr1Yq6ghhKU/HpUCMi0tMz2s3W7mSMBlX1XMlgTCr39Koq35LLq
+U9g4f1573rZbhm01Nw18TUu5Ai8VUVLAm7gHOnduYjEe/La8Wtm5lETrHGiNTh5w
+pa72BDz4mFTVcKlu9Hm8Vrz5I/97umqMrlEmrhw1JFEv7Gmh3c+6pe4DV+Qwznie
+Pwk4p/mIlatVcHV5v80RWjJoNTCFSTpsBNwh2xeSuzbP2CG1r1OVnZ6n7y85e+oV
+xZhmd3+ehs7utUPop2CC5+P2bFM4mCoa9DxUbqzFDThZT8B/w2SISuD0KICdpg1H
+zdb+a1Fm5XoEgszkt5Q83khWEWV+6mttEpXPlf7KikwvldJtXPpZbWVQ7+3zjOH9
+d9jGwfyVIPcuxJk2vcUzfo42v68PLpHeyotzmSL4peQTHLA0D8evTjdBD3kjGOjo
+vRmPNp2lPCOBFPfF/CKL4/DLyhH832GdQ0mPQ9fxTZNzQY2qry1IlUQX9Vt3xPO1
+d758wxBXHA5UdpZj75ghJ9Drcys0nc4eZtGw5Xqi0A4NcmXhEUYrgKbxJRSDlJfS
+wIUBctugCN2YjgvTrPuDXknIn0u8EBJrc5tEafP/KZcFsFRizjIVg0M5nT8ubBKs
+3So8rPFTp5f/+cZoWETHto6/GI5YI5RZxOiWjkW2VKr+F5OdNxAMUX4KZo+ruLlJ
+4bvi4z5/mFOTQvGwloARnE8giFaJOxIJDZ3j1oUd5LNBFzfEBPLeEMb0NNwURSaK
+gkq98GGRfYKB3iUX60CpKcfo9L7KmDWVk2cZ4yXENe5A/Z+HdTtVCjcZZOdfDtdT
+2iSkde3EvCqSC8jdACk2H3Mqt2ro/4JP66a88yJmEirW2bXya76w2AeOoqqU/DNJ
+V/opNk9uZIylewfnPTDtam4I3nQRfbGmWOlm+MPQyUWXjwvZCLaEcfI0m+1xGTI2
+EwbXg/vJVSv/IeElXKsQ5ZkhH/W3cHpl8GLXJ4oRI8K3cuFH8A5n
+=cNgC
+-----END PGP MESSAGE-----

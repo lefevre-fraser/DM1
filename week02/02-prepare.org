@@ -1,0 +1,20 @@
+#+TITLE: DM1 Week 02 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read Subsection DEF through subsubsection DEU from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+* TODO Answer What is True
+   Check the box if you can truthfully assert that you did any of the following:
+  - [ ] I reviewed my solution to last week\rsquo{}s /census-taker problem/.
+  - [ ] I identified the \ldquo{}key move\rdquo required to see the answer, and came
+    prepared to articulate it if called upon.
+  - [ ] I found two or three classmates (the same as last week, or different
+    ones) to form a team for an in-class exercise.
+  - [ ] I encouraged them to be to class early so as to have time to set up two
+    tables and sit facing each other.

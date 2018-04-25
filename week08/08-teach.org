@@ -1,0 +1,17 @@
+#+TITLE: DM1 Week 08 Teach
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Discuss and Write 
+  Discuss with a group (new or old) the exercises begun in class on Day 1 of
+  this week, and then write your answers to the questions that will be posed.
+
+#+begin_info
+  Your answers go here.
+#+end_info

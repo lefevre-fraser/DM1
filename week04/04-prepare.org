@@ -1,0 +1,41 @@
+#+TITLE: DM1 Week 04 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read Subsection GHI through subsubsection GHS from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+* TODO Answer What is True By Way of Review
+   If you can truthfully assert any of the following, you know what to do:
+  - [ ] I know that mathematical functions are useful abstractions of the
+    process of transformation.
+  - [ ] I also know *why* mathematical functions are useful abstractions of the
+    process of transformation.
+  - [ ] I know that *onto* functions are also called *surjective* functions.
+  - [ ] I know that *one-to-one* functions are also called *injective*
+    functions.
+  - [ ] I know that in lisp there are no restrictions on what objects can be the
+    inputs to a function (what it takes) and what objects can be the outputs of
+    a function (what it gives).
+  - [ ] I know how many inputs a *k-ary* function has.
+  - [ ] I know that in formulas, variables can be /free/ or /bound/, but not
+    both, and not neither.
+  - [ ] I know why it is *false* to say that predicates take only boolean
+    variables as arguments.
+  - [ ] I know why it is *false* to say that quantifiers can *always* be
+    modeled as loops.
+* TODO Answer What is True
+  You know what to do:
+  - [ ] I pondered last week\rsquo{}s compare/contrast exercises, both code and gospel
+    terms.
+  - [ ] For the code, I compared/contrasted my group\rsquo{}s summary to the summary in
+    the key.
+  - [ ] For the gospel terms, I thought about the ramifications of taking
+    scriptures out of context.
+  - [ ] I thought about how to answer a critic of the Church who claims the
+    Doctrine and Covenants contradicts itself in what it names the greatest gift
+    of God in section 6 verse 13 and section 14 verse 7.

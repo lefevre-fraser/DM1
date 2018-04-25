@@ -1,0 +1,18 @@
+#+TITLE: DM1 Week 02 Teach
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Think and Discuss
+  After thinking about it individually, and then collectively arriving at a
+  consensus by following the instructions given in class, write up your report
+  below.
+* TODO Report
+#+begin_info
+  Your answer goes here.
+#+end_info

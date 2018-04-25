@@ -1,0 +1,44 @@
+#+TITLE: DM1 Week 00 Teach
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Play 
+  Find 3-5 classmates and play \ldquo{}guess my number\rdquo. This is the game where one of
+  you picks a number between 1 and 100, and the others try to guess it as
+  quickly as possible. The only clues that can be given by the one who chose the
+  number are \ldquo{}smaller\rdquo if the guessed number is too big, or \ldquo{}bigger\rdquo if the
+  guessed number is too small.
+
+  You will be reminded how to evaluate the following elisp code blocks. Please
+  do so, and play =guess-my-number= by evaluating elisp code. Then write up your
+  results --- what you did, and what you learned:
+
+#+BEGIN_SRC elisp :results silent
+  (defun start ()
+    (setq small 1
+          big 100)
+    (guess-my-number))
+
+  (defun guess-my-number ()
+     (/ (+ small big) 2))
+
+  (defun smaller ()
+    (setq big (- (guess-my-number) 1))
+    (guess-my-number))
+
+  (defun bigger ()
+    (setq small (+ (guess-my-number) 1))
+    (guess-my-number))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (start)
+#+END_SRC
+
+* TODO Report

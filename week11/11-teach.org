@@ -1,0 +1,60 @@
+#+TITLE: DM1 Week 11 Teach
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Supply and Test                                                :crypt:
+  :PROPERTIES:
+  :CRYPTKEY: dm1teach11
+  :END:
+-----BEGIN PGP MESSAGE-----
+
+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
+=ZHzx
+-----END PGP MESSAGE-----

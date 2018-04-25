@@ -1,0 +1,24 @@
+#+TITLE: DM1 Week 01 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read Subsection ABC from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+
+* TODO Answer What is True
+   Check the box if you can truthfully assert any of the following:
+  - [ ] I know from my previous reading why it is *false* to say that languages
+    and grammars belong to English and have nothing to do with discrete math.
+  - [ ] I know why Brother Neff likes the English alphabet with its 26 letters.
+  - [ ] I know the meaning of these seven words: =first three odds double halve
+    divide reciprocate=.
+  - [ ] I could correctly answer one of the following three questions if called
+    upon in class:
+    1. What is the difference between *using* a word and *mentioning* it?
+    2. What does *TLA ISA* mean?
+    3. What is a *tetragramamalgam*?

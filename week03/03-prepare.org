@@ -1,0 +1,61 @@
+#+TITLE: DM1 Week 03 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Read DEV through DEW from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+* TODO Read [[https://firstthreeodds.org/17657741833134731255/why-teach-logic.pdf][Why Teach Logic?]]
+* TODO Answer What is True about Why Teach Logic?
+  If you can truthfully assert any of the following, you know what to do:
+
+  - [ ] I know why \ldquo{}It depends\rdquo is the correct answer to the question: True or
+    False? Zero is a member of the set of *Natural* numbers.
+  - [ ] I know that statements saying such-and-such elements are members of
+    so-and-so sets are *propositions*.
+  - [ ] I know that \ldquo{}Whatever is written by a famous person is true\rdquo is called
+    the \ldquo{}Appeal to Authority\rdquo fallacy.
+  - [ ] I know that \ldquo{}Whatever is believed by a large number of people is true\rdquo
+    is called the \ldquo{}Bandwagon\rdquo fallacy.
+  - [ ] I know the difference between a /valid/ argument and a /sound/
+    argument.
+  - [ ] I know why it is *false* to say that Zeezrom tried to fool Alma and
+    Amulek with a /Hasty Generalization/ argument.
+  - [ ] I know that to study something out in one’s mind requires more than
+    just gathering facts; it requires reasoning out the logical relationships
+    among the facts.
+  - [ ] I know who said: \ldquo{}The mind should be trained to study, to reflection,
+    to system [...] [This mental labor will] yield fruits satisfactory to
+    itself, and useful in the salvation of others.\rdquo
+  - [ ] I know that the proud despise reason because it destroys their craft.
+  - [ ] I know who said \ldquo{}We are free to think [,plan and do]. But once an
+    action has been taken, we are never free from its consequences.\rdquo
+  - [ ] I know that logic, like language, must be studied and understood in
+    order to be used effectively.
+* TODO Answer What is True about your ICE Preparation
+   Note: ICE = In-Class Exercise.
+
+   Check the box if you can truthfully assert that you did any of the following:
+  - [ ] I reviewed my solution to last week\rsquo{}s /census-taker problem/.
+  - [ ] I identified the \ldquo{}key move\rdquo required to see the answer, and came
+    prepared to articulate it if called upon.
+  - [ ] I found two or three classmates (the same as last week, or different
+    ones) to form a team for an ICE (to be revealed on Day 2).
+  - [ ] I started discussing with my team how to compare/contrast terms as
+    warmup for the ICE on Day 2. For example, compare and contrast pairs of the
+    four terms
+    1. immortality
+    2. salvation
+    3. eternal life
+    4. exaltation
+    taking the pairs across the two rows (e.g., immortality versus salvation) or
+    down the two columns (e.g. immortality versus eternal life) of the following
+    table, where the column headings give a hint:
+    | Moses 1:39   | Nouns meaning "the action of (a verb)" or "the result of (a verb)" |
+    |--------------+--------------------------------------------------------------------|
+    | immortality  | salvation                                                          |
+    | eternal life | exaltation                                                         |

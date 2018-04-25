@@ -1,0 +1,42 @@
+#+TITLE: README for Discrete Mathematics One (aka DM1 aka CS 237)
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+STARTUP: showeverything
+#+SETUPFILE: ../theme-bigblow.setup
+
+  Welcome to Discrete Mathematics One!
+
+  There are many, many things you can do in emacs/Spacemacs/org-mode that you
+  will learn in this course. One of them is that links in this file can be
+  visited either in the usual way by clicking on them, or else by positioning
+  the cursor on them and pressing Enter.
+
+  In case you're new to them, since .org files are "plain old text" files
+  (marked up in clever ways), any old editor will allow you to view and edit
+  them. But org-mode can only be used to full advantage within emacs.
+
+* Course Metamaterial
+
+   [[file:syllabus.org][syllabus.org]]
+
+   [[file:schedule.org][schedule.org]]
+
+   [[file:gradebook.org][gradebook.org]]
+
+* Course Material
+
+   [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]]
+
+   - [[file:week00/00-prepare.org][Week 00]]
+   - [[file:week01/01-prepare.org][Week 01]]
+   - [[file:week02/02-prepare.org][Week 02]]
+   - [[file:week03/03-prepare.org][Week 03]]
+   - [[file:week04/04-prepare.org][Week 04]]
+   - [[file:week05/05-prepare.org][Week 05]]
+   - [[file:week06/06-prepare.org][Week 06]]
+   - [[file:week07/07-prepare.org][Week 07]]
+   - [[file:week08/08-prepare.org][Week 08]]
+   - [[file:week09/09-prepare.org][Week 09]]
+   - [[file:week10/10-prepare.org][Week 10]]
+   - [[file:week11/11-prepare.org][Week 11]]
+   - [[file:week12/12-prepare.org][Week 12]]

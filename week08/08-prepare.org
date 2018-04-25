@@ -1,0 +1,45 @@
+#+TITLE: DM1 Week 08 Prepare
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+[[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
+[[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
+[[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+* TODO Answer What is True By Way of Review
+   You know what to do:
+  - [ ] I know what a CSF is.
+  - [ ] I know what \ldquo{}congruence modulo a positive integer\rdquo means.
+  - [ ] I know how to find by inspection MMIs (modular multiplicative inverses)
+    of small positive integers modulo other small positive integers.
+  - [ ] I know how the Euclidean GCD algorithm works.
+  - [ ] I know how the Extended Euclidean GCD algorithm works.
+
+* TODO Read section THR subsections STU through STD from [[https://rickneff.github.io][The Book]].
+* TODO Answer What is True
+  You know what to do:
+  - [ ] I know that a rooted tree is a tree in which one of the nodes is
+    designated as the root.
+  - [ ] I know that in a rooted tree, every link can be viewed as directed away
+    from the root.
+  - [ ] I know that in a rooted tree, the parent of a (non-root) node *n* is the
+    unique node that has a directed link to *n*.
+  - [ ] I know why it is *false* to say that every node in a rooted tree has a
+    parent.
+  - [ ] I know that a child of a node *n* is any node of which *n* is the
+    parent.
+  - [ ] I know that a leaf is a childless node.
+  - [ ] I know that using \ldquo{}leaf\rdquo and \ldquo{}child(less)\rdquo in the same thought is using
+    a mixed metaphor.
+  - [ ] I know that the level of a node is its distance from the root, measured
+    as the number of links in the path from root to node.
+  - [ ] I know why it is *false* to say that a tree is *m*-ary if each node has
+    at least *m* children.
+  - [ ] I know why in a rooted binary tree with 16 nodes, there must be a path
+    of length 4.
+  - [ ] I know in what sense there are only two *different* unrooted trees with
+    four unlabeled nodes.
+  - [ ] I know in what sense there are only four different *rooted* trees with
+    four unlabeled nodes.
