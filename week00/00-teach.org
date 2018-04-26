@@ -9,15 +9,17 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-04-26 Thu 10:22]
+#+CAPTION: Clock summary at [2018-04-26 Thu 10:28]
 | Headline     | Time   |
 |--------------+--------|
-| *Total time* | *0:00* |
+| *Total time* | *0:06* |
+|--------------+--------|
+| Play         | 0:06   |
 #+END:
 
 * TODO Play 
   :LOGBOOK:
-  CLOCK: [2018-04-26 Thu 10:22]
+  CLOCK: [2018-04-26 Thu 10:22]--[2018-04-26 Thu 10:28] =>  0:06
   CLOCK: [2018-04-26 Thu 10:22]--[2018-04-26 Thu 10:22] =>  0:00
   :END:
   Find 3-5 classmates and play \ldquo{}guess my number\rdquo. This is the game where one of

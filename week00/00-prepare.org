@@ -24,18 +24,19 @@
 
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-04-25 Wed 19:52]
-| Headline            | Time   |
-|---------------------+--------|
-| *Total time*        | *0:01* |
-|---------------------+--------|
-| Answer What is True | 0:01   |
+#+CAPTION: Clock summary at [2018-04-26 Thu 13:10]
+| Headline                     |   Time |
+|------------------------------+--------|
+| *Total time*                 | *0:10* |
+|------------------------------+--------|
+| Answer What is True          |   0:08 |
+| Take Note                    |   0:01 |
+| Export to See Formatted File |   0:01 |
 #+END:
 
 * DONE Answer What is True
-  CLOSED: [2018-04-25 Wed 19:52]
   :LOGBOOK:
-  CLOCK: [2018-04-25 Wed 19:51]--[2018-04-25 Wed 19:52] =>  0:01
+  CLOCK: [2018-04-25 Wed 19:51]--[2018-04-25 Wed 19:59] =>  0:08
   :END:
   If you can truthfully assert that you did any of the following, put an X in
   the box. (With Spacemacs bindings, putting the cursor anywhere on the line and
@@ -51,14 +52,20 @@
     which ends just when subsection ABC begins).
 
 * DONE Take Note
-  CLOSED: [2018-04-25 Wed 19:52]
+  CLOSED: [2018-04-26 Thu 13:08]
+  :LOGBOOK:
+  CLOCK: [2018-04-26 Thu 13:07]--[2018-04-26 Thu 13:08] =>  0:01
+  :END:
   Please read \lsquo{}I\rsquo or \lsquo{}We\rsquo as you, the reader(s) rather than me, the writer of
   these \ldquo{}Answer What Is True\rdquo (and other) assertions. These say \lsquo{}I\rsquo, but be
   thinking about \lsquo{}We\rsquo as you look around for three other classmates you would be
   comfortable working in a group with.
 
 * DONE Export to See Formatted File
-  CLOSED: [2018-04-25 Wed 19:52]
+  CLOSED: [2018-04-26 Thu 13:09]
+  :LOGBOOK:
+  CLOCK: [2018-04-26 Thu 13:08]--[2018-04-26 Thu 13:09] =>  0:01
+  :END:
   If you want to see what your file will look like when formatted like The Book,
   run the link below:
 
