@@ -9,7 +9,7 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-04-25 Wed 22:03]
+#+CAPTION: Clock summary at [2018-04-26 Thu 00:59]
 | Headline     |   Time |      |
 |--------------+--------+------|
 | *Total time* | *1:23* |      |

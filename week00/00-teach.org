@@ -8,6 +8,13 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-04-26 Thu 01:03]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
 * TODO Play 
   Find 3-5 classmates and play \ldquo{}guess my number\rdquo. This is the game where one of
   you picks a number between 1 and 100, and the others try to guess it as
