@@ -9,18 +9,19 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-04-26 Thu 10:28]
-| Headline     | Time   |
+#+CAPTION: Clock summary at [2018-04-27 Fri 14:31]
+| Headline     |   Time |
 |--------------+--------|
-| *Total time* | *0:06* |
+| *Total time* | *1:22* |
 |--------------+--------|
-| Play         | 0:06   |
+| Play         |   1:00 |
+| Report       |   0:22 |
 #+END:
 
-* TODO Play 
+* DONE Play 
+  CLOSED: [2018-04-27 Fri 00:05]
   :LOGBOOK:
-  CLOCK: [2018-04-26 Thu 10:22]--[2018-04-26 Thu 10:28] =>  0:06
-  CLOCK: [2018-04-26 Thu 10:22]--[2018-04-26 Thu 10:22] =>  0:00
+  CLOCK: [2018-04-26 Thu 23:00]--[2018-04-26 Thu 24:00] =>  1:00
   :END:
   Find 3-5 classmates and play \ldquo{}guess my number\rdquo. This is the game where one of
   you picks a number between 1 and 100, and the others try to guess it as
@@ -52,9 +53,45 @@
 
 #+BEGIN_SRC elisp
   (start)
+  (bigger)
+  (smaller)
+  (smaller)
+  (bigger)
+  (bigger)
+  (smaller)
 #+END_SRC
 
 #+RESULTS:
-: 50
+: 59
 
-* TODO Report
+* DONE Report
+  CLOSED: [2018-04-27 Fri 14:30]
+  :LOGBOOK:
+  CLOCK: [2018-04-27 Fri 14:07]--[2018-04-27 Fri 14:29] =>  0:22
+  :END:
+From this activity I learned how to write in elisp a little
+because I had no idea how to use this, so I looked up youtube 
+videos to start figuring things out.
+
+I still do not understand however how to reevalute a code block
+without deleting the resutls first. I had to delete the results
+each time that I wanted to run the script again to see if it would 
+guess my number correctly.
+
+elisp is deffinately going to be a learning curve for me. There 
+are many differences in function names and actions. But I hope I
+will have fun and get through it anyway. It is a great oportunity 
+to grow my knowledge and abilities.
+
+This game is cool be cause it is using logic to guess your number.
+first it tries 50, then with the next quess it rules out half of 
+the numbers, each time you make it guess again it gits rid of half
+of the choices again. 
+
+So, with 100 numbers it should not take more than 6 or 7 tries to 
+guess the correct number. 
+(2^7 = 128) my chance of getting it right is 1/(2^n) where n is the
+number of guesses I make if I use this method.
+(since each guess cuts the number of quesses left in half, with the
+6th guess i have a 1/64 chance of gueesing it, but with the 7th I
+have a 1/128 chance)
