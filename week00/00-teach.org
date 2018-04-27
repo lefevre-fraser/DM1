@@ -90,8 +90,8 @@ of the choices again.
 
 So, with 100 numbers it should not take more than 6 or 7 tries to 
 guess the correct number. 
-(2^7 = 128) my chance of getting it right is 1/(2^n) where n is the
+(2^7 = 128) my chance of getting it right is (2^n) percent where n is the
 number of guesses I make if I use this method.
 (since each guess cuts the number of quesses left in half, with the
-6th guess i have a 1/64 chance of gueesing it, but with the 7th I
-have a 1/128 chance)
+6th guess i have a 64% chance of gueesing it, but with the 7th I
+have a 128% chance)
