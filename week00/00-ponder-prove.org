@@ -9,20 +9,20 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-04-26 Thu 00:59]
+#+CAPTION: Clock summary at [2018-04-28 Sat 16:56]
 | Headline     |   Time |      |
 |--------------+--------+------|
-| *Total time* | *1:23* |      |
+| *Total time* | *3:56* |      |
 |--------------+--------+------|
 | Exercises    |   0:17 |      |
 | \_  CRC      |        | 0:04 |
 | \_  DGZ      |        | 0:13 |
-| Problems     |   0:15 |      |
+| Problems     |   0:58 |      |
 | \_  CHJ      |        | 0:03 |
-| \_  DZB      |        | 0:12 |
-| Puzzles      |   0:51 |      |
-| \_  DOK      |        | 0:43 |
-| \_  CJF      |        | 0:08 |
+| \_  DZB      |        | 0:55 |
+| Puzzles      |   2:41 |      |
+| \_  DOK      |        | 0:55 |
+| \_  CJF      |        | 1:46 |
 #+END:
 
 * Exercises
@@ -80,8 +80,10 @@
 #+begin_info
   Strengths
 #+end_info
-** TODO DZB
+** DONE DZB
+   CLOSED: [2018-04-28 Sat 14:13]
    :LOGBOOK:
+   CLOCK: [2018-04-28 Sat 13:30]--[2018-04-28 Sat 14:13] =>  0:43
    CLOCK: [2018-04-25 Wed 20:15]--[2018-04-25 Wed 20:27] =>  0:12
    :END:
 #+begin_note
@@ -95,11 +97,41 @@
   What is the radius of the outermost circle?
 #+end_note
 #+begin_info
-  Your Answer Here.
+
+I created a progam in c++ for solving this problem.
+The size of the outermost circle approaches the 
+value 8.7
+Wirh one billion loops the answer was 8.69918
+
+:CODE:
+#include <math.h>
+#include <iostream>
+#include <cassert>
+double solve()
+{
+	double r1 = 1;
+	double r2;
+	for (long i = 3; i < 1000000000; ++i)
+	{
+		r2 = r1 / (cos(3.1415296 / i));
+		r1 = r2;
+	}
+
+	assert(r1 == r2);
+	return r1;
+}
+
+int main() 
+{
+	cout << solve() << endl;
+}
+:END:
 #+end_info
 * Puzzles
-** TODO DOK
+** DONE DOK
+   CLOSED: [2018-04-28 Sat 14:34]
    :LOGBOOK:
+   CLOCK: [2018-04-28 Sat 14:18]--[2018-04-28 Sat 14:30] =>  0:12
    CLOCK: [2018-04-25 Wed 21:31]--[2018-04-25 Wed 21:52] =>  0:21
    CLOCK: [2018-04-25 Wed 21:10]--[2018-04-25 Wed 21:19] =>  0:09
    CLOCK: [2018-04-25 Wed 20:28]--[2018-04-25 Wed 20:41] =>  0:13
@@ -123,19 +155,20 @@
     7 * 8 * 15 = 840   /6   140
 *** Solution
     These numbers are all divisable by 6
+    and when dived by 6, they form the
+    square pyramidal numbers.
 *** Proof
     n * (n + 1) * ((2 * n) + 1)
     (n^2 + n) * (2n + 1)
-            or
-    (n + 1) * (2n^2 + n)
-
     (2n^3 + 2n^2 + n^2 + n)
     (2n^3 + 3n^2 + n)
-    n * (2n^2 + 3n + 1)
 
-    
-** TODO CJF
+    This last part divided by 6 is the 
+    equation for square pyramidal numbers.
+** DONE CJF
+   CLOSED: [2018-04-28 Sat 16:55]
    :LOGBOOK:
+   CLOCK: [2018-04-28 Sat 15:17]--[2018-04-28 Sat 16:55] =>  1:38
    CLOCK: [2018-04-25 Wed 21:19]--[2018-04-25 Wed 21:27] =>  0:08
    :END:
 #+begin_note
@@ -165,12 +198,64 @@
     654321
     and the set of letters:
     CLAHCK
-*** Approach
+*** Approaches
+    CLAHCK sounds like 
+    CLOCK
+    Split the set of numbers in half
+    654    321 
+
+    CLAHCK sounds like 
+    CLOCK
 *** Solution
+    If we look at the separated numbers it appears to
+    be two times: 6:45 - 3:21
+    the time elapsed is 8:27
+    in between 8 and 27 are 18 numbers.
+
+    split 18 and you get 
+    the place number of the letters
+    A and H 
+
+    18 is the time between and
+    AH are the letters changed
+    in the middle of the word.
+
+    so
+    CLOCK 
+    became
+    CLAHCK
+
+    Creating a patter is tuff stuff!
 *** Proof
-* TODO Identify Collaborators
+    Time was the correlation
+    along with the place of the 
+    letters in the alphabet
+    and their place inside the word.
+
+    Another example
+    
+    730158
+    is to
+    CLUCK
+
+    CLUCK sounds like
+    time
+
+    difference in time is
+    6:28
+    there are 21 numbers in between
+    and O is the 21st letter in the alphabet
+    
+    so our
+    CLOCK
+    maps to 
+    CLUCK
+
+* DONE Identify Collaborators
+  CLOSED: [2018-04-28 Sat 16:55]
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand what DOK was asking.
-  - Benjamin Franklin :: He helped brainstorm ideas for CJF.
-  -  :: 
+  - Sawyer Gehring :: Helped with code and helped find patter for products in DOC
+                      He also helped in a large part with "inventing" a patter
+                      between 654321 and CLAHCK
+  - Enrique Kolowich :: Helped with code
