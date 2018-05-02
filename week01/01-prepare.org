@@ -8,17 +8,54 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read Subsection ABC from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-01 Tue 20:56]
+| Headline                    |   Time |
+|-----------------------------+--------|
+| *Total time*                | *0:36* |
+|-----------------------------+--------|
+| Read Subsection ABC from... |   0:08 |
+| Answer What is True         |   0:28 |
+#+END:
 
-* TODO Answer What is True
+* DONE Read Subsection ABC from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-05-01 Tue 18:24]
+  :LOGBOOK:
+  CLOCK: [2018-05-01 Tue 18:16]--[2018-05-01 Tue 18:24] =>  0:08
+  :END:
+
+* DONE Answer What is True
+  CLOSED: [2018-05-01 Tue 20:56]
+  :LOGBOOK:
+  CLOCK: [2018-05-01 Tue 20:41]--[2018-05-01 Tue 20:44] =>  0:03
+  CLOCK: [2018-05-01 Tue 20:05]--[2018-05-01 Tue 20:19] =>  0:14
+  CLOCK: [2018-05-01 Tue 19:00]--[2018-05-01 Tue 19:11] =>  0:11
+  :END:
    Check the box if you can truthfully assert any of the following:
-  - [ ] I know from my previous reading why it is *false* to say that languages
+  - [X] I know from my previous reading why it is *false* to say that languages
     and grammars belong to English and have nothing to do with discrete math.
-  - [ ] I know why Brother Neff likes the English alphabet with its 26 letters.
-  - [ ] I know the meaning of these seven words: =first three odds double halve
-    divide reciprocate=.
-  - [ ] I could correctly answer one of the following three questions if called
+  - [X] I know why Brother Neff likes the English alphabet with its 26 letters.
+         a. 26 is 2 times 13. 2 and 13 are both prime, which is cool enough, 
+            but they’re also my birth month and day. And it’s unambiguous which is which. 
+            2/13 or 13/2 — take your pick. Because there’s no thirteenth month, either way works. 
+            Not every birth date is so lucky!
+  - [X] I know the meaning of these seven words: =first three odds double halve
+    divide reciprocate=.    
+         a. reciprocate - move back and forth in a straight line.
+         b. 135 -> 135135 or 2610 -> 135 135 or 26 10 or 1305 or 135 -> 1 or 2.6 or 13 05
+             i) 135 -> 2610 -> 1305 -> 13 05 then
+                13 05 -> 1305 -> 2610 -> 135
+         
+  - [X] I could correctly answer one of the following three questions if called
     upon in class:
     1. What is the difference between *using* a word and *mentioning* it?
+         a. Using - a word is used if it "adds" to a sentence.
+             i) I am using a word - I used using
+         b. Mentioning - a word not "adding" to a sentence
+             i) What does dead mean? - I mentioned the word "dead"
     2. What does *TLA ISA* mean?
-    3. What is a *tetragramamalgam*?
+         a. Three Letter Acronym - Is A - Three Letter Acronym
+    3. What is a *tetragramamalgam*? 
+         a. A mixture of different four letter words || A four letter word with a mixture of letters
+             i) Tetragram - a group of four letters, such as a word that is exactly four letters long 
+             ii) Amalgam - Mixture of different elements.
