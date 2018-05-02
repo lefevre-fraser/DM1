@@ -9,13 +9,13 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-05-01 Tue 22:27]
+#+CAPTION: Clock summary at [2018-05-01 Tue 22:36]
 | Headline                    |   Time |
 |-----------------------------+--------|
-| *Total time*                | *0:37* |
+| *Total time*                | *0:36* |
 |-----------------------------+--------|
 | Read Subsection ABC from... |   0:08 |
-| Answer What is True         |   0:29 |
+| Answer What is True         |   0:28 |
 #+END:
 
 * DONE Read Subsection ABC from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
@@ -27,7 +27,7 @@
 * DONE Answer What is True
   CLOSED: [2018-05-01 Tue 20:56]
   :LOGBOOK:
-  CLOCK: [2018-05-01 Tue 20:41]--[2018-05-01 Tue 20:45] =>  0:04
+  CLOCK: [2018-05-01 Tue 20:41]--[2018-05-01 Tue 20:44] =>  0:03
   CLOCK: [2018-05-01 Tue 20:05]--[2018-05-01 Tue 20:19] =>  0:14
   CLOCK: [2018-05-01 Tue 19:00]--[2018-05-01 Tue 19:11] =>  0:11
   :END:
