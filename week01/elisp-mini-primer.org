@@ -795,5 +795,3 @@
 #+END_SRC
 
 [[elisp:(turn-it-in)][Turn It In]]
-error: pathspec 'elisp' did not match any file(s) known to git.
-error: pathspec 'tutorial'' did not match any file(s) known to git.
