@@ -8,8 +8,22 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-03 Thu 19:53]
+| Headline                       |   Time |
+|--------------------------------+--------|
+| *Total time*                   | *0:27* |
+|--------------------------------+--------|
+| Think About and Discuss the... |   0:07 |
+| Report                         |   0:20 |
+#+END:
 
-* TODO Think About and Discuss the Census-Taker Problem
+
+* DONE Think About and Discuss the Census-Taker Problem
+  CLOSED: [2018-05-03 Thu 19:31]
+  :LOGBOOK:
+  CLOCK: [2018-05-03 Thu 19:24]--[2018-05-03 Thu 19:31] =>  0:07
+  :END:
   After thinking about it individually, and then collectively arriving at a
   consensus by following the instructions given in class, write up your report
   below.
@@ -41,7 +55,34 @@
   | =sa=     | Sum of their ages     |                             13 |
   | =sm=     | Something more        | My oldest daughter likes cats. |
 
-* TODO Report
+* DONE Report
+  CLOSED: [2018-05-03 Thu 19:51]
+  :LOGBOOK:
+  CLOCK: [2018-05-03 Thu 19:31]--[2018-05-03 Thu 19:51] =>  0:20
+  :END:
 #+begin_info
-  Your answer goes here.
+  With the number of daughters she had, the only two combinations of 
+  ages that can solve this problem are
+  6 6 1
+  and
+  2 2 9
+
+  But which one is the right combination?
+  the key is in the last clue, her "oldest daughter"
+  
+  because of that statement, we are led to assume that one daughet is
+  older than the rest. While it is possible for children to 
+  be the same age and not be twins, since pregnancy is only nine months,
+  and she could have adobted a child that was either a little older or 
+  younger than her previously oldest daughters, that is not a very
+  likeley scenerio.
+
+  So the more likeley answer to the question is that the woman's 
+  daughter's ages are 2, 2, and 9.
+
+  And while the fact that her oldeer daughter likes cats does not 
+  have to mean that because cats have nine lives her oldest 
+  daughter is nine years old. But it is a fun idea to think that
+  the daughter likes cats because it reminds her of her age.
+  
 #+end_info
