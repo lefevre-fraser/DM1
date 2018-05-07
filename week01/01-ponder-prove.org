@@ -8,16 +8,79 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-07 Mon 17:23]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *5:46* |      |
+|------------------------+--------+------|
+| Exercises              |   3:46 |      |
+| \_  UCA                |        | 0:13 |
+| \_  ODS                |        | 0:16 |
+| \_  UGX                |        | 0:30 |
+| \_  OGR                |        | 0:07 |
+| \_  UWM                |        | 0:06 |
+| \_  OPZ                |        | 0:10 |
+| \_  UOX                |        | 0:14 |
+| \_  OTX                |        | 0:04 |
+| \_  UOT                |        | 0:13 |
+| \_  UIN                |        | 0:22 |
+| \_  UCG                |        | 0:40 |
+| \_  OQT                |        | 0:04 |
+| \_  UTQ                |        | 0:04 |
+| \_  UJU                |        | 0:06 |
+| \_  OLH                |        | 0:09 |
+| \_  UWY                |        | 0:07 |
+| \_  OBW                |        | 0:03 |
+| \_  USL                |        | 0:11 |
+| \_  OYP                |        | 0:04 |
+| \_  UBV                |        | 0:03 |
+| Problems               |   1:01 |      |
+| \_  UIJ                |        | 0:10 |
+| \_  OYU                |        | 0:08 |
+| \_  UOH                |        | 0:03 |
+| \_  UZM                |        | 0:03 |
+| \_  UVH                |        | 0:10 |
+| \_  OTD                |        | 0:11 |
+| \_  UKF                |        | 0:06 |
+| \_  OKL                |        | 0:02 |
+| \_  UEZ                |        | 0:05 |
+| \_  OUB                |        | 0:03 |
+| Puzzles                |   0:58 |      |
+| \_  OQP                |        | 0:06 |
+| \_  USV                |        | 0:52 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO UCA
+** DONE UCA
+   CLOSED: [2018-05-05 Sat 12:22]
+   :LOGBOOK:
+   CLOCK: [2018-05-03 Thu 20:05]--[2018-05-03 Thu 20:18] =>  0:13
+   :END:
 #+begin_note
   Start your exercise warmup by thinking up three examples and three
   non-examples of propositions. Make them pithy.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Pithy - concise and forcefully expresive.
+
+  - Propositions ::
+     i.   Math is fun for everyone.
+     ii.  Walking is easy for most people.
+     iii. Discrete Math's course number is CS 237.
+
+  - Non-Propositions ::
+     i.   Is math fun?
+     ii.  Is reading benneficial?
+     iii. Is Discrete math helpful?
+
 #+end_info
-** TODO ODS
+** DONE ODS
+   CLOSED: [2018-05-03 Thu 20:35]
+   :LOGBOOK:
+   CLOCK: [2018-05-03 Thu 20:19]--[2018-05-03 Thu 20:35] =>  0:16
+   :END:
 #+begin_note
   Which of the following sentences are propositions? For each proposition, give
   its truth value (true or false).
@@ -31,9 +94,24 @@
   8. Simon says jump.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. nil
+  3. nil
+  4. can only be confirmed as true or false if 
+     values are known for x, y, z, and q
+     so, not a proposition
+  5. not a proposition
+  6. not a proposition
+  7. t when x == 3, nil for all other values of x
+     so, it is not a prposition
+  8. not a proposition
 #+end_info
-** TODO UGX
+** DONE UGX
+   CLOSED: [2018-05-05 Sat 12:18]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 12:14]--[2018-05-05 Sat 12:18] =>  0:04
+   CLOCK: [2018-05-03 Thu 20:15]--[2018-05-03 Thu 20:41] =>  0:26
+   :END:
 #+begin_note
   Put the proposition \ldquo{} /v/ is a member of the set of English alphabet
   consonants\rdquo in symbolic logic terms, using /C/ as the name of the set of
@@ -44,9 +122,13 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  v ∈ C
 #+end_info
-** TODO OGR
+** DONE OGR
+   CLOSED: [2018-05-05 Sat 12:47]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 12:40]--[2018-05-05 Sat 12:47] =>  0:07
+   :END:
 #+begin_note
   Which of the following are simple (not compound) propositions?
 
@@ -56,9 +138,16 @@
   4. People can fly or pigs can sing.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Simple
+  2. Compuand
+  3. Compound
+  4. Simple
 #+end_info
-** TODO UWM
+** DONE UWM
+   CLOSED: [2018-05-05 Sat 12:54]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 12:48]--[2018-05-05 Sat 12:54] =>  0:06
+   :END:
 #+begin_note
   Express in English the negation of each of these propositions:
 
@@ -72,9 +161,17 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Two plus two does not equal four.
+  2. Two plus one is not less than four.
+  3. Toronto is not the capital of Germany.
+  4. Total eclipses happen often.
+  5. No special measures are required for the current situation.
 #+end_info
-** TODO OPZ
+** DONE OPZ
+   CLOSED: [2018-05-05 Sat 13:05]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 12:55]--[2018-05-05 Sat 13:05] =>  0:10
+   :END:
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -91,20 +188,34 @@
   6. \not (/p/ \lor /q/)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. I did not study.
+  2. I studied or got an F on the test.
+  3. I studied and got an F on the test.
+  4. I did not study and I did not get an F on the test
+  5. I did not study or get an F on the test
+  6. I did not study and I did not get an F on the test
 #+end_info
 ** TODO UOX
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 13:06]--[2018-05-05 Sat 13:20] =>  0:14
+   :END:
 #+begin_note
   What other special forms besides =if= does elisp have for doing conditionals?
   Why are they called \ldquo{}special\rdquo?
 :HINT:
-  - Hint :: You can find at least six.
+  - Hint :: You can find at least six.  
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  when
+  unless
+  
 #+end_info
-** TODO OTX
+** DONE OTX
+   CLOSED: [2018-05-05 Sat 13:28]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 13:24]--[2018-05-05 Sat 13:28] =>  0:04
+   :END:
 #+begin_note
   Determine whether these sentences use an inclusive or, or an exclusive or:
   1. A side of fries or chips comes with your sandwich.
@@ -115,9 +226,19 @@
   6. Take it or leave it.
 #+end_note
 #+begin_info
-  Your answer goes here.
+*** Refering to the statements above
+    1. The statement uses an exclisive OR.
+    2. The statement uses an inclusive OR.
+    3. The statement uses an inclusive OR.
+    4. The statement uses an inclusive OR.
+    5. The statement uses an exclusive OR.
+    6. The statement uses an exclusive OR.
 #+end_info
-** TODO UOT
+** DONE UOT
+   CLOSED: [2018-05-05 Sat 13:42]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 13:29]--[2018-05-05 Sat 13:42] =>  0:13
+   :END:
 #+begin_note
   Return to the task of comparing the two expressions:
 
@@ -131,15 +252,59 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - First Equation :: =p and (q or not r)=
+  | p q r | out |
+  |-------+-----|
+  | 0 0 0 |  0  |
+  | 0 0 1 |  0  |
+  | 0 1 0 |  0  |
+  | 0 1 1 |  0  |
+  | 1 0 0 |  1  |
+  | 1 0 1 |  0  |
+  | 1 1 0 |  1  |
+  | 1 1 1 |  1  |
+ - Second Equation :: =(p and q) or not r=
+  | p q r | out |
+  |-------+-----|
+  | 0 0 0 |  1  |
+  | 0 0 1 |  0  |
+  | 0 1 0 |  1  |
+  | 0 1 1 |  0  |
+  | 1 0 0 |  1  |
+  | 1 0 1 |  0  |
+  | 1 1 0 |  1  |
+  | 1 1 1 |  1  |
+ - Tables Differ At ::
+       0 0 0  
+       and 
+       0 1 0
 #+end_info
-** TODO UIN
+** DONE UIN
+   CLOSED: [2018-05-05 Sat 13:52]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 14:10]--[2018-05-05 Sat 14:23] =>  0:13
+   CLOCK: [2018-05-05 Sat 13:43]--[2018-05-05 Sat 13:52] =>  0:09
+   :END:
 #+begin_note
   What is the set difference between the set of letters in the English alphabet
   and the set of letters in the Hawaiian alphabet?
 #+end_note
 #+begin_info
-  Your answer goes here.
+**** English Alphabet
+      a b c d e f g h i j k l m n o p q r s t u v w x y z
+**** Hawaiian Alphabet
+      a       e     h i   k l m n o p         u   w       'okina
+**** Set Difference
+#+BEGIN_SRC elisp
+  (require 'cl)
+  (setq list1 '(a b c d e f g h i j k l m n o p q r s t u v w x y z))
+  (setq list2 '(a e h i k l m n o p u w okina))
+  (append (set-difference list1 list2) (set-difference list2 list1))
+#+END_SRC
+
+#+RESULTS:
+| b | c | d | f | g | j | q | r | s | t | v | x | y | z | okina |
+
 #+end_info
 ** TODO OJL
 #+begin_note
@@ -161,7 +326,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO UCG
+** DONE UCG
+   CLOSED: [2018-05-05 Sat 15:30]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 14:50]--[2018-05-05 Sat 15:30] =>  0:40
+   :END:
 #+begin_note
   Let set *A* = =[verve vim vigor]=, set *B* = =[butter vinegar pepper vigor]=.
   For each of the following set operations, give its resulting members (as a
@@ -178,10 +347,40 @@
             elisp code to help you find the answers!
 :END:
 #+end_note
+
+#+BEGIN_SRC elisp
+  (setq seta '[verve vim vigor])
+  (setq setb '[butter vinegar pepper vigor])
+  (setq setc (remove-duplicates (vconcat setb seta)))
+  (setq setd (remove-duplicates
+                (vconcat
+                   (seq-difference setb
+                      (vconcat 
+                         (seq-difference seta setb) 
+                         (seq-difference setb seta)))
+                   (seq-difference seta
+                       (vconcat 
+                          (seq-difference seta setb) 
+                          (seq-difference setb seta))))))
+  
+#+END_SRC
+
+#+RESULTS:
+: [vigor]
+
 #+begin_info
-  Your answer goes here.
+  1. [butter vinegar pepper verve vim vigor]
+  2. [vigor]
+  3. [vinegar verve vim vigor]
+  4. [butter vinegar pepper vigor]
+  5. [vinegar vigor]
+  6. []
 #+end_info
-** TODO OQT
+** DONE OQT
+   CLOSED: [2018-05-05 Sat 16:04]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:02]--[2018-05-05 Sat 16:06] =>  0:04
+   :END:
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -196,9 +395,16 @@
   4. \not /p/ \rarr \not /q/
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Getting an A on the test is contingent upon studiying.
+  2. If I do not study I will still get an A on the test
+  3. I didn't study so I will possibly study or get an A on the test.
+  4. Not gettign an A on the test is contingent upon not studying.
 #+end_info
-** TODO UTQ
+** DONE UTQ
+   CLOSED: [2018-05-05 Sat 16:09]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:06]--[2018-05-05 Sat 16:10] =>  0:04
+   :END:
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -214,58 +420,194 @@
      or you did apply and got accepted.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. /p/ \land /q/
+  2. \not /p/ \land /q/
+  3. /p/ \land (\not /q/)
+  4. (\not /p/ \land (\not /q/)) \lor (/p/\land /q/)
+     Simplified:
+     (/p/ \rarr /q/)
 #+end_info
-** TODO UJU
+** DONE UJU
+   CLOSED: [2018-05-05 Sat 16:22]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:16]--[2018-05-05 Sat 16:22] =>  0:06
+   :END:
 #+begin_note
   Use truth tables to verify the /commutative/ laws.
   1. $p \vee q \equiv q \vee p$
   2. $p \wedge q \equiv q \wedge p$
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - Commutative OR ::
+  | p q | p \lor q | q \lor p |
+  |-----+--------+-------|
+  | 0 0 |   0    |   0   |
+  | 0 1 |   1    |   1   |
+  | 1 0 |   1    |   1   |
+  | 1 1 |   1    |   1   |
+ - Commutative AND ::
+  | p q | p \land q | q \land p |
+  |-----+--------+-------|
+  | 0 0 |   0    |   0   |
+  | 0 1 |   0    |   0   |
+  | 1 0 |   0    |   0   |
+  | 1 1 |   1    |   1   |
+ - Summary ::
+  AND and OR are commutative actions like addition
+
 #+end_info
-** TODO OLH
+** DONE OLH
+   CLOSED: [2018-05-05 Sat 16:32]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:23]--[2018-05-05 Sat 16:32] =>  0:09
+   :END:
 #+begin_note
   Use truth tables to verify the associative laws.
   1. $(p \vee q) \vee r \equiv p \vee (q \vee r)$
   2. $(p \wedge q) \wedge r \equiv p \wedge (q \wedge r)$
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - Associative OR ::
+  | p q r | (p \lor q) \lor r | p \lor (q \lor r) |
+  |-------+-------------+-------------|
+  | 0 0 0 |           0 |           0 |
+  | 0 0 1 |           1 |           1 |
+  | 0 1 0 |           1 |           1 |
+  | 0 1 1 |           1 |           1 |
+  | 1 0 0 |           1 |           1 |
+  | 1 0 1 |           1 |           1 |
+  | 1 1 0 |           1 |           1 |
+  | 1 1 1 |           1 |           1 |
+ - Associative AND ::
+  | p q r | (p \land q) \land r | p \land (q \land r) |
+  |-------+-------------+-------------|
+  | 0 0 0 |           0 |           0 |
+  | 0 0 1 |           0 |           0 |
+  | 0 1 0 |           0 |           0 |
+  | 0 1 1 |           0 |           0 |
+  | 1 0 0 |           0 |           0 |
+  | 1 0 1 |           0 |           0 |
+  | 1 1 0 |           0 |           0 |
+  | 1 1 1 |           1 |           1 |
+ - Summary ::
+  The associative laws have been 
+  verified for the AND and OR logic.
 #+end_info
-** TODO UWY
+** DONE UWY
+   CLOSED: [2018-05-05 Sat 16:42]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:35]--[2018-05-05 Sat 16:42] =>  0:07
+   :END:
 #+begin_note
   Use truth tables to verify the distributive laws.
   1. $p \wedge (q \lor r) \equiv (p \wedge q) \lor (p \wedge r)$.
   2. $p \vee (q \wedge r) \equiv (p \vee q) \wedge (p \vee r)$.
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - Distributive AND ::
+  | p q r | p \land (q \lor r) | (p \land q) \lor (p \land r) |
+  |-------+-------------+-------------------|
+  | 0 0 0 |           0 |                 0 |
+  | 0 0 1 |           0 |                 0 |
+  | 0 1 0 |           0 |                 0 |
+  | 0 1 1 |           0 |                 0 |
+  | 1 0 0 |           0 |                 0 |
+  | 1 0 1 |           1 |                 1 |
+  | 1 1 0 |           1 |                 1 |
+  | 1 1 1 |           1 |                 1 |
+ - Distributive OR ::
+  | p q r | p \lor (q \land r) | (p \lor q) \land (p \lor r) |
+  |-------+-------------+-------------------|
+  | 0 0 0 |           0 |                 0 |
+  | 0 0 1 |           0 |                 0 |
+  | 0 1 0 |           0 |                 0 |
+  | 0 1 1 |           1 |                 1 |
+  | 1 0 0 |           1 |                 1 |
+  | 1 0 1 |           1 |                 1 |
+  | 1 1 0 |           1 |                 1 |
+  | 1 1 1 |           1 |                 1 |
+ - Summary ::
+  Distributive propertiy applies to AND and OR logic
+
 #+end_info
-** TODO OBW
+** DONE OBW
+   CLOSED: [2018-05-05 Sat 16:50]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:47]--[2018-05-05 Sat 16:50] =>  0:03
+   :END:
 #+begin_note
   Use truth tables to verify De Morgan\rsquo{}s laws:
   1. $\neg (p \vee q) \equiv \neg p \wedge \neg q$
   2. $\neg (p \wedge q) \equiv \neg p \vee \neg q$
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - De Morgan's Laws :: \neg (p \vee q) \equiv \neg p \wedge \neg q
+  | p q | \neg (p \vee q) | \neg p \wedge \neg q |
+  |-----+-----------+-----------|
+  | 0 0 |         1 |         1 |
+  | 0 1 |         0 |         0 |
+  | 1 0 |         0 |         0 |
+  | 1 1 |         0 |         0 |
+ - De Morgan's Laws :: \neg (p \wedge q) \equiv \neg p \vee \neg q
+  | p q | \neg (p \wedge q) | \neg p \vee \neg q |
+  |-----+-----------+-----------|
+  | 0 0 |         1 |         1 |
+  | 0 1 |         1 |         1 |
+  | 1 0 |         1 |         1 |
+  | 1 1 |         0 |         0 |
+
 #+end_info
-** TODO USL
+** DONE USL
+   CLOSED: [2018-05-05 Sat 17:09]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 16:58]--[2018-05-05 Sat 17:09] =>  0:11
+   :END:
 #+begin_note
   Use truth tables to verify some miscellaneous laws, letting $\mathbf{1}$ =
   true, $\mathbf{0}$ = false:
   1. $p \land \mathbf{1} \equiv p$ (idempotence)
   2. $p \lor \mathbf{0} \equiv p$ (idempotence)
-  3. $\lnot \lnot p \equiv p$ (double negation)
+  3. $\not \not p \equiv p$ (double negation)
   4. $p \land \mathbf{0} \equiv \mathbf{0}$ (absorption)
   5. $p \lor \mathbf{1} \equiv \mathbf{1}$ (absorption)
 #+end_note
 #+begin_info
-  Your answer goes here.
+*** Idempotence
+ - Misc. Laws - AND with 1 ::
+   | p | 1 | p \land 1 |
+   |---+---+-------|
+   | 0 | 1 |     0 |
+   | 1 | 1 |     1 |
+ - Misc. Laws - OR with 0 :: 
+   | p | 0 | p \lor 1 |
+   |---+---+-------|
+   | 0 | 0 |     0 |
+   | 1 | 0 |     1 |
+   |   |   |       |
+*** Double Negation
+ - Msic. Laws - Double \not ::
+   | p | \not p | \not \not p |
+   |---+-----+-------|
+   | 0 |   1 |     0 |
+   | 1 |   0 |     1 |
+*** Absorption
+ - Msic. Laws - AND with 0 ::
+   | p | 0 | p \land 0 |
+   |---+---+-------|
+   | 0 | 0 |     0 |
+   | 1 | 0 |     0 |
+ - Misc. Laws - OR with 1 ::
+   | p | 1 | p \lor 1 |
+   |---+---+-------|
+   | 0 | 1 |     1 |
+   | 1 | 1 |     1 |
+
 #+end_info
-** TODO OYP
+** DONE OYP
+   CLOSED: [2018-05-05 Sat 17:18]
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 17:14]--[2018-05-05 Sat 17:18] =>  0:04
+   :END:
 #+begin_note
   Match the following set identities with their counterparts in the
   miscellaneous logic laws:
@@ -277,9 +619,16 @@
   5. $\overline{\overline{\mathsf{A}}} = \mathsf{A}$.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Matches Idempotence
+  2. Matches Absorption
+  3. Matches Idempotence
+  4. Matches Absorbtion
+  5. Matches Double Negative
 #+end_info
 ** TODO UBV
+   :LOGBOOK:
+   CLOCK: [2018-05-05 Sat 17:18]--[2018-05-05 Sat 17:21] =>  0:03
+   :END:
 #+begin_note
   Use DeMorgan's Laws to find the negations of the propositions:
   1. Winning the first round is necessary for winning the trophy.
@@ -289,7 +638,9 @@
   5. Getting an A on the final exam is necessary and sufficient for passing this class.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. p = winning first round
+     q = winning trophy
+     proposition = p 
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -324,7 +675,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO UIJ
+** DONE UIJ
+   CLOSED: [2018-05-07 Mon 16:10]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:00]--[2018-05-07 Mon 16:10] =>  0:10
+   :END:
 #+begin_note
   The following Venn diagram numbers three regions of a set B with a subset A
   relationship within a Universal set U:
@@ -348,11 +703,13 @@
   Make a connection between the logical conditional operator (\rightarrow) and the
   /definition/ of a subset. Refer to the three numbered regions in your answer.
 :HINT:
-  - Hint :: Making this connection means: 1) express the logical conditional
-            operator in terms of the definition of subset, or 2) express subset
-            in terms of the definition of the logical conditional operator,
-            whichever makes the most sense to you. Express either (or both) in
-            terms of the three numbered regions.
+  - Hint :: Making this connection means: 
+            1) express the logical conditional
+               operator in terms of the definition of subset, or 
+            2) express subset
+               in terms of the definition of the logical conditional operator,
+               whichever makes the most sense to you. Express either (or both) in
+               terms of the three numbered regions.
 
   - More Emphatically :: Making this connection will help you understand why the
        conditional operator works the way it does. To answer fully, you /must/
@@ -361,9 +718,28 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Subset - A subset is a set that is a part of a larger group of related things.
+  
+  Given that A is a subset of B,
+  A is only a subset of U if 
+  B is a subset of U
+
+  The set A, being a subset of U
+  is based on whether or not 
+  B is a subset of U
+
+  p = a is a subset of u
+  r = b is a subset of u
+  q = a is a subset of b
+  given q
+  if r then p
+  q \rarr p
 #+end_info
-** TODO OYU
+** DONE OYU
+   CLOSED: [2018-05-07 Mon 16:20]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:12]--[2018-05-07 Mon 16:20] =>  0:08
+   :END:
 #+begin_note
    There are many different ways in English to put the same conditional statement,
    \lsquo{}if p then q\rsquo{}. Here are four:
@@ -379,9 +755,16 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  (wherever p, q) or (q wherever p)
+  (while p, q) or (q while p)
+  (when p, q) or (q when p)
+  (each time p, q) or (q each time p)
 #+end_info
-** TODO UOH
+** DONE UOH
+   CLOSED: [2018-05-07 Mon 16:27]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:24]--[2018-05-07 Mon 16:27] =>  0:03
+   :END:
 #+begin_note
   Let /p/ and /q/ be the propositions:
 
@@ -398,7 +781,9 @@
      your being accepted.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. q \larr p
+  2. q \rarr p
+  3. q \harr p
 #+end_info
 ** TODO OZD *
 #+begin_note
@@ -411,7 +796,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO UZM
+** DONE UZM
+   CLOSED: [2018-05-07 Mon 16:30]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:27]--[2018-05-07 Mon 16:30] =>  0:03
+   :END:
 #+begin_note
   Determine whether these biconditionals are true or false:
   1. 2 + 1 = 3 if and only if 1 + 2 = 3.
@@ -420,7 +809,10 @@
   4. 1 < 2 if and only if 2 < 3.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. nil
+  3. nil
+  4. nil
 #+end_info
 ** TODO OOY *
 #+begin_note
@@ -447,7 +839,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO UVH
+** DONE UVH
+   CLOSED: [2018-05-07 Mon 16:41]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:31]--[2018-05-07 Mon 16:41] =>  0:10
+   :END:
 #+begin_note
   Construct a truth table for each  of these propositions:
   1. $\mathsf{p} \rightarrow \mathsf{q}$
@@ -457,7 +853,39 @@
   5. $\mathsf{p} \wedge \lnot \mathsf{q}$
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | p \rarr q |   |
+  |-------+---|
+  |     p | q |
+  |-------+---|
+  |     0 | 0 |
+  |     1 | 1 |
+
+  | p \oplus q |   |
+  |-------+---|
+  |     p | q |
+  |-------+---|
+  |     0 | 1 |
+  |     1 | 1 |
+
+  | p \rarr q |   |
+  |-------+---|
+  |     p | q |
+  |-------+---|
+  |     0 | 0 |
+  |     1 | 1 |
+
+  | \not p \rarr q |   |
+  |---------+---|
+  |       p | q |
+  |---------+---|
+  |       0 | 1 |
+  |       1 | 0 |
+
+  | p \land\not q |   |
+  |--------+---|
+  |      p | q |
+  |      0 | 1 |
+  |      1 | 1 |
 #+end_info
 ** TODO OJM *
 #+begin_note
@@ -478,12 +906,25 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO OTD
+** DONE OTD
+   CLOSED: [2018-05-07 Mon 16:53]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:42]--[2018-05-07 Mon 16:53] =>  0:11
+   :END:
 #+begin_note
   Construct a truth table for (p \lor q) \land (\not p \lor r) \rightarrow (q v r).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | r | p | q | p \lor q | \not p \lor r | (p \lor q) \land (\not p \lor r) | q \lor r | (p \lor q) \land (\not p \lor r) \rightarrow (q \lor r) |
+  |---+---+---+-------+---------+---------------------+-------+-------------------------------|
+  | 0 | 0 | 0 |     0 |       1 |                   0 |     0 |                             1 |
+  | 0 | 0 | 1 |     1 |       1 |                   1 |     1 |                             1 |
+  | 0 | 1 | 0 |     1 |       0 |                   0 |     0 |                             1 |
+  | 0 | 1 | 1 |     1 |       0 |                   0 |     1 |                             0 |
+  | 1 | 0 | 0 |     0 |       1 |                   0 |     1 |                             0 |
+  | 1 | 0 | 1 |     1 |       1 |                   1 |     1 |                             1 |
+  | 1 | 1 | 0 |     1 |       1 |                   1 |     1 |                             1 |
+  | 1 | 1 | 1 |     1 |       1 |                   1 |     1 |                             1 |
 #+end_info
 ** TODO OKQ *
 #+begin_note
@@ -496,27 +937,78 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO UKF
+** DONE UKF
+   CLOSED: [2018-05-07 Mon 17:01]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 16:54]--[2018-05-07 Mon 17:00] =>  0:06
+   :END:
 #+begin_note
   Show that $\neg(p \leftrightarrow q)$ and $p \leftrightarrow \neg q$ are logically equivalent.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | p | q | p \harr q | \not(p \harr q) |
+  |---+---+-------+----------|
+  | 0 | 0 |     0 |        1 |
+  | 0 | 1 |     0 |        1 |
+  | 1 | 0 |     0 |        1 |
+  | 1 | 1 |     1 |        0 |
+
+  | p | q | \not q | p \harr \not q |
+  |---+---+-----+---------|
+  | 0 | 0 |   1 |       1 |
+  | 0 | 1 |   0 |       1 |
+  | 1 | 0 |   1 |       1 |
+  | 1 | 1 |   0 |       0 |
+  
 #+end_info
-** TODO OKL
+** DONE OKL
+   CLOSED: [2018-05-07 Mon 17:04]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 17:02]--[2018-05-07 Mon 17:04] =>  0:02
+   :END:
 #+begin_note
   Determine if $(p \vee q) \wedge (\neg p \vee r) \rightarrow (q \vee r)$ is a tautology.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  It is not a tautology.
+
+  From OTD:
+  | r | p | q | p \lor q | \not p \lor r | (p \lor q) \land (\not p \lor r) | q \lor r | (p \lor q) \land (\not p \lor r) \rightarrow (q \lor r) |
+  |---+---+---+-------+---------+---------------------+-------+-------------------------------|
+  | 0 | 0 | 0 |     0 |       1 |                   0 |     0 |                             1 |
+  | 0 | 0 | 1 |     1 |       1 |                   1 |     1 |                             1 |
+  | 0 | 1 | 0 |     1 |       0 |                   0 |     0 |                             1 |
+  | 0 | 1 | 1 |     1 |       0 |                   0 |     1 |                             0 |
+  | 1 | 0 | 0 |     0 |       1 |                   0 |     1 |                             0 |
+  | 1 | 0 | 1 |     1 |       1 |                   1 |     1 |                             1 |
+  | 1 | 1 | 0 |     1 |       1 |                   1 |     1 |                             1 |
+  | 1 | 1 | 1 |     1 |       1 |                   1 |     1 |                             1 |
+
+  Because it is not always true, (p \vee q) \wedge (\neg p \vee r) \rightarrow (q \vee r) is not a tautology.
 #+end_info
-** TODO UEZ
+** DONE UEZ
+   CLOSED: [2018-05-07 Mon 17:09]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 17:04]--[2018-05-07 Mon 17:09] =>  0:05
+   :END:
 #+begin_note
   Find a compound proposition involving the propositional variables /p/, /q/, and /r/
   that is true when /p/ and /q/ are true and /r/ is false, but is false otherwise.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | p | q | r | out |
+  |---+---+---+-----|
+  | 0 | 0 | 0 |   0 |
+  | 0 | 0 | 1 |   0 |
+  | 0 | 1 | 0 |   0 |
+  | 0 | 1 | 1 |   0 |
+  | 1 | 0 | 0 |   0 |
+  | 1 | 0 | 1 |   0 |
+  | 1 | 1 | 0 |   1 |
+  | 1 | 1 | 1 |   0 |
+  
+  (p \land q) \land (\not r)
+
 #+end_info
 ** TODO OYW *
 #+begin_note
@@ -635,14 +1127,24 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO OUB
+** DONE OUB
+   CLOSED: [2018-05-07 Mon 17:13]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 17:10]--[2018-05-07 Mon 17:13] =>  0:03
+   :END:
 #+begin_note
   Implement the reverse conditional function (=<--=).
 
   Find two shorter ways to correctly implement the biconditional function (=<-->=).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  p = learning to ride a bike
+  q = owning a bike
+
+  p is necessary for q
+  p \larr q
+  p is necessary and sufficient for q
+  p \harr q
 #+end_info
 ** TODO UQY *
 #+begin_note
@@ -739,7 +1241,11 @@
   Your answer goes here.
 #+end_info
 * Puzzles
-** TODO OQP
+** DONE OQP
+   CLOSED: [2018-05-07 Mon 17:21]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 17:15]--[2018-05-07 Mon 17:21] =>  0:06
+   :END:
 #+begin_note
   The way to deal with lisp expressions is to look for lists, and when found,
   evaluate them. Finding them is easy --- lisp code consists of lists, and lists
@@ -760,11 +1266,36 @@
 :END:
 #+end_note
 *** Rephrase
+    Lisp is good for evaluationg lists of things.
+    Work through the mini-primer
 *** Approach
+    here is a list:
+    8 9 0 1 5 7
+    what do we want to do with it?
+#+BEGIN_SRC elisp
+    (list
+    ;; add:
+    (+ 8 9 0 1 5 7) 
+    ;; subtract
+    (- 8 9 0 1 5 7)
+    ;; multiply
+    (* 8 9 0 1 5 7)
+    )
+#+END_SRC    
+
+#+RESULTS:
+| 30 | -14 | 0 |
+
 *** Solution
+Long lists of things can be easily worked through in lisp
+| 30 | -14 | 0 |
 *** Proof
     Not applicable.
-** TODO USV
+** DONE USV
+   CLOSED: [2018-05-07 Mon 15:51]
+   :LOGBOOK:
+   CLOCK: [2018-05-07 Mon 15:01]--[2018-05-07 Mon 15:53] =>  0:52
+   :END:
 #+begin_note
   Or pyrire jvgu ahzoref. Svaq n jnl gb vafreg vagb gurfr gra yvarf gur sbhe
   fgnaqneq zngu bcrengbef (+, -, \gvzrf, \qvi), be ! (snpgbevny), be \enqvp (fdhner ebbg),
@@ -797,10 +1328,78 @@
 :END:
 #+end_note
 *** Rephrase
+    - Using rot13 :: 
+     #+BEGIN_SRC elisp
+     (rot13 "Or pyrire jvgu ahzoref. Svaq n jnl gb vafreg vagb gurfr gra yvarf gur sbhe
+     fgnaqneq zngu bcrengbef (+, -, \gvzrf, \qvi), be ! (snpgbevny), be \enqvp (fdhner ebbg),
+     naq cneragurfrf sbe tebhcvat, gb znxr gra qvssrerag rkcerffvbaf gung rnpu
+     rinyhngr gb 6. Sbe rknzcyr: \enqvp4 + \enqvp4 + \enqvp4 = 6.")
+#+END_SRC
+
+     #+RESULTS:
+     : Be clever with numbers. Find a way to insert into these ten lines the four
+     : standard math operators (+, -, times, div), or ! (factorial), or \radic(square root),
+     : and parentheses for grouping, to make ten different expressions that each
+     : evaluate to 6. For example: \radic4 + \radic4 + \radic4 = 6.
+    - In my own words ::
+     Use +, -, *, / !, or \radic with parentheses to make 10 different expressions that
+     will each evaluate to 6
 *** Approach
+    tried different combinations of +, -, *, /, !, \radic
 *** Solution
+    0 factorial is 1, 1 three times is 3, three factorial is 6
+    !(+ !0 !0 !0)     = 6
+
+    three factorial is 6
+    !(+ 1 1 1)        = 6
+
+    two three times is 6
+    (+ 2 2 2)         = 6
+
+    three three times is 9, sqrt 9 = 3, facorial of 3 is 6
+    !(\radic (+ 3 3 3))    = 6
+
+    4 / 4 is 1, 4 - 1 is 3, 3 factorial is 6
+    !(- 4 (/ 4 4)) = 6
+
+    5 / 5 = 1, 5 + 1 = 6
+    (+ 5 (/ 5 5))     = 6
+
+    6 - 6 = 0, 0 + 6 = 6
+    (+ 6 (- 6 6))     = 6
+
+    7 / 7 = 1, 7 - 1 = 6
+    (- 7 (/ 7 7))     = 6
+
+    8 + 8 = 16, \radic16 = 4, \radic4 = 2, 8 - 2 = 6
+    (- 8 \radic\radic(+ 8 8))   = 6
+
+    9 - 9 = 0, 0 + 9 = 9, \radic9 = 3, 3 factorial = 6
+    !(\radic (+ 9 (- 9 9)))= 6
 *** Proof
-    Verify with code calculations.
+#+BEGIN_SRC elisp
+    (defun factorial (n)
+       (if (<= n 1)
+          1
+          (* n (factorial (- n 1)))))
+    
+    (list 
+          (factorial (+ (factorial 0) (factorial 0) (factorial 0))) ;0 0 0
+          (factorial (+ 1 1 1))                                     ;1 1 1
+          (+ 2 2 2)                                                 ;2 2 2
+          (factorial (isqrt (+ 3 3 3)))                             ;3 3 3
+          (factorial (- 4 (/ 4 4)))                                 ;4 4 4
+          (+ 5 (/ 5 5))                                             ;5 5 5
+          (+ 6 (- 6 6))                                             ;6 6 6
+          (- 7 (/ 7 7))                                             ;7 7 7
+          (- 8 (isqrt (isqrt (+ 8 8))))                             ;8 8 8
+          (factorial (isqrt (+ 9 (- 9 9))))                         ;9 9 9
+    )
+#+END_SRC
+
+#+RESULTS:
+| 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
+
 ** TODO UFZ
 #+begin_note
   Investigate the variations of conditional statements known as the /converse/,
@@ -811,9 +1410,12 @@
 *** Solution
 *** Proof
     Not applicable.
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-05-07 Mon 17:14]
+  :LOGBOOK:
+  CLOCK: [2018-05-07 Mon 17:22]--[2018-05-07 Mon 17:23] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Sawyer Gehring :: Worked with me throughout the Exercixses.
+                      No specific contributions to be named.
