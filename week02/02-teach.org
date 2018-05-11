@@ -9,7 +9,7 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-05-10 Thu 22:54]
+#+CAPTION: Clock summary at [2018-05-11 Fri 01:33]
 | Headline          |   Time |
 |-------------------+--------|
 | *Total time*      | *1:20* |
@@ -154,3 +154,6 @@
         It is because of all the logical deductions that the third person
         can conclude that she has a white hat.
 #+end_info
+
+
+
