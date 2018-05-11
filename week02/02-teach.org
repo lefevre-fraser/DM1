@@ -8,7 +8,21 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Think and Discuss
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-10 Thu 22:54]
+| Headline          |   Time |
+|-------------------+--------|
+| *Total time*      | *1:20* |
+|-------------------+--------|
+| Think and Discuss |   1:00 |
+| Report            |   0:20 |
+#+END:
+
+* DONE Think and Discuss
+  CLOSED: [2018-05-10 Thu 22:30]
+  :LOGBOOK:
+  CLOCK: [2018-05-10 Thu 12:45]--[2018-05-10 Thu 13:45] =>  1:00
+  :END:
   First a comment, then a puzzle. In the limited time we have to scratch the
   surface of DM, we can just barely, barely scratch the surface of logic (and
   its companion --- touched on even more lightly --- proof). If you want a much
@@ -28,42 +42,115 @@
   problem, how you take it apart, what you place emphasis on, your avenues of
   pursuit, and plausible conjectures. The answer requires \ldquo{}seeing\rdquo a key move.
 
-  Here is the challenge: A teacher comes to class with a box and shows the
-  contents of the box to the students. It contains three white hats, two red
-  hats, and nothing else. There happen to be only three students in this class,
-  and the teacher tells them that he is going to blindfold each one and then
-  place one of the five hats on each of their heads. The remaining two hats will
-  then be placed back in the box, so no one can see them once the blindfolds are
-  removed. If anyone can tell what color hat they have on their heads, then the
-  teacher will give that student an A. But the students are not allowed to
-  guess: They must be able to /prove/ they have that color hat.
+  - Here is the challenge: ::
+      A teacher comes to class with a box and shows the
+      contents of the box to the students. It contains three white hats, two red
+      hats, and nothing else. There happen to be only three students in this class,
+      and the teacher tells them that he is going to blindfold each one and then
+      place one of the five hats on each of their heads. The remaining two hats will
+      then be placed back in the box, so no one can see them once the blindfolds are
+      removed. If anyone can tell what color hat they have on their heads, then the
+      teacher will give that student an A. But the students are not allowed to
+      guess: They must be able to /prove/ they have that color hat.
+  - Here is the Situation ::
+      The teacher removes the blindfold from the first student, who is now able to
+      see the color of the hats on the other two students --- but not his own. The
+      first student looks carefully at the other two hats, thinks silently for a
+      while, and says he does not know the color of his hat. The teacher then
+      removes the blindfold from the second student. He, too, looks at the hats on
+      the other two students, thinks for a while, and says he does not know the
+      color of his hat. (As before, this student does /not/ say aloud the color of
+      the hats he sees on the other two students\rsquo{} heads.) Now, just as the teacher
+      is about to remove the blindfold from the third student, she says that she
+      knows exactly the color of the hat on her head. In fact, she doesn\rsquo{}t even need
+      to see the hats of the other two students to know this.
+  - Here is the Question ::
+      Can you see how she did it? No information is being held back, no tricks are
+      being played, and no word games are used. All the information necessary to
+      solve the problem is contained in its description. There are three
+      possibilities for you to consider. Which is correct?
 
-  The teacher removes the blindfold from the first student, who is now able to
-  see the color of the hats on the other two students --- but not his own. The
-  first student looks carefully at the other two hats, thinks silently for a
-  while, and says he does not know the color of his hat. The teacher then
-  removes the blindfold from the second student. He, too, looks at the hats on
-  the other two students, thinks for a while, and says he does not know the
-  color of his hat. (As before, this student does /not/ say aloud the color of
-  the hats he sees on the other two students\rsquo{} heads.) Now, just as the teacher
-  is about to remove the blindfold from the third student, she says that she
-  knows exactly the color of the hat on her head. In fact, she doesn\rsquo{}t even need
-  to see the hats of the other two students to know this.
-
-  Can you see how she did it? No information is being held back, no tricks are
-  being played, and no word games are used. All the information necessary to
-  solve the problem is contained in its description. There are three
-  possibilities for you to consider. Which is correct?
-
-  1. She cannot possibly know what color hat she has on her head.
-  2. She has a red hat and can prove it.
-  3. She has a white hat and can prove it.
+      1. She cannot possibly know what color hat she has on her head.
+      2. She has a red hat and can prove it.
+      3. She has a white hat and can prove it.
 #+end_note
 
   After thinking about it individually, and then collectively arriving at a
   consensus by following the instructions given in class, write up your report
   below.
-* TODO Report
+* DONE Report
+  CLOSED: [2018-05-10 Thu 22:54]
+  :LOGBOOK:
+  CLOCK: [2018-05-10 Thu 22:34]--[2018-05-10 Thu 22:54] =>  0:20
+  :END:
 #+begin_info
-  Your answer goes here.
+  She has a white hat and can prove it.
+
+  Proof can be found through the use of the following tables.
+  - Table of Possiblities ::
+                | 1 | 2 | 3 | Box | Poss |
+                | - | - | - | --- | ---- |
+                | w | w | w | r r |      |
+                | w | w | r | w r |      |
+                | w | r | w | w r |      |
+                | w | r | r | w w |      |
+                | r | w | w | w r |      |
+                | r | w | r | w w |      |
+                | r | r | w | w w |      |
+  - Reduced Table ::
+                | 1 | 2 | 3 | Box | Poss |
+                | - | - | - | --- | ---- |
+                | w | w | w | r r |      |
+                | w | w | r | w r |      |
+                | w | r | w | w r |      |
+                | w | r | r | w w | \Chi    |
+                | r | w | w | w r |      |
+                | r | w | r | w w | \Chi    |
+                | r | r | w | w w |      |
+        We can remove these two options because if the middle and the last person
+        both had red hats, the first person would know he had a white hat.
+        Also if the first and the third person both had red hats then the second
+        person would know that he had a white hat.
+
+        They could have come to these conclusions because there are only 2 red hats
+  - Further Reduced ::
+                | 1 | 2 | 3 | Box | Poss |
+                | - | - | - | --- | ---- |
+                | w | w | w | r r |      |
+                | w | w | r | w r | \Chi    |
+                | w | r | w | w r |      |
+                | w | r | r | w w | \Chi    |
+                | r | w | w | w r |      |
+                | r | w | r | w w | \Chi    |
+                | r | r | w | w w |      |
+        This one reequires a little more thinking to get rid of, but once we do
+        then we will have the answer to the question.
+
+        We can get rid of the second row because in this scenario the second 
+        person would have been able to know the answer.
+
+        The second person would know because he would see that the third had a red 
+        hat, and knowing that previously that the first person could not guess
+        meant either the second and the third were both white or one was red and
+        one was right, with this information seeing the third person wearing a
+        red had would allow him to know that his hat was white.
+
+        So, since the second person could not know and prove what color hat he
+        was wearing, this option is can no longer be considered a possibility.
+  - Final Table ::
+                | 1 | 2 | 3 | Box | Poss |
+                | - | - | - | --- | ---- |
+                | w | w | w | r r | \radic    |
+                | w | w | r | w r | \Chi    |
+                | w | r | w | w r | \radic    |
+                | w | r | r | w w | \Chi    |
+                | r | w | w | w r | \radic    |
+                | r | w | r | w w | \Chi    |
+                | r | r | w | w w | \radic    |
+        All the rest of these possibilities we cannot get rid of, but on the
+        bright side, we do not have to. the only options left are those that
+        have the third person being white.
+
+        It is because of all the logical deductions that the third person
+        can conclude that she has a white hat.
 #+end_info
