@@ -23,14 +23,6 @@
 | \_  TGE      |        | 0:04 |
 #+END:
 
-#+BEGIN_SRC elisp
-  (defun git-commit ()
-  (save-buffer)
-  (magit-commit)
-  (vc-git-push))
-
-  (git-commit)
-#+END_SRC
 * Exercises
 ** DONE TDR
    CLOSED: [2018-05-12 Sat 12:51]
