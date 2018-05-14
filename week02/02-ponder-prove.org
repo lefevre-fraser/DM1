@@ -24,11 +24,11 @@
 #+END:
 
 #+BEGIN_SRC elisp
-(global-set-key (kbd "C-x v c") (lambda () (interactive) (save-buffer) (vc-next-action "VERBOSE") (vc-push)))
+(global-set-key (kbd "C-x v c") (lambda () (interactive) (save-buffer) (vc-next-action t) (sleep 20) (vc-push)))
 #+END_SRC
 
 #+RESULTS:
-| lambda | nil | (interactive) | (save-buffer) | (vc-next-action VERBOSE) | (vc-push) |
+| lambda | nil | (interactive) | (save-buffer) | (vc-next-action t) | (sleep 20) | (vc-push) |
 
 * Exercises
 ** DONE TDR
