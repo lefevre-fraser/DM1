@@ -23,13 +23,6 @@
 | \_  TGE      |        | 0:04 |
 #+END:
 
-#+BEGIN_SRC elisp
-(global-set-key (kbd "C-x v c") (lambda () (interactive) (save-buffer) (vc-next-action nil) (vc-push)))
-#+END_SRC
-
-#+RESULTS:
-| lambda | nil | (interactive) | (save-buffer) | (vc-next-action nil) | (vc-push) |
-
 * Exercises
 ** DONE TDR
    CLOSED: [2018-05-12 Sat 12:51]
