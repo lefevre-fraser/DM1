@@ -8,49 +8,296 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-12 Sat 20:00]
+| Headline     | Time   |      |
+|--------------+--------+------|
+| *Total time* | *2:23* |      |
+|--------------+--------+------|
+| Exercises    | 2:23   |      |
+| \_  TDR      |        | 0:18 |
+| \_  WDT      |        | 0:24 |
+| \_  TEJ      |        | 0:50 |
+| \_  WFK      |        | 0:24 |
+| \_  TER      |        | 0:23 |
+| \_  TGE      |        | 0:04 |
+#+END:
+
+#+BEGIN_SRC elisp 
+  (defun comit-git ()
+    (vc-next-action (read-from-minibuffer "Enter a commit message: "))) 
+  (comit-git)
+#+END_SRC
+
+#+RESULTS:
+: Enter a change comment.  Type C-c C-c when done
+
 * Exercises
-** TODO TDR
+** DONE TDR
+   CLOSED: [2018-05-12 Sat 12:51]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 12:33]--[2018-05-12 Sat 12:51] =>  0:18
+   :END:
 #+begin_note
   Find the =setf= way of doing the equivalent of =fset=.
 #+end_note
+#+BEGIN_SRC elisp
+  
+  (defun dooo (n)
+     (+ n 2))
+  (fset 'doo (lambda (n) (+ n 2)))
+  (setf doooo (lambda (n) (+ n 2)))
+
+  (list
+    (list (dooo 6))
+    (list (doo 6))
+    (list (funcall doooo 6))
+  )
+#+END_SRC
+
+#+RESULTS:
+| 8 |
+| 8 |
+| 8 |
+
+
 #+begin_info
-  Your answer goes here.
+  Creating a method suing  setf is almost identical to creating 
+  a method using fset.
+
+  The two differences are that fset requires a single quote before 
+  the function name and in order to call a function defined by setf
+  you must use the "funcall" method.
+
 #+end_info
-** TODO WDT
+** DONE WDT
+   CLOSED: [2018-05-12 Sat 17:14]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 13:35]--[2018-05-12 Sat 13:59] =>  0:24
+   :END:
 #+begin_note
   PVP the result of evaluating the following (paying special attention to the
   more-than-syntactic difference between the \lsquo{}starless\rsquo{} form of =let= and the
   \lsquo{}star-suffixed\rsquo{} form):
 
+  PVP - Predict Verify Ponder
+#+end_note
+
+*** Problem 1
+**** Predict
+use a for 1,
+b for 2,
+c for 3
+
+then add a, b, and c
+answer = 6
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c))
 #+END_SRC
 
+#+RESULTS:
+: 6
+
+My assumption was correct
+**** Ponder
+(let) allows a use to say
+"given that a=1... n=10... then do ____"
+
+*** Problem 2
+**** Predict
+let a be 1,
+b be 2
+c be 3
+
+then add a, b, c, and d
+
+This code block will not evaluate,
+or it will add the ascii value of d
+to a, b, and c
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) (+ a b c d))
 #+END_SRC
 
+the function did not evalute. It said
+the symblos value as variable is void
+**** Ponder
+If we changed d to be ?d ti might evaluate with
+the asscii calue of d
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) (+ a b c ?d))
+#+END_SRC
+
+#+RESULTS:
+: 106
+
+It did evalute this way!
+     
+*** Problem 3
+**** Predict
+a = 1,
+b = 2,
+c = 3,
+
+this will try to make a vector
+it will contain: +, 1, 2, 3, d
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3)) [+ a b c d])
 #+END_SRC
 
+#+RESULTS:
+: [+ a b c d]
+
+I was wrong, a,b, and c did not evalute to the
+values set by let.
+
+**** Ponder
+Maybe if a I did 'a and so forth, then it 
+would work as i previously expected
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ 'a 'b 'c d])
+#+END_SRC
+
+#+RESULTS:
+: [+ (quote a) (quote b) (quote c) d]
+Nope... Maybe if I put parentheses around the leters
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ (a) (b) (c) d])
+#+END_SRC
+
+#+RESULTS:
+: [+ (a) (b) (c) d]
+Nope... Maybe if I put a question mark before the leters
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ ?a ?b ?c d])
+#+END_SRC
+
+#+RESULTS:
+: [+ 97 98 99 d]
+Nope... I found this idea online
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ (symbol-value a) (symbol-value b) (symbol-value c) d])
+#+END_SRC
+
+#+RESULTS:
+: [+ (symbol-value a) (symbol-value b) (symbol-value c) d]
+
+Nope... maybe evaluation inside a vector just
+doesn't work... but can I grab the value of 'a'
+from the vector ?
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) (aref [+ a b c d] 2))
+#+END_SRC
+
+#+RESULTS:
+: b
+
+Nope... something else I found online
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ a-val b-val c-val d])
+#+END_SRC
+
+#+RESULTS:
+: [+ a-val b-val c-val d]
+
+Nope... something else I found online
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ ,a ,b ,c d])
+#+END_SRC
+
+#+RESULTS:
+: [+ (\, a) (\, b) (\, c) d]
+
+Nope... something else I found online - trying to convert to list first
+#+BEGIN_SRC emacs-lisp
+  (symbol-value (let ((a 1) (b 2) (c 3)) (elt (append [+ a b c d] nil) 1)))
+#+END_SRC
+
+#+RESULTS:
+: a
+
+Nope, I guess it is an impossibilty, at least with my current knowledge
+of things as they are.
+
+*** Problem 4
+**** Predict
+a = 1,
+b = 2,
+c = 3,
++ = 4?
+
+this block of code will not evalute correctly 
+vecause of the + at the end
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (let ((a 1) (b 2) (c 3) (+ 4)) (+ a b c +))
 #+END_SRC
 
+#+RESULTS:
+: 10
+I was wrong.
+
+**** Ponder
+we defined the the sybmol-value of + to be 4
+
+*** Problem 5
+**** Predict
+make a unbound - remove previous value of a?
+               - make a have infinite scope?
+a = 1,
+b = 2,
+c = 3,
+d = 5,
+
+add a, b, c, and d together
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (makunbound 'a)
   (let ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
+I was wrong 
+ - Sybmol's value as variable is void: a
+Or I just did not understand all of it.
 
+**** Ponder
+(makunbound) does clear the previous value,
+but we cannot use 'a' inside of the bindings 
+for the (let) method in order to define 
+another variable.
+#+BEGIN_SRC emacs-lisp
+  (makunbound 'a)
+  (setq a 1)
+  (let ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
+#+END_SRC
+
+#+RESULTS:
+: 11
+
+*** Problem 6
+**** Predict
+I predict this special definition of
+let will allow it's previous bindings 
+to be used in the deffinitions of it's
+other bindings
+**** Verify
 #+BEGIN_SRC emacs-lisp
   (let* ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
 #+END_SRC
-#+end_note
-#+begin_info
-  Your answer goes here.
-#+end_info
-** TODO TEJ
+
+#+RESULTS:
+: 11
+I was correct!
+
+**** Ponder
+let* must work as i expected it to
+
+** DONE TEJ
+   CLOSED: [2018-05-12 Sat 18:06]
+  :LOGBOOK:
+  CLOCK: [2018-05-12 Sat 17:16]--[2018-05-12 Sat 18:06] =>  0:50
+  :END:
 #+begin_note
   A function-as-association between elements of a domain and elements of a
   codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
@@ -59,7 +306,7 @@
   =(assoc KEY LIST)= returns non-nil if KEY is \ldquo{}equal\rdquo to the first element of
   an element of LIST. The value is actually the first element of LIST whose
   first element equals KEY.
-
+  
   For example, here is a function that uses an alist to look up the RGB values
   of a given color name:
 
@@ -73,6 +320,9 @@
   (lookup-rgb "blue")
 #+END_SRC
 
+#+RESULTS:
+(0 0 255)
+
 : (0 0 255)
 
   What if the color name is not in the alist?
@@ -81,14 +331,71 @@
   (lookup-rgb "grue")
 #+END_SRC
 
+#+RESULTS:
+nil
+
 : nil
 
   There are several variations of =assoc=. Find and give examples of using them.
 #+end_note
+
 #+begin_info
-  Your answer goes here.
+assoc-if 
+#+BEGIN_SRC elisp :results raw
+  (setq animals '(("dogs" bark) ("cats" meow) ("snakes" hiss)))
+  (cdr (assoc-if #'(lambda (x) (string= "dogs" x)) animals))
+#+END_SRC
+
+#+RESULTS:
+(bark)
+
+assoc-if-not
+#+BEGIN_SRC elisp :results raw
+  (setq animals '(("dogs" bark) ("cats" meow) ("snakes" hiss)))
+  (car (assoc-if-not #'(lambda (x) (string= "dogs" x)) animals))
+#+END_SRC
+
+#+RESULTS:
+cats
+
+assq - variation of assoc, but does 
+not work if keys are "like this"
+#+BEGIN_SRC elisp
+  (setq animals '((dogs . bark) (cats . meow) (snakes . hiss)))
+  (cdr (assq 'dogs animals))
+#+END_SRC
+
+#+RESULTS:
+: bark
+
+rassq - variation that uses 
+the "value" to do a look up 
+rather than the "key"
+#+BEGIN_SRC elisp
+  (setq animals '((dogs . bark) (cats . meow) (snakes . hiss)))
+  (car (rassq 'bark animals))
+#+END_SRC
+
+#+RESULTS:
+: dogs
+
+rassoc - variation that uses 
+the "value" to do a look up 
+rather than the "key"
+#+BEGIN_SRC elisp
+  (setq animals '((dogs . bark) (cats . meow) (snakes . hiss)))
+  (car (rassoc 'bark animals))
+#+END_SRC
+
+#+RESULTS:
+: dogs
+
 #+end_info
-** TODO WFK
+** DONE WFK
+   CLOSED: [2018-05-12 Sat 18:29]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 18:05]--[2018-05-12 Sat 18:29] =>  0:24
+   :END:
 #+begin_note
   In the function-as-map context, here is another interpretation:
 
@@ -112,6 +419,11 @@
   }
 #+END_SRC
 
+#+RESULTS:
+: one : red
+: three : green
+: two : blue
+
 : one : red
 : three : green
 : two : blue
@@ -126,8 +438,13 @@
 
   if __name__ == "__main__":
           for key in mymap.keys():
-                  print key + " : " + str(mymap[key])
+                  print( key + " : " + str(mymap[key]))
 #+END_SRC
+
+#+RESULTS:
+: one : red
+: two : blue
+: three : green
 
 : three : green
 : two : blue
@@ -145,6 +462,12 @@
     (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
 #+END_SRC
 
+#+RESULTS:
+: ("red" "blue" "green")
+: one : red
+: two : blue
+: three : green
+
 : ("red" "blue" "green")
 : one : red
 : two : blue
@@ -154,9 +477,32 @@
   =make-hash-table= call?
 #+end_note
 #+begin_info
-  Your answer goes here.
+Without the ":test 'equal" parameter 
+the "heading" displayed results in
+a list of nil
+#+BEGIN_SRC emacs-lisp :results output
+  (let* ((mymap (make-hash-table)))
+    (puthash "one" "red" mymap)
+    (puthash "two" "blue" mymap)
+    (puthash "three" "green" mymap)
+    (pp (list (gethash "one" mymap)
+              (gethash "two" mymap)
+              (gethash "three" mymap)))
+    (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
+#+END_SRC
+
+#+RESULTS:
+: (nil nil nil)
+: one : red
+: two : blue
+: three : green
+
 #+end_info
-** TODO TER
+** DONE TER
+   CLOSED: [2018-05-12 Sat 18:54]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 18:30]--[2018-05-12 Sat 18:53] =>  0:23
+   :END:
 #+begin_note
   This exercise explores /looping/ versus /mapping/.
 
@@ -193,9 +539,64 @@
   Explain how this version of =morphify= works.
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - Predict ::
+    this function takes in a list of lists and
+    collects the different parts of it into a
+    new "morphed" list.
+ - Verify ::
+    #+BEGIN_SRC emacs-lisp :results silent
+      (defun morphify (fun lst)
+        (loop for item in lst
+              collect (funcall fun item)))
+    #+END_SRC
+    
+    #+BEGIN_SRC emacs-lisp :results raw
+      (morphify (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
+    #+END_SRC
+
+    #+RESULTS:
+    (this is too loud)
+
+   This did not at all do what I thought it would
+   I think I should have studied it more
+   thouroughly.
+ - Ponder ::
+   After looking through the begining of the note, and looking
+   more carefully at the code, i can now see that morphify is meant
+   to perform a single action on larger sets of data.
+ - Recursive Version :: 
+      The recursive version takes in a funtion and 
+      a list still, but instead of doing a loop 
+      through each item in the list, it looks to
+      see if the list is null, then then it morfs 
+      the first item, and appends that item with 
+      the morphed version of the rest of the list
+
+      example:
+      morphify downcase (THIS IS ALL I WANT)
+      morphify does this first
+      "this" then appends it with 
+      morphify downcase (IS ALL I WANT)
+      then the recusively called function does this
+      "is" then appends it with
+      morphify downcase (ALL I WANT)
+
+      this contines untill the whole list has been gone through
+      once it has this happens
+      "want" is appended to "i"
+      "i want" is appended to "all"
+      "all i want" is appended to "is"
+      and finally
+      "is all i want" is appended to "this"
+      to produce
+      this is all i want
+
 #+end_info
-** TODO TGE
+** DONE TGE
+   CLOSED: [2018-05-12 Sat 18:58]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 18:54]--[2018-05-12 Sat 18:58] =>  0:04
+   :END:
 #+begin_note
   Note the difference if -13 is used instead of 13 below:
 #+BEGIN_SRC emacs-lisp :results silent
@@ -204,28 +605,40 @@
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :results raw
-  (let* ((number (/ 13 4.0))
+  (let* ((number (/ -13 4.0))
          (floor1 (floor number))
-         (floor2 (compute-floor-the-hard-way 13 4.0)))
+         (floor2 (compute-floor-the-hard-way -13 4.0)))
     (list number floor1 floor2))
 #+END_SRC
+
+#+RESULTS:
+(-3.25 -4 -4.0)
+(3.25 3 3.0)
 
 : (3.25 3 3.0)
 
   Is the hard way correct?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The hard way does produce the same values as the 
+  floor method.
 #+end_info
 ** TODO THP
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 19:00]--[2018-05-12 Sat 20:07] =>  1:07
+   :END:
 #+begin_note
   Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
   number values of x in the interval [-5.0 .. 5.0].
 #+end_note
 #+begin_info
-  Your answer goes here.
+
 #+end_info
-** TODO WKM
+** DONE WKM
+   CLOSED: [2018-05-12 Sat 20:23]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 20:11]--[2018-05-12 Sat 20:22] =>  0:11
+   :END:
 #+begin_note
   Which of these statements about floor and ceiling are correct, for any real
   number $x$ and any integers $n$ and $m$?
@@ -243,23 +656,67 @@
       0$ as in statement 8).
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. nil
+  3. nil
+  4. t
+  5. t
+  6. t
+  7. t
+  8. nil
+  9. t
+  10. nil
 #+end_info
-** TODO TIW
+** DONE TIW
+   CLOSED: [2018-05-12 Sat 20:40]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 20:30]--[2018-05-12 Sat 20:40] =>  0:10
+   :END:
 #+begin_note
   Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
   functions, together with the \ldquo{}Iverson bracket\rdquo function. (A number whose
   fractional part is less than one-half should be rounded down, otherwise up.)
 #+end_note
 #+begin_info
-  Your answer goes here.
+Iverson bracket function - true or false
+     aka: if statement
+     it works really well.
+#+BEGIN_SRC elisp :results silent
+  (defun round-to-nearest-int (x)
+    (if (< (- x (floor x)) .5)
+      (floor x)
+      (ceiling x)))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (round-to-nearest-int 3.5)
+#+END_SRC
+
+#+RESULTS:
+: 4
+
 #+end_info
-** TODO TKG
+** DONE TKG
+   CLOSED: [2018-05-12 Sat 20:50]
+   :LOGBOOK:
+   CLOCK: [2018-05-12 Sat 20:45]--[2018-05-12 Sat 20:50] =>  0:05
+   :END:
 #+begin_note
   Explore the inverse of =assoc= via the functions =rassoc= and associates.
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (setq mylist '((one . 1) (2 . two) (3 . "three")))
+  (list
+    (rassoc 'two mylist)
+    (rassoc-if #'stringp mylist)
+    (rassoc-if-not #'vectorp mylist)
+  )
+#+END_SRC
+
+#+RESULTS:
+: ((2 . two) (3 . three) (one . 1))
+
 #+end_info
 ** TODO WOV
 #+begin_note
@@ -276,7 +733,11 @@
   10. =[2 3 5 7 11 13 17 19 23 29 ...]=
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. add 7 times it's position (7 * n) n starts at 1
+  2. add four to the previous number starting at 7
+     7 + (4 * (n - 1)) n starting at 1
+  3. n_-1 + n where n_-1 starts at 3
+  4. 
 #+end_info
 ** TODO WQW
 #+begin_note
@@ -578,9 +1039,12 @@
 *** Approach
 *** Solution
 *** Proof
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-05-12 Sat 18:06]
   Identify your collaborators and the contribution of each, in the following way:
 
   - Joseph Smith :: In particular, he helped me understand \dots.
   - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
   -  :: etc. 
+
+Cc: This <Hi>

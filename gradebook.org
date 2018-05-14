@@ -10,7 +10,7 @@
 
 * Final Grade                                                         :crypt:
   :PROPERTIES:
-  :CRYPTKEY: you17001@byui.edu
+  :CRYPTKEY: lef13001@byui.edu
   :END:
 :FINAL_GRADE:
 :END:

@@ -59,3 +59,5 @@
          a. A mixture of different four letter words || A four letter word with a mixture of letters
              i) Tetragram - a group of four letters, such as a word that is exactly four letters long 
              ii) Amalgam - Mixture of different elements.
+
+         b. four four letter words, like a word search, where all combinations of four words in a row or colomn spell a word.
