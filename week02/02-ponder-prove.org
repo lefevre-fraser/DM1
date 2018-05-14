@@ -9,38 +9,39 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-05-14 Mon 17:49]
-| Headline     |   Time |      |
-|--------------+--------+------|
-| *Total time* | *5:42* |      |
-|--------------+--------+------|
-| Exercises    |   5:00 |      |
-| \_  TDR      |        | 0:18 |
-| \_  WDT      |        | 0:24 |
-| \_  TEJ      |        | 0:50 |
-| \_  WFK      |        | 0:24 |
-| \_  TER      |        | 0:23 |
-| \_  TGE      |        | 0:04 |
-| \_  THP      |        | 1:28 |
-| \_  WKM      |        | 0:11 |
-| \_  TIW      |        | 0:10 |
-| \_  TKG      |        | 0:05 |
-| \_  WOV      |        | 0:36 |
-| \_  WQW      |        | 0:07 |
-| Problems     |   0:32 |      |
-| \_  TEH      |        | 0:02 |
-| \_  WFC      |        | 0:01 |
-| \_  WGP      |        | 0:01 |
-| \_  WJS      |        | 0:04 |
-| \_  WKC      |        | 0:03 |
-| \_  WNW      |        | 0:02 |
-| \_  TMZ      |        | 0:16 |
-| \_  TNL      |        | 0:01 |
-| \_  TNQ      |        | 0:02 |
-| Puzzles      |   0:10 |      |
-| \_  TEU      |        | 0:07 |
-| \_  TME      |        | 0:02 |
-| \_  WRA      |        | 0:01 |
+#+CAPTION: Clock summary at [2018-05-14 Mon 17:51]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *5:48* |      |
+|------------------------+--------+------|
+| Exercises              |   5:00 |      |
+| \_  TDR                |        | 0:18 |
+| \_  WDT                |        | 0:24 |
+| \_  TEJ                |        | 0:50 |
+| \_  WFK                |        | 0:24 |
+| \_  TER                |        | 0:23 |
+| \_  TGE                |        | 0:04 |
+| \_  THP                |        | 1:28 |
+| \_  WKM                |        | 0:11 |
+| \_  TIW                |        | 0:10 |
+| \_  TKG                |        | 0:05 |
+| \_  WOV                |        | 0:36 |
+| \_  WQW                |        | 0:07 |
+| Problems               |   0:32 |      |
+| \_  TEH                |        | 0:02 |
+| \_  WFC                |        | 0:01 |
+| \_  WGP                |        | 0:01 |
+| \_  WJS                |        | 0:04 |
+| \_  WKC                |        | 0:03 |
+| \_  WNW                |        | 0:02 |
+| \_  TMZ                |        | 0:16 |
+| \_  TNL                |        | 0:01 |
+| \_  TNQ                |        | 0:02 |
+| Puzzles                |   0:10 |      |
+| \_  TEU                |        | 0:07 |
+| \_  TME                |        | 0:02 |
+| \_  WRA                |        | 0:01 |
+| Identify Collaborators |   0:06 |      |
 #+END:
 
 * Exercises
@@ -1201,9 +1202,10 @@ word that starts with y
 *** Approach
 *** Solution
 *** Proof
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-05-14 Mon 17:51]
   :LOGBOOK:
-  CLOCK: [2018-05-14 Mon 17:45]
+  CLOCK: [2018-05-14 Mon 17:45]--[2018-05-14 Mon 17:51] =>  0:06
   :END:
   Identify your collaborators and the contribution of each, in the following way:
 
