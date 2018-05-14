@@ -23,17 +23,14 @@
 | \_  TGE      |        | 0:04 |
 #+END:
 
+#+BEGIN_SRC elisp
+  (defun git-commit ()
+  (save-buffer)
+  (magit-commit)
+  (vc-git-push))
 
-
-#+BEGIN_SRC elisp 
-  (defun comit-git ()
-    (vc-next-action (read-from-minibuffer "Enter a commit message: "))) 
-  (comit-git)
+  (git-commit)
 #+END_SRC
-
-#+RESULTS:
-: Enter a change comment.  Type C-c C-c when done
-
 * Exercises
 ** DONE TDR
    CLOSED: [2018-05-12 Sat 12:51]
@@ -1050,3 +1047,4 @@ Iverson bracket function - true or false
   -  :: etc. 
 
 Cc: This <Hi>
+Modified-by: Fraser LeFevre <mp3lefevre@gmail.com>
