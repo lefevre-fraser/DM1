@@ -23,6 +23,8 @@
 | \_  TGE      |        | 0:04 |
 #+END:
 
+
+
 #+BEGIN_SRC elisp 
   (defun comit-git ()
     (vc-next-action (read-from-minibuffer "Enter a commit message: "))) 
