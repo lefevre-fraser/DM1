@@ -8,50 +8,122 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Compare/Contrast                                               :crypt:
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-17 Thu 13:40]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
+* TODO Compare/Contrast
   :PROPERTIES:
   :CRYPTKEY: dm1teach03
   :END:
------BEGIN PGP MESSAGE-----
+  :LOGBOOK:
+  CLOCK: [2018-05-18 Fri 13:05]
+  :END:
+  Recall the /polygon circumscribing/ (AKA /limiting radius/) problem? The
+  limiting radius (r_\infty) of the outermost circle is 8.700 (approximately).
 
-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
-lZMnvRcWJCCitQlnDdJZ5JA=
-=Uy0N
------END PGP MESSAGE-----
+  There are reasons finding the value of this radius is an exercise/problem in
+  /discrete/ mathematics (one is because algorithms are step-by-step discrete
+  things, another is that the answer can only be given with finite precision,
+  which is a discrete math idea) and there are reasons for it being /continuous/
+  mathematics (because you can do it without a computer, and the answer is a
+  /real/ number, which is a continuous math idea). In other words, it depends!
+
+  Whether or not this was an exercise (versus a problem) depends on if on first
+  contact you immediately knew how to answer it or not!
+
+  Below are two computational solutions to this problem, one in C++, one in
+  elisp. The exercise of your thinking and writing skills is to compare and
+  contrast the two. Bear in mind that to be responsive at all there should be
+  at least one point of comparison (telling how they are the same) and at least
+  one point of contrast (telling how they are different), and preferably two or
+  more of each.
+
+#+BEGIN_SRC C++ :var num=10000000 :results output
+  #include <iostream>
+  #include <iomanip>
+  #include <cmath>
+  #include <ctime>
+  #include <cstdlib>
+  using namespace std;
+
+  double limitingRadius(long numSides)
+  {
+     double radius = 1.0;
+     for (long i = 3; i < numSides; i++)
+     {
+        radius /= cos(M_PI / i);
+     }
+     return radius;
+  }
+
+  int main(int argc, const char* argv[])
+  {
+     int n = (argc < 2) ? num : atol(argv[1]);
+     clock_t start = clock();
+     double result = limitingRadius(n);
+     clock_t end = clock();
+     cout << "Calculated " << setprecision(17) << result
+          << " with " << num << " iterations in "
+          << (end - start) / (double) CLOCKS_PER_SEC
+          << " seconds.\n";
+     return 0;
+  }
+#+END_SRC
+
+#+RESULTS:
+: Calculated 8.70003233192908 with 10000000 iterations in 0.94399999999999995 seconds.
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun limiting-radius (num-sides)
+    (loop with result = 1.0
+          for i from 3 below num-sides
+          do (setq result (/ result (cos (/ pi i))))
+          finally return result))
+
+  (defun calculate-limiting-radius (num-sides)
+    (let* ((start (float-time))
+           (result (limiting-radius num-sides))
+           (end (float-time)))
+      (format "Calculated %.17f with %d iterations in %.17f seconds."
+              result num-sides (- end start))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (calculate-limiting-radius 100000)
+#+END_SRC
+
+#+RESULTS:
+: Calculated 8.69960730405618676 with 100000 iterations in 0.11685919761657715 seconds.
+
+#+BEGIN_SRC emacs-lisp
+  (calculate-limiting-radius 1000000)
+#+END_SRC
+
+#+RESULTS:
+: Calculated 8.69999369233345732 with 1000000 iterations in 0.47839140892028809 seconds.
+
+#+BEGIN_SRC emacs-lisp
+  (calculate-limiting-radius 10000000)
+#+END_SRC
+
+#+RESULTS:
+: Calculated 8.70003233192909420 with 10000000 iterations in 6.17167282104492188 seconds.
+
+#+begin_info
+  Something I have noticed about these two functinos is how faste they ran.
+  The c++ code definately ran faster than the elisp code.
+
+  Somthing similar though is how they compute the answer. They both loop through
+  each sided figure and perform the calculation.
+
+  Also similar is the result they produced. Using the same amount of itterations
+  they were able to produce values that only started to differ at the fourteenth
+  decimal place.
+  
+  What's great about the elsip code is how small it is. 
+  It takes up considerably less space than the c++ code.
+#+end_info
