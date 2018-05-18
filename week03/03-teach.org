@@ -9,18 +9,21 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-05-17 Thu 13:40]
-| Headline     | Time   |
-|--------------+--------|
-| *Total time* | *0:00* |
+#+CAPTION: Clock summary at [2018-05-18 Fri 13:18]
+| Headline         | Time   |
+|------------------+--------|
+| *Total time*     | *0:12* |
+|------------------+--------|
+| Compare/Contrast | 0:12   |
 #+END:
 
-* TODO Compare/Contrast
+* DONE Compare/Contrast
+  CLOSED: [2018-05-18 Fri 13:17]
   :PROPERTIES:
   :CRYPTKEY: dm1teach03
   :END:
   :LOGBOOK:
-  CLOCK: [2018-05-18 Fri 13:05]
+  CLOCK: [2018-05-18 Fri 13:05]--[2018-05-18 Fri 13:17] =>  0:12
   :END:
   Recall the /polygon circumscribing/ (AKA /limiting radius/) problem? The
   limiting radius (r_\infty) of the outermost circle is 8.700 (approximately).
