@@ -8,8 +8,43 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-19 Sat 14:59]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *2:14* |      |
+|------------------------+--------+------|
+| Exercises              |   0:46 |      |
+| \_  WRP                |        | 0:05 |
+| \_  TOJ                |        | 0:06 |
+| \_  WRU                |        | 0:04 |
+| \_  TOL                |        | 0:01 |
+| \_  TUK                |        | 0:05 |
+| \_  WVQ                |        | 0:06 |
+| \_  WVU                |        | 0:07 |
+| \_  TVL                |        | 0:05 |
+| \_  TXG                |        | 0:07 |
+| Problems               |   1:11 |      |
+| \_  WZO                |        | 0:10 |
+| \_  TOU                |        | 0:19 |
+| \_  TLI                |        | 0:03 |
+| \_  WPI                |        | 0:03 |
+| \_  TTV                |        | 0:03 |
+| \_  WUZ                |        | 0:02 |
+| \_  TUW                |        | 0:18 |
+| \_  WWS                |        | 0:04 |
+| \_  WUE                |        | 0:09 |
+| Puzzles                |   0:15 |      |
+| \_  MMP (not in book)  |        | 0:15 |
+| Identify Collaborators |   0:02 |      |
+#+END:
+
 * Exercises
-** TODO WRP
+** DONE WRP
+   CLOSED: [2018-05-19 Sat 12:02]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 11:57]--[2018-05-19 Sat 12:02] =>  0:05
+   :END:
 #+begin_note
   Let P(x) be the statement \ldquo{}x is older than 21 years\rdquo where the domain for x
   consists of all people.
@@ -21,9 +56,16 @@
   4. $\forall$ x $\neg$ P(x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. There are some people in the set of all people that are older than 21 years.
+  2. All people are older than 21.
+  3. There are some people in the set of all people that are not older than 21.
+  4. All people are not older than 21.
 #+end_info
-** TODO TOJ
+** DONE TOJ
+   CLOSED: [2018-05-19 Sat 12:08]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 12:02]--[2018-05-19 Sat 12:08] =>  0:06
+   :END:
 #+begin_note
   Let S(x) be the statement \ldquo{}x is a student at BYU-Idaho\rdquo where the domain
   consists of the residents of Idaho.
@@ -37,9 +79,18 @@
   6. $\forall$ x $\neg$ S(x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. There are some people in Idaho that are students at BYU-Idaho
+  2. All people in Idaho are students at BYU-Idaho
+  3. There are not any people in Idaho that are students at BYU-Idaho
+  4. There are some people in Idaho that are not students at BYU-Idaho
+  5. Not everyone in Idaho is not a student at BYU-Idaho
+  6. Every one in Idaho is a student at BYU-Idaho
 #+end_info
-** TODO WRU
+** DONE WRU
+   CLOSED: [2018-05-19 Sat 12:12]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 12:08]--[2018-05-19 Sat 12:12] =>  0:04
+   :END:
 #+begin_note
   Translate these statements into English, where F(x) is \ldquo{}x is a friend\rdquo,
   C(x) is \ldquo{}x is cool\rdquo, and the domain consists of all people.
@@ -49,9 +100,16 @@
   4. $\exists$ x (F(x) $\rightarrow$ C(x))
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Every person is cool if they are a friend
+  2. Some people are friends and cool
+  3. All people are friends and cool
+  4. Some people are cool if the are a friend
 #+end_info
-** TODO TOL
+** DONE TOL
+   CLOSED: [2018-05-19 Sat 12:15]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 12:13]--[2018-05-19 Sat 12:14] =>  0:01
+   :END:
 #+begin_note
   Translate these statements into English, where S(x) is \ldquo{}x is a student\rdquo, R(x)
   is \ldquo{}x is from Russia\rdquo, and the domain consists of all people.
@@ -61,9 +119,16 @@
   4. $\exists$ x (S(x) $\wedge$ R(x))
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. All people are from Russia if they are students
+  2. Some people are form Russia if they are from Russia
+  3. All people are students and from Russia
+  4. Some people are students and from Russia
 #+end_info
-** TODO TUK
+** DONE TUK
+   CLOSED: [2018-05-19 Sat 12:20]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 12:15]--[2018-05-19 Sat 12:20] =>  0:05
+   :END:
 #+begin_note
   Translate these statements into English, where the domain for each variable
   consists of all real numbers.
@@ -72,9 +137,17 @@
   3. $\exists$ x $\forall$ y $\exists$ z (x = y + z)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Some x values are greater than all y values
+  2. The product of some x and y values are greater than or equal to zero 
+     if the x values are greater than or equal to zero 
+     and the y values are greater than or equal to zero
+  3. For some x, all y, and some z, x is eqaul to y + z
 #+end_info
-** TODO WVQ
+** DONE WVQ
+   CLOSED: [2018-05-19 Sat 12:26]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 12:20]--[2018-05-19 Sat 12:26] =>  0:06
+   :END:
 #+begin_note
   Let Q(x, y) be the statement \ldquo{}x asks y a question,\rdquo where the domain for both
   x and y consists of all students in a class. Express each quantification in an
@@ -87,9 +160,19 @@
   6. $\exists$ y $\exists$ x Q(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. All students int the class ask some students in the class a question
+  2. All students in the class ask all the stuents in the class a question
+  3. Some students in the class ask some the stuents in the class a question
+  4. Some students in the class ask all the stuents in the class a question
+  5. Some students in the class ask all the stuents in the class a question
+  6. Some students in the class ask some the stuents in the class a question
+
 #+end_info
-** TODO TUQ
+** DONE TUQ
+   CLOSED: [2018-05-19 Sat 13:04]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:26]--[2018-05-19 Sat 13:04] => -0:22
+   :END:
 #+begin_note
   Take the statement Q(x, y) \ldquo{}x asks y a question\rdquo. Express each of these
   sentences in terms of Q(x, y), quantifiers, and logical connectives, where the
@@ -103,9 +186,16 @@
   4. At least two students have asked a teacher a question.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. \not \exist x \forall y ((S(X) \land T(Y)) \rarr Q(x, y))
+  2. \exist x \exist y ((S(X) \land T(Y)) \rarr Q(x, y))
+  3. \forall x \exist y \exist z ((S(X) \land T(Y) \land A(z)) \rarr (Q(x, y) \land Q(x, z))
+  4. \forall x \exist y (((\sum S(x) \ge 2) \land T(y)) \rarr Q(x, y))
 #+end_info
-** TODO WVU
+** DONE WVU
+   CLOSED: [2018-05-19 Sat 13:11]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:04]--[2018-05-19 Sat 13:11] =>  0:07
+   :END:
 #+begin_note
   Let the statement T(x, y) \ldquo{}x has taught y\rdquo where the domains for x and y
   consist of all teachers teaching and all classes taught in some department.
@@ -116,9 +206,21 @@
   4. No teacher has taught every class.
 #+end_note
 #+begin_info
-  Your answer goes here.
+ - Restate ::
+    Copy the above one through four. 
+    We are to "express" the statements
+    in an english sentence.
+ - Solution ::
+  1. No teacher has taught every class.
+  2. Every teacher has taught every class.
+  3. At least two teachers have taught a class.
+  4. No teacher has taught every class.
 #+end_info
-** TODO TVL
+** DONE TVL
+   CLOSED: [2018-05-19 Sat 13:17]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:12]--[2018-05-19 Sat 13:17] =>  0:05
+   :END:
 #+begin_note
   Let D(x, y) be the statement \ldquo{}x has dropped out of y\rdquo where the domain for x
   consists of all students and the domain for y consists of all classes. Express
@@ -128,10 +230,16 @@
   3. $\forall$ x $\exists$ y D(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Jackson Andrews has dropped out of Discrete Mathematics.
+  2. Only one student has dropped out of all classes.
+  3. All students have dropped out of some classes.
 #+end_info
-** TODO TXG
-#+begin_note
+** DONE TXG
+   CLOSED: [2018-05-19 Sat 13:26]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:19]--[2018-05-19 Sat 13:26] =>  0:07
+   :END:
+#+begzin_note
   What are the truth values of the expressions below if T(x, y) is \ldquo{}xy < y\rdquo,
   where the domain consists of all integers?
   1. T(0, 5)
@@ -144,11 +252,22 @@
   8. $\forall$ x $\exists$ y T(x, y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. nil
+  3. t
+  4. t
+  5. t
+  6. nil
+  7. nil
+  8. nil
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO WZO
+** DONE WZO
+   CLOSED: [2018-05-19 Sat 13:36]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:26]--[2018-05-19 Sat 13:36] =>  0:10
+   :END:
 #+begin_note
   Translate each of these statements into logical expressions using predicates,
   quantifiers, and logical connectives.
@@ -160,9 +279,24 @@
   6. No one is a critic and everyone is your friend.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. x is all people, C(x) is "x is a critic"
+     \forall x C(x)
+  2. x is all people, P(x) is "x is perfect"
+     \not\exist x P(x)
+  3. x is all your friends, P(x) is "x is perfect"
+     \exist x P(x)
+  4. x is all you friends, C(x) is "x is a critic"
+     \forall x C(x)
+  5. x and y are all people, C(x) is "x is a critic", F(x) is "x is your friend"
+     \forall x \exist y (C(x) \lor F(x))
+  6. x and y are all people, C(x) is "x is a critic", F(x) is "x is your friend"
+     \not\exist x \forall y (C(x) \land F(y))
 #+end_info
-** TODO TOU
+** DONE TOU
+   CLOSED: [2018-05-19 Sat 13:55]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:36]--[2018-05-19 Sat 13:55] =>  0:19
+   :END:
 #+begin_note
   Express each of these statements using quantifiers. Then form the negation of
   the statement so that no negation is to the left of a quantifier. Next,
@@ -174,7 +308,26 @@
   5. There is at least one penguin that can swim and catch fish.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. x is all horses, H(x) is "x has hooves"
+     \forall x H(x)
+     \forall x (\not H(x))
+     All horses do not have hooves.
+  2. x is all horses, F(x) is "x can fly"
+     \not\exist x F(x)
+     \forall x F(x)
+     All horses can fly.
+  3. x is all bats, B(x) is "x is blind"
+     \forall x B(x)
+     \forall x (\not B(x))
+     All bats are not blind.
+  4. x is all bears, D(x) is "x can dance"
+     \not\exist x D(x)
+     \forall x D(x)
+     All bears can dance.
+  5. x is all penguins, S(x) is "x can swim", F(x) is "x can catch fish"
+     \exist x (S(x) \land F(x))
+     \forall x (\not S(x) \lor \not F(x))
+     All penguins can not swim or can not catch fish.
 #+end_info
 ** TODO WYH *
 #+begin_note
@@ -187,7 +340,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TLI
+** DONE TLI
+   CLOSED: [2018-05-19 Sat 13:58]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:55]--[2018-05-19 Sat 13:58] =>  0:03
+   :END:
 #+begin_note
   The notation $\exists$! x P(x) denotes \ldquo{}There exists a unique x such that P(x) is
   true.\rdquo If the domain consists of all integers, what are the truth values of
@@ -198,12 +355,16 @@
   4. $\exists$! x (x = x + 1)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. nil
+  2. t
+  3. t
+  4. nil
 #+end_info
-#+begin_info
-  Your answer goes here.
-#+end_info
-** TODO WPI
+** DONE WPI
+   CLOSED: [2018-05-19 Sat 14:01]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 13:58]--[2018-05-19 Sat 14:01] =>  0:03
+   :END:
 #+begin_note
   What are the truth values of these statements?
   1. $\exists$! x P(x) $\rightarrow$ $\exists$ x P(x)
@@ -212,7 +373,10 @@
   4. $\forall$ x P(x) $\rightarrow$ $\exists$ x P(x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. nil
+  3. t
+  4. t
 #+end_info
 ** TODO TSD *
 #+begin_note
@@ -247,7 +411,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TTV
+** DONE TTV
+   CLOSED: [2018-05-19 Sat 14:05]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:02]--[2018-05-19 Sat 14:05] =>  0:03
+   :END:
 #+begin_note
   Determine the truth value of each of these statements if the domain consists
   of all real numbers.
@@ -257,9 +425,15 @@
   4. $\forall$ x (2x > x)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. t
+  3. t
+  4. nil
 #+end_info
 ** TODO WUZ
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:05]--[2018-05-19 Sat 14:07] =>  0:02
+   :END:
 #+begin_note
   Solidify your knowledge of how looping works in elisp, and then translate the
   following C++ code into elisp:
@@ -465,7 +639,11 @@ int main()
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO TUW
+** DONE TUW
+   CLOSED: [2018-05-19 Sat 14:25]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:07]--[2018-05-19 Sat 14:25] =>  0:18
+   :END:
 #+begin_note
   Use quantifiers and predicates with more than one variable to express these statements.
   1. Every CS major needs to take discrete mathematics.
@@ -476,7 +654,22 @@ int main()
   6. Every student has been in at least one room of every building on campus.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  x is all people
+  C(x) is "x is in the class"
+  CS(x) is "x is a CS major"
+  DM(x) is "x needs to take Discrete Mathematics"
+  S(x) is "x is a student"
+  L(x) is "x owns a laptop"
+  DS(x) is "x has taken data structure"
+  E(x, y) is "x has been in y"
+  STC(x) is "x has been in every room of the STC"
+  
+  1. \forall x (CS(x) \rarr DM(x))
+  2. \forall x (S(x) \rarr L(x))
+  3. \exist x DS(C(S(x)))
+  4. \not\exist x (S(x) \land E(x, every building at the University))
+  5. \exist! x (S(x) \land E(x, every room of the STC))
+  6. \forall x (S(x) \land (E(x, \exist (every buliding on campus)))
 #+end_info
 ** TODO WWD *
 #+begin_note
@@ -513,7 +706,11 @@ int main()
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO WWS
+** DONE WWS
+   CLOSED: [2018-05-19 Sat 14:30]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:26]--[2018-05-19 Sat 14:30] =>  0:04
+   :END:
 #+begin_note
   If the domain consists of all integers, what are the truth values of these statements?
   1. $\forall$ x $\forall$ y (x $\neq$ 0) $\wedge$ (y $\neq$ 0) $\leftrightarrow$ (xy $\neq$ 0)
@@ -522,7 +719,10 @@ int main()
   4. $\exists$! x $\forall$ y (x + y = y)
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. t
+  2. t
+  3. t
+  4. t
 #+end_info
 ** TODO WZG *
 #+begin_note
@@ -595,7 +795,11 @@ int main()
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO WUE
+** DONE WUE
+   CLOSED: [2018-05-19 Sat 14:39]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:30]--[2018-05-19 Sat 14:39] =>  0:09
+   :END:
 #+begin_note
   Consider Doctrine and Covenants 130:20-21 in light of what you know of
   predicates and quantifiers:
@@ -617,11 +821,24 @@ int main()
   Justify your choice.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I choose number 2.
+
+  I like to think o fthe statement as being
+  "all blessings come from some law, but the
+  relationship between the two is not one-to-one
+  we receive multiple blessings for a single law."
+
+  Hence the reason I like the 2nd statement
+  "for all blessings there exists some law
+  upon which it is predicated."
 #+end_info
 * Puzzles
   Puzzle, to be precise.
-** TODO MMP (not in book)
+** DONE MMP (not in book)
+   CLOSED: [2018-05-19 Sat 14:54]
+   :LOGBOOK:
+   CLOCK: [2018-05-19 Sat 14:39]--[2018-05-19 Sat 14:54] =>  0:15
+   :END:
 #+begin_note
    What is the following code demonstrating?
 #+BEGIN_SRC emacs-lisp :results silent
@@ -660,12 +877,39 @@ int main()
 #+END_SRC
 #+end_note
 *** Rephrase
+    Explain what the following code does.
 *** Approach
+    mm takes in two lists that are of length 2
+    Since there is acomment about 2x2 matricei multiplication
+    I assume mm performes a 2x2 matricie multiplication.
 *** Solution
+    the code defines variables to match those listed
+    in the table in the comment in the code.
+    it then performs matricie multiplication
+    and returns the new matricie.
 *** Proof
-* TODO Identify Collaborators
+    matrix A  matrix B
+    [0 1]     [1 0]
+    [1 1]     [2 1]
+
+    AxB
+    [2 1]
+    [3 1]
+
+    Now, using the code above.
+
+#+BEGIN_SRC elisp
+  (mm [[0 1] [1 1]] [[1 0] [2 1]])
+#+END_SRC
+
+#+RESULTS:
+: [[2 1] [3 1]]
+
+* DONE Identify Collaborators
+  CLOSED: [2018-05-19 Sat 14:56]
+  :LOGBOOK:
+  CLOCK: [2018-05-19 Sat 14:54]--[2018-05-19 Sat 14:56] =>  0:02
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Sawyer Gehring :: Helped me throughout the assignment.
