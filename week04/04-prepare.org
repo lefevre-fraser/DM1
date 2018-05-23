@@ -8,34 +8,63 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read Subsection GHI through subsubsection GHS from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
-* TODO Answer What is True By Way of Review
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-22 Tue 22:44]
+| Headline                             |   Time |
+|--------------------------------------+--------|
+| *Total time*                         | *0:58* |
+|--------------------------------------+--------|
+| Read Subsection GHI through...       |   0:29 |
+| Answer What is True By Way of Review |   0:05 |
+| Answer What is True                  |   0:24 |
+#+END:
+
+* DONE Read Subsection GHI through subsubsection GHS from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-05-22 Tue 22:14]
+  :LOGBOOK:
+  CLOCK: [2018-05-22 Tue 21:45]--[2018-05-22 Tue 22:14] =>  0:29
+  :END:
+* DONE Answer What is True By Way of Review
+  CLOSED: [2018-05-22 Tue 22:20]
+  :LOGBOOK:
+  CLOCK: [2018-05-22 Tue 22:15]--[2018-05-22 Tue 22:20] =>  0:05
+  :END:
    If you can truthfully assert any of the following, you know what to do:
-  - [ ] I know that mathematical functions are useful abstractions of the
+  - [X] I know that mathematical functions are useful abstractions of the
     process of transformation.
-  - [ ] I also know *why* mathematical functions are useful abstractions of the
+  - [X] I also know *why* mathematical functions are useful abstractions of the
     process of transformation.
-  - [ ] I know that *onto* functions are also called *surjective* functions.
-  - [ ] I know that *one-to-one* functions are also called *injective*
+  - [X] I know that *onto* functions are also called *surjective* functions.
+  - [X] I know that *one-to-one* functions are also called *injective*
     functions.
-  - [ ] I know that in lisp there are no restrictions on what objects can be the
+  - [X] I know that in lisp there are no restrictions on what objects can be the
     inputs to a function (what it takes) and what objects can be the outputs of
     a function (what it gives).
-  - [ ] I know how many inputs a *k-ary* function has.
-  - [ ] I know that in formulas, variables can be /free/ or /bound/, but not
+  - [X] I know how many inputs a *k-ary* function has.
+  - [X] I know that in formulas, variables can be /free/ or /bound/, but not
     both, and not neither.
-  - [ ] I know why it is *false* to say that predicates take only boolean
+  - [X] I know why it is *false* to say that predicates take only boolean
     variables as arguments.
-  - [ ] I know why it is *false* to say that quantifiers can *always* be
+  - [X] I know why it is *false* to say that quantifiers can *always* be
     modeled as loops.
-* TODO Answer What is True
+* DONE Answer What is True
+  CLOSED: [2018-05-22 Tue 22:44]
+  :LOGBOOK:
+  CLOCK: [2018-05-22 Tue 22:20]--[2018-05-22 Tue 22:44] =>  0:24
+  :END:
   You know what to do:
-  - [ ] I pondered last week\rsquo{}s compare/contrast exercises, both code and gospel
+  - [X] I pondered last week\rsquo{}s compare/contrast exercises, both code and gospel
     terms.
-  - [ ] For the code, I compared/contrasted my group\rsquo{}s summary to the summary in
+    - (MI) - the gospel terms were found in the prepare, not the compare/contrast
+  - [X] For the code, I compared/contrasted my group\rsquo{}s summary to the summary in
     the key.
-  - [ ] For the gospel terms, I thought about the ramifications of taking
+  - [X] For the gospel terms, I thought about the ramifications of taking
     scriptures out of context.
-  - [ ] I thought about how to answer a critic of the Church who claims the
+  - [X] I thought about how to answer a critic of the Church who claims the
     Doctrine and Covenants contradicts itself in what it names the greatest gift
     of God in section 6 verse 13 and section 14 verse 7.
+    - D&C 6:13 - If thou wilt do good, yea, and hold out faithful to the end,
+      thou shalt be saved in the kingdom of God, which is the greatest of all
+      the gifts of God; for there is no gift greater than the gift of salvation.
+    - D&C 14:7 - And, if you keep my commandments and endure to the end you 
+      shall have eternal life, which gift is the greatest of all the gifts of God.
