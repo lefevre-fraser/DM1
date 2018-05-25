@@ -8,11 +8,26 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Exercise Your Understanding
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-25 Fri 00:49]
+| Headline                    |   Time |
+|-----------------------------+--------|
+| *Total time*                | *3:07* |
+|-----------------------------+--------|
+| Exercise Your Understanding |   0:37 |
+| Discuss                     |   1:30 |
+| Justify Your Answer         |   1:00 |
+#+END:
+
+* DONE Exercise Your Understanding
+  CLOSED: [2018-05-25 Fri 00:48]
+  :LOGBOOK:
+  CLOCK: [2018-05-24 Thu 13:07]--[2018-05-24 Thu 13:44] =>  0:37
+  :END:
   Write elisp code that takes two same-sized vectors of one-character symbols
   and \ldquo{}shuffles\rdquo them together into one vector. For example:
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp prepend
   (shuffle [A B C] [x y z])
 #+END_SRC
 
@@ -26,7 +41,20 @@
   one line of code uses four functions, two of which take another function as an
   argument, the other two being those argument functions. The names of these
   four functions will be revealed during class.
-* TODO Discuss
+
+#+BEGIN_SRC elisp
+  (defun shuffle (v1 v2)
+    (apply 'vconcat (mapcar* 'vector v1 v2)))
+#+END_SRC
+
+#+RESULTS:
+: shuffle
+
+* DONE Discuss
+  CLOSED: [2018-05-25 Fri 00:21]
+  :LOGBOOK:
+  CLOCK: [2018-05-24 Thu 20:00]--[2018-05-24 Thu 21:30] =>  1:30
+  :END:
   In subsubsection GHS Roger Penrose is quoted. Discuss this quote with your
   neighbors (teams, groups, same as before or different), focusing on how he
   relates awareness, understanding and intelligence. Then consider the
@@ -42,11 +70,52 @@
   From these marvelous revealed words, and /thinking in terms of sets/, we can
   conclude which of the following?
 
-  - [ ] Intelligence is the intersection of light and truth.
+  - [X] Intelligence is the intersection of light and truth.
   - [ ] Intelligence is the union of light and truth.
   - [ ] Intelligence is a subset of truth, and light is the name of that subset.
   - [ ] Intelligence, light and truth are all synonymous.
-* TODO Justify Your Answer
+* DONE Justify Your Answer
+  CLOSED: [2018-05-25 Fri 00:19]
+  :LOGBOOK:
+  CLOCK: [2018-05-24 Thu 23:18]--[2018-05-25 Fri 00:18] =>  1:00
+  :END:
 #+begin_info
-  Write a paragraph or two here.
+  Starting with the the first Idea:
+    Truth is Knowledge of things as they are.
+  From this we can say:
+    Truth is Knowledge of things,
+    not things themselves.
+    Light is a thing.
+    Light has knowledge about its self.
+    Truth, being knowledge about things,
+    has knowlegde about light, but not light itself.
+
+  So we can think of this as a venn diagram:
+  [[file:../img/TruthLight.png]]
+
+  Now, to address the other two statements.
+  - Intelligence is truth and light. 
+  - Intelligence is the light of truth.
+
+  These statements might seem to say different
+  things, but taking a closer look at it, I feel
+  like they are actually tring to say the dame thing.
+
+  Intelligence is truth and light:
+  - In coding when we want to find the Intersection of two
+    things we use the and symbol '&&'. So aplying this
+    to the phrase above we can read it to be:
+      Intelligence is the intersection of truth and light.
+    This coincides with our ideas from the previous paragraphs.
+
+  Next,
+  Intelligence is the light of truth:
+  - This is a little harder to think about. But when 
+    we read it like this it makes more sense.
+      Intelligence is the part of truth that is light.
+
+  Again, we see through looking at the verse in a 
+  different way, not changin the meaning, we are able
+  to see how it says, "Intelligence is the intersection
+  of light and truth"
 #+end_info
