@@ -8,8 +8,35 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-29 Tue 13:47]
+| Headline     |    Time |      |
+|--------------+---------+------|
+| *Total time* | *10:03* |      |
+|--------------+---------+------|
+| Exercises    |    1:40 |      |
+| \_  MGX      |         | 0:19 |
+| \_  ECI      |         | 0:49 |
+| \_  ECT      |         | 0:08 |
+| \_  MKJ      |         | 0:02 |
+| \_  EFE      |         | 0:01 |
+| \_  MKL      |         | 0:01 |
+| \_  EFS      |         | 0:01 |
+| \_  MMC      |         | 0:19 |
+| Problems     |    8:23 |      |
+| \_  EBQ      |         | 0:49 |
+| \_  MHB      |         | 0:17 |
+| \_  MLB      |         | 0:12 |
+| \_  EKQ      |         | 0:34 |
+| \_  MON      |         | 6:31 |
+#+END:
+
 * Exercises
-** TODO MGX
+** DONE MGX
+   CLOSED: [2018-05-28 Mon 18:44]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 18:25]--[2018-05-28 Mon 18:44] =>  0:19
+   :END:
 #+begin_note
   More mapping versus looping.
 
@@ -30,14 +57,25 @@
 #+BEGIN_SRC elisp :results raw
   (map-for-all-for-all '< [1 2 3] [4 5 6])
 #+END_SRC
+
+#+RESULTS:
+t
+
 :HINT:
   - Hint :: See TKH for the context.
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  These functions use the "every" command
+  to do the looping for each of the numbers within
+  a given set to apply a funtion to check "for all
+  numbers in that set.
 #+end_info
-** TODO ECI
+** DONE ECI
+   CLOSED: [2018-05-28 Mon 19:38]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 18:49]--[2018-05-28 Mon 19:38] =>  0:49
+   :END:
 #+begin_note
   Implement the =for-some-for-some=, =for-some-for-all=, and =for-all-for-some=
   functions in a similar manner to the mapping =for-all-for-all=. Test them with
@@ -49,6 +87,66 @@
 #+end_note
 #+begin_info
   Your answer goes here.
+#+BEGIN_SRC elisp :results silent
+  (defun for-some (pred x domain-y)
+    (some (lambda (y) (funcall pred x y)) domain-y))
+
+  (defun for-some-for-some (pred domain-x domain-y)
+    (some (lambda (x) (for-some pred x domain-y)) domain-x))
+
+  (defun for-all (pred x domain-y)
+    (every (lambda (y) (funcall pred x y)) domain-y))
+
+  (defun for-some-for-all (pred domain-x domain-y)
+    (some (lambda (x) (for-all pred x domain-y)) domain-x))
+
+  (defun for-all-for-some (pred domain-x domain-y)
+    (every (lambda (x) (for-some pred x domain-y)) domain-x))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (vector 
+    (for-some-for-some '<' [1 2 3] [4 5 6])
+    (for-some-for-some '<' [4 5 6] [1 2 3])
+    (for-some-for-some '<' [0 5 6] [1 2 3])
+    (for-some-for-some '<' [1 2 3] [1 2 3])
+    (for-some-for-some '<' [1 2 3] [1 5 6])
+  )
+
+#+END_SRC
+
+#+RESULTS:
+: [t nil t t t]
+
+#+BEGIN_SRC elisp
+  (vector
+    (for-some-for-all '<' [1 2 3] [4 5 6])
+    (for-some-for-all '<' [4 5 6] [1 2 3])
+    (for-some-for-all '<' [0 5 6] [1 2 3])
+    (for-some-for-all '<' [1 2 3] [1 2 3])
+    (for-some-for-all '<' [1 2 3] [1 5 6])
+  )
+#+END_SRC
+
+#+RESULTS:
+: [t nil t nil nil]
+
+#+BEGIN_SRC elisp
+  (vector
+    (for-all-for-some '<' [1 2 3] [4 5 6])
+    (for-all-for-some '<' [4 5 6] [1 2 3])
+    (for-all-for-some '<' [0 5 6] [1 2 3])
+    (for-all-for-some '<' [1 9 3] [4 5 6])
+    (for-all-for-some '<' [1 2 3] [1 5 6])
+  )  
+#+END_SRC
+
+#+RESULTS:
+: [t nil nil nil t]
+
+#+end_info
+
+#+begin_info
 
 #+BEGIN_SRC elisp :results silent
   (defun map-for-some (pred x domain-y)
@@ -61,9 +159,13 @@
 #+END_SRC
 
 #+end_info
-** TODO ECT
+** DONE ECT
+   CLOSED: [2018-05-28 Mon 20:12]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:04]--[2018-05-28 Mon 20:12] =>  0:08
+   :END:
 #+begin_note
-  Which of the following pairs are in the relation on the set [1 2 3 4] given by
+} Which of the following pairs are in the relation on the set [1 2 3 4] given by
   the mathy set description {(x, y) | x > y + 1} or by the equivalent lispy set
   membership predicate:
 
@@ -85,10 +187,39 @@
   - Hint :: This is a very straightforward exercise.
 :END:
 #+end_note
+#+BEGIN_SRC elisp
+  (vector
+    (in-the-relation 2 1)  
+    (in-the-relation 2 2)  
+    (in-the-relation 2 3)  
+    (in-the-relation 2 4)  
+    (in-the-relation 3 1)  
+    (in-the-relation 3 2)  
+    (in-the-relation 4 1)  
+    (in-the-relation 4 2)  
+    (in-the-relation 4 3)  
+  )
+#+END_SRC
+
+#+RESULTS:
+: [nil nil nil nil t nil t t nil]
+
 #+begin_info
-  Your answer goes here.
+  1. not in set
+  2. not in set
+  3. not in set
+  4. not in set
+  5. in set
+  6. not in set
+  7. in set
+  8. in set
+  9. not in set
 #+end_info
-** TODO MKJ
+** DONE MKJ
+   CLOSED: [2018-05-28 Mon 20:16]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:14]--[2018-05-28 Mon 20:16] =>  0:02
+   :END:
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
@@ -103,9 +234,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | [(1 1) (1 3) (2 2) (3 1)] | Yes or No? |
+  |---------------------------+------------|
+  | Reflexive?                | YES        |
+  | Symmetric?                | NO         |
+  | Antisymmetric?            | NO         |
+  | Transitive?               | YES        |
 #+end_info
-** TODO EFE
+** DONE EFE
+   CLOSED: [2018-05-28 Mon 20:18]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:16]--[2018-05-28 Mon 20:17] =>  0:01
+   :END:
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
@@ -120,9 +260,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | [(1 1) (2 2) (3 1) (3 3)] | Yes or No? |
+  |---------------------------+------------|
+  | Reflexive?                | NO         |
+  | Symmetric?                | NO         |
+  | Antisymmetric?            | NO         |
+  | Transitive?               | YES        |
 #+end_info
-** TODO MKL
+** DONE MKL
+   CLOSED: [2018-05-28 Mon 20:19]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:17]--[2018-05-28 Mon 20:18] =>  0:01
+   :END:
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
@@ -137,9 +286,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | [(1 2) (2 1) (3 3)] | Yes or No? |
+  |---------------------+------------|
+  | Reflexive?          | YES        |
+  | Symmetric?          | YES        |
+  | Antisymmetric?      | NO         |
+  | Transitive?         | NO         |
 #+end_info
-** TODO EFS
+** DONE EFS
+   CLOSED: [2018-05-28 Mon 20:20]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:18]--[2018-05-28 Mon 20:19] =>  0:01
+   :END:
 #+begin_note
   What is the most correct description of relation types for the relation
   on the set [1 2 3] given as the pairs heading the first column?
@@ -154,9 +312,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  | [(1 3) (2 3)]  | Yes or No? |
+  |----------------+------------|
+  | Reflexive?     | NO         |
+  | Symmetric?     | NO         |
+  | Antisymmetric? | YES        |
+  | Transitive?    | NO         |
 #+end_info
-** TODO MMC
+** DONE MMC
+   CLOSED: [2018-05-28 Mon 20:39]
+   :LOGBOOK:
+   CLOCK: [2018-05-28 Mon 20:20]--[2018-05-28 Mon 20:39] =>  0:19
+   :END:
 #+begin_note
   Create a table like the one above with the members of the CM7 partition sets.
 :HINT:
@@ -165,11 +332,27 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  I feel like CM7 is referring to something other
+  than the set of Notes: "C Eb G Bb" but I was
+  unable to find anything usefull about cm7 partitions...
+
+  | [(C Eb) (C G) (C Bb)] | Yes or No? |
+  |-----------------------+------------|
+  | Reflexive?            | no         |
+  | Symmetric?            | no         |
+  | Antisymmetric?        | no         |
+  | Transitive?           | no         |
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO EBQ
+** DONE EBQ
+   CLOSED: [2018-05-29 Tue 11:49]
+   :LOGBOOK:
+   CLOCK: [2018-05-29 Tue 12:57]
+   CLOCK: [2018-05-29 Tue 06:53]--[2018-05-29 Tue 07:02] =>  0:09
+   CLOCK: [2018-05-29 Tue 00:00]--[2018-05-29 Tue 00:30] =>  0:30
+   CLOCK: [2018-05-28 Mon 20:39]--[2018-05-28 Mon 20:49] =>  0:10
+   :END:
 #+begin_note
   Here is one way to do a Cartesian product of two 3-element sets:
 #+BEGIN_SRC elisp :results raw
@@ -273,9 +456,30 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+
+#+BEGIN_SRC elisp
+  (defun cartesian-product (n)
+    (if (- (length n 1))
+      (loop for x across (first n)
+        (mapcar* 'list x (cartesian-product (rest x)))
+      )
+      nil
+    )
+  )
+  (setq a '((2 2), (2 2)))
+  (cartesian-product a)
+#+END_SRC
+
+#+RESULTS:
+: cartesian-product
+
 #+end_info
-** TODO MHB
+** DONE MHB
+   CLOSED: [2018-05-29 Tue 11:37]
+   :LOGBOOK:
+   CLOCK: [2018-05-29 Tue 11:20]--[2018-05-29 Tue 11:36] =>  0:16
+   CLOCK: [2018-05-29 Tue 00:30]--[2018-05-29 Tue 00:31] =>  0:01
+   :END:
 #+begin_note
    From the definition of antisymmetric, show using logic that if xRy and x \ne y
    then it is false that yRx.
@@ -285,9 +489,20 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  R is antisymmetric iff ∀ x ∀ y [xRy ∧ yRx → x = y]
+
+  From the deffinition we can see that x = y must
+  be the case if the Relation is antisymetric.
+
+  so, because it is given that x \ne y then we know
+  that yRx will be false.
 #+end_info
-** TODO MLB
+** DONE MLB
+   CLOSED: [2018-05-29 Tue 11:48]
+   :LOGBOOK:
+   CLOCK: [2018-05-29 Tue 11:37]--[2018-05-29 Tue 11:48] =>  0:11
+   CLOCK: [2018-05-29 Tue 00:32]--[2018-05-29 Tue 00:33] =>  0:01
+   :END:
 #+begin_note
   How many possible binary relations are there on a set with 3 elements?
 
@@ -305,7 +520,22 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (defun number-of-binary-relations (n)
+    "Computes the number of binary relations on a set with n elements."
+      (setq x (* n n))
+      (expt 2 x)
+    )
+
+  (number-of-binary-relations 3)
+#+END_SRC
+
+#+RESULTS:
+: 512
+
+The number of binary relations for a set 
+with 3 elements is 512
+
 #+end_info
 ** TODO EJE *
 #+begin_note
@@ -356,7 +586,12 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO EKQ
+** DONE EKQ
+   CLOSED: [2018-05-29 Tue 12:29]
+   :LOGBOOK:
+   CLOCK: [2018-05-29 Tue 11:55]--[2018-05-29 Tue 12:29] =>  0:34
+   CLOCK: [2018-05-29 Tue 07:26]--[2018-05-29 Tue 07:26] =>  0:00
+   :END:
 #+begin_note
   Which of the following are equivalence relations? If it is, show it has
   reflexivity, symmetry and transitivity. If not, argue for which of these three
@@ -378,12 +613,47 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. Not reflexive, you cannot be a sibling to yourself
+  2. This is an equivalence realtion
+     It has reflexivity because even if
+     we compare you, with yourself, you have
+     the same parents.
+     It has symetry because each child that has 
+     the same parents as another child, then
+     that child will have the same parents as the other
+     It has transitivity for a child because they will
+     all have the same parents if they all have the same parents.
+  3. No transitivity, just beacuse two children have a common 
+     parent and one of those has a common parent with another child
+     does not mean that the other two have a common parent.
+  4. No transitivity, just beacuse two children share a common 
+     language and one of those share a common language with another child
+     does not mean that the other two will have a common language too.
+  5. No transitivity, just because a couple of words share a common vowel
+     and on of those words shares a common value with another word, does
+     not mean that the other two words also share a common vowel.
+  6. Not symetric, because flipping the relation to be yRx would fail
+     the condition.
+  7. No transitivity, just because if x is one and y is zero, 
+     and y is zero and x is one
+     then when x is one and z is one the relationship will
+     not be satisfied.
+  8. No transitivity, jsut because an x and a y will equal 42,
+     and a y and a z will equal 42 does not mean that
+     the x and the z will equal 42.
+  9. No Symetry, just because the floor of a number and the ceiling of another
+     number are equal to each other, does not mean that the ceiling of the one
+     and the floor of the other will be equal to each other.
 #+end_info
-** TODO MON
+** DONE MON
+   CLOSED: [2018-05-29 Tue 07:22]
+   :LOGBOOK:
+   CLOCK: [2018-05-29 Tue 07:10]--[2018-05-29 Tue 07:22] =>  0:12
+   CLOCK: [2018-05-29 Tue 00:34]--[2018-05-29 Tue 06:53] =>  6:19
+   :END:
 #+begin_note
   Give a better name to this function:
-#+BEGIN_SRC elisp :results silent
+#+BEGIN_SRC elisp :results output
   (defun do-something (m &optional n)
     (let* ((count (if (null n) 20 n))
            (bound (* count m)))
@@ -393,10 +663,25 @@
                   do (princ j)
                   (princ " "))
             (princ "]\n"))))
+
+  (do-something 1)
 #+END_SRC
+
+#+RESULTS:
+: [ -20 -19 -18 -17 -16 -15 -14 -13 -12 -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ]
+
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This functinon should print a table of numbers
+  But is appears to do nothing...
+  I would at least expect it to print out ']'
+  but it didn't happen.
+  It should print out a two dimensional array
+
+  A better name would be either
+  be-confusing
+  or
+  do-nothing
 #+end_info
 * Puzzles
 ** TODO EJK
@@ -441,6 +726,6 @@
 * TODO Identify Collaborators
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Sawyer Gehring :: helped with various parts
+  - Tyler Elkington :: helped with various parts
+
