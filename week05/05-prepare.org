@@ -8,22 +8,42 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read JKL through JKP from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]]. 
-* TODO Answer What is True By Way of Review
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-29 Tue 23:12]
+| Headline                             |   Time |
+|--------------------------------------+--------|
+| *Total time*                         | *1:10* |
+|--------------------------------------+--------|
+| Read JKL through JKP from...         |   0:27 |
+| Answer What is True By Way of Review |   0:04 |
+| Read A Quote About Combinatorics     |   0:28 |
+| Answer What is True                  |   0:11 |
+#+END:
+
+* DONE Read JKL through JKP from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]]. 
+  CLOSED: [2018-05-29 Tue 22:27]
+  :LOGBOOK:
+  CLOCK: [2018-05-29 Tue 22:00]--[2018-05-29 Tue 22:27] =>  0:27
+  :END:
+* DONE Answer What is True By Way of Review
+  CLOSED: [2018-05-29 Tue 22:31]
+  :LOGBOOK:
+  CLOCK: [2018-05-29 Tue 22:27]--[2018-05-29 Tue 22:31] =>  0:04
+  :END:
   You know what to do:
-  - [ ] I know that xRy is a shorthand notation for \ldquo{}x is related to y\rdquo (under
+  - [X] I know that xRy is a shorthand notation for \ldquo{}x is related to y\rdquo (under
     relation R).
-  - [ ] I know that A \times B, the *Cartesian product* (or just product) of set A
+  - [X] I know that A \times B, the *Cartesian product* (or just product) of set A
     with set B is the set of all ordered pairs (a b) where a \in A and b \in B.
-  - [ ] I think I understand how the *Cartesian Product* generalizes to *n*
+  - [X] I think I understand how the *Cartesian Product* generalizes to *n*
     sets.
-  - [ ] I can match the name on the left with the correct definition of a type
+  - [X] I can match the name on the left with the correct definition of a type
     of relation on the right:
-  | 1. *Reflexive*     | a. \forall x \forall y [xRy \rightarrow yRx]           |
-  | 2. *Symmetric*     | b. \forall x \forall y [xRy \land yRx \rightarrow x = y]   |
-  | 3. *Antisymmetric* | c. \forall x \forall y \forall z [xRy \land yRz \rightarrow xRz] |
-  | 4. *Transitive*    | d. \forall x [x \in U \rightarrow xRx]             |
-  - [ ] I chose the correct matching as one of the following lisp lists of \ldquo{}dotted pairs\rdquo:
+  | 1. *Reflexive*     d | a. \forall x \forall y [xRy \rightarrow yRx]           |
+  | 2. *Symmetric*     a | b. \forall x \forall y [xRy \land yRx \rightarrow x = y]   |
+  | 3. *Antisymmetric* b | c. \forall x \forall y \forall z [xRy \land yRz \rightarrow xRz] |
+  | 4. *Transitive*    c | d. \forall x [x \in U \rightarrow xRx]             |
+  - [X] I chose the correct matching as one of the following lisp lists of \ldquo{}dotted pairs\rdquo:
   - [ ] ((1 . a) (2 . b) (3 . c) (4 . d))
   - [ ] ((1 . a) (2 . b) (3 . d) (4 . c))
   - [ ] ((1 . a) (2 . c) (3 . b) (4 . d))
@@ -42,14 +62,18 @@
   - [ ] ((1 . c) (2 . b) (3 . d) (4 . a))
   - [ ] ((1 . c) (2 . d) (3 . a) (4 . b))
   - [ ] ((1 . c) (2 . d) (3 . b) (4 . a))
-  - [ ] ((1 . d) (2 . a) (3 . b) (4 . c))
+  - [X] ((1 . d) (2 . a) (3 . b) (4 . c))
   - [ ] ((1 . d) (2 . a) (3 . c) (4 . b))
   - [ ] ((1 . d) (2 . b) (3 . a) (4 . c))
   - [ ] ((1 . d) (2 . b) (3 . c) (4 . a))
   - [ ] ((1 . d) (2 . c) (3 . a) (4 . b))
   - [ ] ((1 . d) (2 . c) (3 . b) (4 . a))
 
-* TODO Read A Quote About Combinatorics 
+* DONE Read A Quote About Combinatorics 
+  CLOSED: [2018-05-29 Tue 23:12]
+  :LOGBOOK:
+  CLOCK: [2018-05-29 Tue 22:32]--[2018-05-29 Tue 23:00] =>  0:28
+  :END:
   --- and the other quotes --- and then answer the questions.
 
 #+BEGIN_QUOTE
@@ -127,22 +151,34 @@
   good sense that he feels no desire for more than he already possesses.
 #+END_QUOTE
 
-* TODO Answer What is True
+* DONE Answer What is True
+  CLOSED: [2018-05-29 Tue 23:12]
+  :LOGBOOK:
+  CLOCK: [2018-05-29 Tue 23:00]--[2018-05-29 Tue 23:11] =>  0:11
+  :END:
   You know what to do:
-  - [ ] I found and entered below the author of the first short quote, \ldquo{}If you \dots\rdquo.
-  - [ ] I found and entered below the author of the second short quote, \ldquo{}No right, \dots\rdquo.
-  - [ ] I found and entered below the author of the third short quote, \ldquo{}Logicians have \dots\rdquo.
-  - [ ] I found and entered below the author of the fourth short quote, \ldquo{}So convenient \dots\rdquo.
-  - [ ] I found and entered below the author of the fifth short quote, \ldquo{}Good sense \dots\rdquo.
-  - [ ] I watched Terry Moore’s TED talk /Why is ‘x’ the unknown?/.
-  - [ ] I know why \lsquo{}x\rsquo is the unknown.
+  - [X] I found and entered below the author of the first short quote, \ldquo{}If you \dots\rdquo.
+  - [X] I found and entered below the author of the second short quote, \ldquo{}No right, \dots\rdquo.
+  - [X] I found and entered below the author of the third short quote, \ldquo{}Logicians have \dots\rdquo.
+  - [X] I found and entered below the author of the fourth short quote, \ldquo{}So convenient \dots\rdquo.
+  - [X] I found and entered below the author of the fifth short quote, \ldquo{}Good sense \dots\rdquo.
+  - [X] I watched Terry Moore’s TED talk /Why is ‘x’ the unknown?/.
+  - [X] I know why \lsquo{}x\rsquo is the unknown.
+    - Arabic Orgigin,
+    - shamon - something
+    - Spanish scholars trying to translate
+      from Arabic with nothing like sh so 
+      they used chi which looks like \chi
+    - The Latin x was then used.
+    x is the unknown because the spanish language did 
+    not have a 'sh' sound.
 
   Enter the author(s) you found (and where) in the table below:
 
-  | Which? | Author of Quote | Where Found (link to website) |
-  |--------+-----------------+-------------------------------|
-  | First  |                 |                               |
-  | Second |                 |                               |
-  | Third  |                 |                               |
-  | Fourth |                 |                               |
-  | Fifth  |                 |                               |
+  | Which? | Author of Quote   | Where Found (link to website)                                                                     |
+  |--------+-------------------+---------------------------------------------------------------------------------------------------|
+  | First  | Katharine Hepburn | https://www.brainyquote.com/quotes/katharine_hepburn_100041                                       |
+  | Second | Elsa              | https://www.quotes.net/mquote/114056                                                              |
+  | Third  | Oliver Goldsmith  | https://archive.org/stream/poeticalworksol01goldgoog/poeticalworksol01goldgoog_djvu.txt           |
+  | Fourth | Benjamin Franklin | http://www.ushistory.org/franklin/autobiography/page18.htm                                        |
+  | Fifth  | René Descartes    | https://www.goodreads.com/quotes/48764-good-sense-is-the-most-equitably-distributed-of-all-things |
