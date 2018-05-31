@@ -8,14 +8,50 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Think and Discuss
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-05-31 Thu 13:31]
+| Headline          |   Time |
+|-------------------+--------|
+| *Total time*      | *0:19* |
+|-------------------+--------|
+| Think and Discuss |   0:10 |
+| Report            |   0:09 |
+#+END:
+
+* DONE Think and Discuss
+  CLOSED: [2018-05-31 Thu 13:15]
+  :LOGBOOK:
+  CLOCK: [2018-05-31 Thu 13:03]--[2018-05-31 Thu 13:13] =>  0:10
+  :END:
   Think about and come prepared to discuss with your group (old or new) how to
   compute the probability that a verse randomly chosen from the verses in the
   Book of Mormon that contain the words =w1= and =w2= in close proximity will
   have those two words in alphabetical order.
 
   What the words =w1= and =w2= are will be revealed in class.
-* TODO Report
+* DONE Report
+  CLOSED: [2018-05-31 Thu 13:16]
+  :LOGBOOK:
+  CLOCK: [2018-05-31 Thu 13:13]--[2018-05-31 Thu 13:22] =>  0:09
+  :END:
 #+begin_info
+  Close proximity - not more than half of the verse apart
 
+  There are 6 verses that contain heed and diligence:
+  1 Nephi 16:28
+  Mosiah 1:16
+  Alma 7:26
+  Alma 12:9
+  Alma 21:23
+  Alma 49:30
+
+  There are three that have them in the right order:
+  1 Nephi 16:28
+  Alma 7:26
+  Alma 21:23
+
+  There is a 50% probability of choosing a verse
+  from the six that contain the two words in 
+  close proximity, in alphabetical order
+  
 #+end_info
