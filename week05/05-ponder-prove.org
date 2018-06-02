@@ -8,8 +8,43 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-02 Sat 15:30]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *2:52* |      |
+|------------------------+--------+------|
+| Exercises              |   1:29 |      |
+| \_  QAM                |        | 0:05 |
+| \_  REX                |        | 0:11 |
+| \_  QCV                |        | 0:02 |
+| \_  RFC                |        | 0:04 |
+| \_  QCZ                |        | 0:33 |
+| \_  RFF                |        | 0:10 |
+| \_  QDM                |        | 0:05 |
+| \_  RJV                |        | 0:14 |
+| \_  QIQ                |        | 0:02 |
+| \_  RLH                |        | 0:03 |
+| Problems               |   1:22 |      |
+| \_  RGL                |        | 0:15 |
+| \_  QEB                |        | 0:05 |
+| \_  RGM                |        | 0:05 |
+| \_  QFK                |        | 0:05 |
+| \_  RHB                |        | 0:09 |
+| \_  QGK                |        | 0:04 |
+| \_  QGT                |        | 0:08 |
+| \_  QKT                |        | 0:09 |
+| \_  RNM                |        | 0:10 |
+| \_  QOS                |        | 0:12 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO QAM
+** DONE QAM
+   CLOSED: [2018-06-02 Sat 10:38]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 10:33]--[2018-06-02 Sat 10:38] =>  0:05
+   :END:
 #+begin_note
   Henry only has one pair of pants. How many different outfits does Henry have
   if he has 5 long-sleeve shirts and 3 short-sleeve shirts? (An outfit is \ldquo{}pants
@@ -25,9 +60,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  With 5 long-sleve shirts, 3 short-sleve shirts, and one pair of pants
+  Henry has 8 different outfits.
+
+  With adding another pair of pants, and  10 ties
+  Henry has 8 * 2 * 10 = 160 different outfits.
 #+end_info
-** TODO REX
+** DONE REX
+   CLOSED: [2018-06-02 Sat 10:53]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 10:46]--[2018-06-02 Sat 10:52] =>  0:06
+   CLOCK: [2018-06-02 Sat 10:41]--[2018-06-02 Sat 10:46] =>  0:05
+   :END:
 #+begin_note
   How should the /Sum Rule/ be adjusted when the two sets being selected from
   are /not/ disjoint --- which means the /opposite/ of the oft-repeated \ldquo{}the
@@ -39,9 +83,19 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  [[file:../img/DisjointSets.png]] 
+  
+  The sum rule will need to be adjusted to calculate for 
+  the duplicate options.
+  In order to do thi you will use the size of one set,
+  and the size of the other minus the number of duplicates
+  in the sets.
 #+end_info
-** TODO QCV
+** DONE QCV
+   CLOSED: [2018-06-02 Sat 10:59]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 10:56]--[2018-06-02 Sat 10:58] =>  0:02
+   :END:
 #+begin_note
   How many different /functions/ are there from a set with 3 elements to a set
   with 5 elements?
@@ -50,9 +104,13 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  There are 5^3 = 125 different functions.
 #+end_info
-** TODO RFC
+** DONE RFC
+   CLOSED: [2018-06-02 Sat 11:02]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 10:59]--[2018-06-02 Sat 11:03] =>  0:04
+   :END:
 #+begin_note
   How many different /one-to-one/ functions are there from a set with 3 elements
   to a set with 5 elements?
@@ -62,9 +120,13 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  There are 5!/((5-3)!) = 120/2 = 60 different one-to-one functions.
 #+end_info
-** TODO QCZ
+** DONE QCZ
+   CLOSED: [2018-06-02 Sat 11:44]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 11:11]--[2018-06-02 Sat 11:44] =>  0:33
+   :END:
 #+begin_note
   How many different /onto/ functions are there from a set with 3 elements to a
   set with 5 elements?
@@ -74,9 +136,18 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  There are S(3,5)5! = 0;
+
+#+begin_note
+  Mathematica code:
+  StirlingS2[3,5] * 5!;
+#+end_note
 #+end_info
-** TODO RFF
+** DONE RFF
+   CLOSED: [2018-06-02 Sat 11:56]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 11:46]--[2018-06-02 Sat 11:56] =>  0:10
+   :END:
 #+begin_note
   Concretize the equality
 
@@ -89,9 +160,16 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  P(5,4) = 5*4*3*2 = 5!/(5-4)! \rArr 5*4*3*2*1 / 1
+         = 5*4*3*2 = 5*4*3*2
+
+  I am convinced that the it is an equality
 #+end_info
-** TODO QDM
+** DONE QDM
+   CLOSED: [2018-06-02 Sat 12:01]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 11:56]--[2018-06-02 Sat 12:01] =>  0:05
+   :END:
 #+begin_note
   The English language predominantly uses the Subject-Verb-Object word type
   ordering; for example, \ldquo{}Gary saw Alice\rdquo. Other languages might use
@@ -102,9 +180,21 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Subject-Verb-Object
+  Subject-Object-Verb
+  Verb-Subject-Object
+  Verb-Object-Subject
+  Object-Subject-Verb
+  Object-Verb-Subject
+
+  P(3,3) = 3*2*1 = 6
+  There are six possible ways.
 #+end_info
-** TODO RJV
+** DONE RJV
+   CLOSED: [2018-06-02 Sat 12:15]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:01]--[2018-06-02 Sat 12:15] =>  0:14
+   :END:
 #+begin_note
   Suppose you flip a /fair/ coin 10 times. How many different ways can you get
 
@@ -115,16 +205,28 @@
   5. at least two heads?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  1. P(10,0) = 0
+  2. P(10,1) = 10
+  3. P(10,2) = 90
+  4. P(10,r) = 10(10 - 1)(10 - 2) \cdots (10 - (r - 1)) = 10!/(10 - r)!
+  5. P(10,10) - P(10,1) - P(10,0) = 3628789
 #+end_info
-** TODO QIQ
+** DONE QIQ
+   CLOSED: [2018-06-02 Sat 12:17]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:15]--[2018-06-02 Sat 12:17] =>  0:02
+   :END:
 #+begin_note
   How many bit strings of length 10 contain at least two 1s?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  From the last problem \rArr 3628789
 #+end_info
-** TODO RLH
+** DONE RLH
+   CLOSED: [2018-06-02 Sat 12:20]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:17]--[2018-06-02 Sat 12:20] =>  0:03
+   :END:
 #+begin_note
   There are many kinds of fruit: raspberries, strawberries, blueberries, apples,
   oranges, bananas, kiwi, papaya, mango, just to name a few. Just choosing five
@@ -132,46 +234,84 @@
   make?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  P(9,5) = 15120
+  You can make 15,120 different combinations of fruit salad
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO RGL
+** DONE RGL
+   CLOSED: [2018-06-02 Sat 12:35]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:20]--[2018-06-02 Sat 12:35] =>  0:15
+   :END:
 #+begin_note
   Recalling the example of how many are the permutations of the letters
   ABCDELMNO, investigate and explain why 0! is defined to be equal to 1.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The reason that mathematicians have decided to make 0! be equal to
+  one is fairly simple.
+  This is the function used to calculate permutations:
+  P(n,k) =       n!
+               ------
+               (n-k)!
+
+  Normaly, there is no problem using 0! as 0,
+  but in the case where we want to permute n
+  things n ways, where n = k, then we would 
+  run into a problem because wew would be trying 
+  to devide by zero. So, in order to make this 
+  work mathematicians decided that 0! should
+  be equal to 1 rather than 0.
 #+end_info
-** TODO QEB
+** DONE QEB
+   CLOSED: [2018-06-02 Sat 12:40]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:35]--[2018-06-02 Sat 12:40] =>  0:05
+   :END:
 #+begin_note
   How many of the 9! arrangements of the letters ABCDELMNO contain the string
   ELM?
 :HINT:
-  - Hint :: How many arrangements of ABCDENO are there?
+  - Hint :: How many arrangements of ABCDENO are there? (MI) - no E in ABCDNO
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  9! - 6! = 362160
+  There are 362,160 arangements that contain the string ELM
 #+end_info
-** TODO RGM
+** DONE RGM
+   CLOSED: [2018-06-02 Sat 12:51]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:48]--[2018-06-02 Sat 12:51] =>  0:03
+   CLOCK: [2018-06-02 Sat 12:40]--[2018-06-02 Sat 12:42] =>  0:02
+   :END:
 #+begin_note
   How many TLAs (arrangements of 3 alphabetic letters) are there /with
   repetition allowed/?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  26 * 26 * 26 = 17576
+  There can be 17,576`TLAs with repetitions allowed
 #+end_info
-** TODO QFK
+** DONE QFK
+   CLOSED: [2018-06-02 Sat 12:48]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 12:43]--[2018-06-02 Sat 12:48] =>  0:05
+   :END:
 #+begin_note
   How many different sequences of initials are there for people who either have
   two initials (first and last) or three initials (first, middle and last)?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  26 * 26 + 26 * 26 * 26 = 18252
+  There are 18,252 different sequences of initials
 #+end_info
-** TODO RHB
+** DONE RHB
+   CLOSED: [2018-06-02 Sat 13:50]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 13:41]--[2018-06-02 Sat 13:50] =>  0:09
+   :END:
 #+begin_note
   How many different sequences can be formed using /either/ two /or/ three
   letters (A-Z) followed by /either/ two /or/ three digits (0-9)?
@@ -184,9 +324,25 @@
   - ...
 #+end_note
 #+begin_info
-  Your answer goes here.
+If No Repetitions:
+  26 * 25 * 10 * 9 +
+  26 * 25 * 24 * 10 * 9 +
+  26 * 25 * 10 * 9 * 8 +
+  26 * 25 * 24 * 10 * 9 * 8
+           \rArr  13,162,500
+
+If Repetitions:
+  26 * 26 * 10 * 10 +
+  26 * 26 * 26 * 10 * 10 +
+  26 * 26 * 10 * 10 * 10 +
+  26 * 26 * 26 * 10 * 10 * 10
+           \rArr  20,077,200
 #+end_info
-** TODO QGK
+** DONE QGK
+   CLOSED: [2018-06-02 Sat 14:05]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 14:01]--[2018-06-02 Sat 14:05] =>  0:04
+   :END:
 #+begin_note
   How many different \ldquo{}words\rdquo of the form =ccvcv= are there where =c= represents
   one of the 21 consonants and =v= represents one of the 5 vowels in the English
@@ -195,7 +351,8 @@
   or \ldquo{}gligi\rdquo, which have repeated letters.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  26 * 25 * 5 * 24 * 3 = 234,000
+  There 234,000 different "words" that can be made.
 #+end_info
 ** TODO RVB *
 #+begin_note
@@ -235,7 +392,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO QGT
+** DONE QGT
+   CLOSED: [2018-06-02 Sat 14:41]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 14:33]--[2018-06-02 Sat 14:41] =>  0:08
+   :END:
 #+begin_note
   Thinking in terms of subsets of size $k$ from a set of size $n$,
   convince yourself of the validity of this summation:
@@ -243,17 +404,67 @@
   $\sum_{k = 0}^{n}{n \choose k} = 2^n$.
 #+end_note
 #+begin_info
-  Your answer goes here.
+Mathematica Coding:
+  In[170]:= comb[n_, k_] := 
+              n!/((n - k)!*k!)
+            myFuncion[n_] :=
+              Sum[comb[n, k], {k, 0, n}]
+            myFuncion[2]
+            myFuncion[3]
+            myFuncion[4]
+            myFuncion[5]
+            myFuncion[6]
+
+  Out[171]= 4
+  Out[172]= 8
+  Out[173]= 16
+  Out[174]= 32
+  Out[175]= 64
+
+I am convinced that \sum_{k = 0}^{n}{n \choose k} = 2^n.
 #+end_info
-** TODO QKT
+** DONE QKT
+   CLOSED: [2018-06-02 Sat 14:50]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 14:41]--[2018-06-02 Sat 14:50] =>  0:09
+   :END:
 #+begin_note
   When you roll two dice, what is the probability that the sum of the numbers
   (1-6) on their faces will be a multiple of 3 (3, 6, 9 or 12)?
 #+end_note
 #+begin_info
-  Your answer goes here.
+Combinations for multiples of 3:
+  1 | 2
+  2 | 1
+  3 | 3
+  3 | 3
+  4 | 2
+  2 | 4
+  5 | 1
+  1 | 5
+  6 | 3
+  3 | 3
+  4 | 5
+  5 | 4
+  6 | 6
+  Total: 13
+
+All posible combinations:
+  In[189]:= comb[n_, k_] := 
+              n!/((n - k)!*k!)
+            myFuncion[n_] :=
+              Sum[comb[n, k], {k, 0, n}]
+            myFuncion[6]
+
+  Out[191]= 64
+
+The probability is 13 / 64 \approx 20.3%
 #+end_info
-** TODO RNM
+** DONE RNM
+   CLOSED: [2018-06-02 Sat 15:00]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 14:50]--[2018-06-02 Sat 15:00] =>  0:10
+   :END:
 #+begin_note
   Rather than roll dice, Ruth and Ed usually flip a coin to decide who's going
   to do the chores. One day Ed complains --- he thinks he loses too often. So
@@ -268,9 +479,48 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+Possible flips for Ed:
+  t | t
+  t | t
+  h | t
+  t | h
+  h | h
+  h | h
+
+Possible flips for Ruth:
+  t 
+  h
+
+In order for Ed to win he must
+get "more" heads than Ruth.
+
+All possible options
+| Ruth | Ed | Winner |
+|------+----+--------|
+| t    | tt | Ruth   |
+| t    | tt | Ruth   |
+| t    | ht | Ed     |
+| t    | th | Ed     |
+| t    | hh | Ed     |
+| t    | hh | Ed     |
+| h    | tt | Ruth   |
+| h    | tt | Ruth   |
+| h    | ht | Ruth   |
+| h    | th | Ruth   |
+| h    | hh | Ed     |
+| h    | hh | Ed     |
+
+Out of the 12 possiblities,
+Ed has 6, and Ruth has 6.
+
+so, Ed has a 50% chance of
+winning and so does Ruth.
 #+end_info
-** TODO QOS
+** DONE QOS
+   CLOSED: [2018-06-02 Sat 15:19]
+   :LOGBOOK:
+   CLOCK: [2018-06-02 Sat 15:07]--[2018-06-02 Sat 15:19] =>  0:12
+   :END:
 #+begin_note
   Generalize the two- and four- fair-coin-flipping experiment to deal with the
   experiment of flipping /2n/ coins. Find the probability of the event that /n/
@@ -280,7 +530,20 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  No matter the amount of coins you flip the probability remains 50% tails
+  and 50% heads, so, if you flip 2*n coins you would expect to flip
+  n heads, and n tails. But what is the probability that it will 
+  actually happen? The probability of it can be described by this function:
+  In[208]:= comb[n_, k_] := 
+              n!/((n - k)!*k!)
+            probOf5050[n_] :=
+              comb[2 n, n]/(2^(2*n))
+            probOf5050[3]
+
+  Out[210]= 5/16
+
+If we flip 6 coins then there is a 5/16 \approx 31.25% chance
+that we will get 3 heads and 3 tails.
 #+end_info
 ** TODO ROP *
 #+begin_note
@@ -367,9 +630,11 @@
 *** Approach
 *** Solution
 *** Proof
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-06-02 Sat 15:21]
+  :LOGBOOK:
+  CLOCK: [2018-06-02 Sat 15:19]--[2018-06-02 Sat 15:20] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - My Self :: I did not collaborate with any one else on this assignment
