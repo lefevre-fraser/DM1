@@ -8,8 +8,27 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read MNO through MNA from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
-* TODO Learn How to Customize a Variable
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-05 Tue 23:33]
+| Headline                          |   Time |
+|-----------------------------------+--------|
+| *Total time*                      | *1:48* |
+|-----------------------------------+--------|
+| Read MNO through MNA from...      |   1:46 |
+| Learn How to Customize a Variable |   0:01 |
+| Answer What is True               |   0:01 |
+#+END:
+
+* DONE Read MNO through MNA from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-06-05 Tue 23:30]
+  :LOGBOOK:
+  CLOCK: [2018-06-05 Tue 21:44]--[2018-06-05 Tue 23:30] =>  1:46
+  :END:
+* DONE Learn How to Customize a Variable
+  CLOSED: [2018-06-05 Tue 23:32]
+  :LOGBOOK:
+  CLOCK: [2018-06-05 Tue 23:31]--[2018-06-05 Tue 23:32] =>  0:01
+  :END:
   Many of you already know how to stop emacs from asking you every time you go
   to evaluate a code block, 
 
@@ -38,7 +57,11 @@
   STATE: Saved and set.
 
   Dismiss the Customization buffer by typing q.
-* TODO Answer What is True
+* DONE Answer What is True
+  CLOSED: [2018-06-05 Tue 23:33]
+  :LOGBOOK:
+  CLOCK: [2018-06-05 Tue 23:32]--[2018-06-05 Tue 23:33] =>  0:01
+  :END:
   You know what to do. 
-  - [ ] I left it as is, or customized the org-confirm-babel-evaluate variable
+  - [X] I left it as is, or customized the org-confirm-babel-evaluate variable
     to my liking.
