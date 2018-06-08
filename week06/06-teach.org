@@ -8,7 +8,21 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read, Discuss, Respond 
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-08 Fri 13:39]
+| Headline               | Time   |
+|------------------------+--------|
+| *Total time*           | *0:48* |
+|------------------------+--------|
+| Read, Discuss, Respond | 0:48   |
+#+END:
+
+* DONE Read, Discuss, Respond 
+  CLOSED: [2018-06-08 Fri 13:39]
+  :LOGBOOK:
+  CLOCK: [2018-06-08 Fri 13:11]--[2018-06-08 Fri 13:39] =>  0:28
+  CLOCK: [2018-06-08 Fri 11:40]--[2018-06-08 Fri 12:00] =>  0:20
+  :END:
   The [[file:06-prepare.org][Prepare activity]] for this week was an exercise in /decision-making/, a
   task all of us must perform many times, every day of our lives. What if we
   could offload that burden?
@@ -16,5 +30,17 @@
   Read [[https://firstthreeodds.org/17657741833134731255/total-noise.html][these thoughts]] by David Foster Wallace, discuss, and respond with your
   best thinking in a paragraph or two below. 
 #+begin_info
-  Your response goes here.
+  This reading was rather confusing to me. I read it through a
+  couple of times, and yet it still doesn't make too much sense 
+  to me.
+  
+  After discussing it with a friend, I think I have a better
+  idea about what it is saying.
+
+  I think that it is important for us to make our own decisions in life.
+  We need to become informed, be invloved, and make decisions.
+  If we could offload the "burden" of thought and decision making then
+  we would never learn, we would never grow, and our life would
+  be the lesser for it.
+  Life becomes meaningless when we do nothing with it.
 #+end_info
