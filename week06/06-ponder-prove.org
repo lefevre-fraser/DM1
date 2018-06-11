@@ -8,16 +8,46 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-11 Mon 17:54]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *0:44* |      |
+|------------------------+--------+------|
+| Exercises              |   0:15 |      |
+| \_  FAB                |        | 0:01 |
+| \_  FDZ                |        | 0:05 |
+| \_  FJH                |        | 0:03 |
+| \_  IWK                |        | 0:06 |
+| Problems               |   0:28 |      |
+| \_  ITT                |        | 0:07 |
+| \_  IWC                |        | 0:01 |
+| \_  FMD                |        | 0:20 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO FAB
+** DONE FAB
+   CLOSED: [2018-06-11 Mon 17:04]
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:03]--[2018-06-11 Mon 17:04] =>  0:01
+   :END:
 #+begin_note
   There is a redundant word in the statement of the division theorem. What is
   it, and why is it redundant?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  the redundant statement is here:
+  d is a positive integer
+
+  0 \le t < d
+
+  Here the fact that d is greater than zero is affirmed twice.
 #+end_info
 ** TODO FDZ
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:16]--[2018-06-11 Mon 17:21] =>  0:05
+   :END:
 #+begin_note
   Re-implement =prime-power-list-to-number= without using =let= by instead
   putting everything =let= is doing within the =loop=.
@@ -26,17 +56,40 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (defun prime-power-list-to-number (prime-power-list)
+  (let ((number 1)
+        (primes [2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71]))
+    (loop for prime across primes
+          for power in prime-power-list
+          do (setq number (* number (expt prime power))))
+    number))
+
+  (prime-power-list-to-number '(6 5 4 3 2 1))
+#+END_SRC
+
+#+RESULTS:
+: 5244319080000
+
 #+end_info
-** TODO FJH
+** DONE FJH
+   CLOSED: [2018-06-11 Mon 17:24]
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:21]--[2018-06-11 Mon 17:24] =>  0:03
+   :END:
 #+begin_note
   The FTA supports the mapping of the sequence =[2 0 0 0 0 1]= to a two-digit
   number. What is that number?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  2*13 = 26*2 = 52
+  The number is 52.
 #+end_info
-** TODO IWK
+** DONE IWK
+   CLOSED: [2018-06-11 Mon 17:52]
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:46]--[2018-06-11 Mon 17:52] =>  0:06
+   :END:
 #+begin_note
   A famous theorem states that there are infinitely many primes of the form
   /ak/ + /b/ whenever /a/ and /b/ are coprime. To get a feel for this, find for
@@ -44,7 +97,118 @@
   and ten values where /4k + 11/ is nonprime.
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (defun is-prime (n &optional (d (- n 1))) 
+    (or (= d 1)
+        (and (/= (rem n d) 0)
+            (is-prime  n (- d 1)))))
+
+  (loop for k from 1 to 100
+    collect (if (is-prime (+ (* 4 k) 11)) k nil))
+#+END_SRC
+
+#+RESULTS:
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+| lambda | (k) | (if (is-prime (+ (* 4 k) 11))) | k |
+
 #+end_info
 ** TODO FOJ
 #+begin_note
@@ -236,7 +400,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO ITT
+** DONE ITT
+   CLOSED: [2018-06-11 Mon 17:14]
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:07]--[2018-06-11 Mon 17:14] =>  0:07
+   :END:
 #+begin_note
   How many divisors does a given number have?
 
@@ -257,7 +425,22 @@
   number?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  In order to calculate the number of factors a given number has 
+  we can use prime numbers.
+
+  The patter is as follow:
+  Example: 60
+  you can divide 60 2 times by 2
+  so 2^2
+  next prime is 3, 60 can be divided by 3 once
+  so 2^2 * 3
+  next prime is 5, 60 is divided by 5 once
+  so 2^2 * 3 * 5
+  60 is not divisible by any more prime numbers, so we stop there.
+  now we take the  powers of the primes and add one to get
+  3 * 2 * 2 = 12
+  so 60 has 12 divisors.
+
 #+end_info
 ** TODO FDK *
 #+begin_note
@@ -294,13 +477,29 @@
   Your answer goes here.
 #+end_info
 ** TODO IWC
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:20]--[2018-06-11 Mon 17:21] =>  0:01
+   :END:
 #+begin_note
   Re-implement =prime-power-list-to-number= as =prime-powers-to-number= using
   mapping instead of looping, and a vector /or/ a list, instead of just a list
   as its argument.
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (defun prime-power-list-to-number (prime-power-list)
+  (let ((number 1)
+        (primes [2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71]))
+    (loop for prime across primes
+          for power in prime-power-list
+          do (setq number (* number (expt prime power))))
+    number))
+
+  (prime-power-list-to-number '(6 5 4 3 2 1))
+#+END_SRC
+
+#+RESULTS:
+: 5244319080000
 #+end_info
 ** TODO IXT *
 #+begin_note
@@ -329,7 +528,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO FMD
+** DONE FMD
+   CLOSED: [2018-06-11 Mon 17:46]
+   :LOGBOOK:
+   CLOCK: [2018-06-11 Mon 17:25]--[2018-06-11 Mon 17:45] =>  0:20
+   :END:
 #+begin_note
   Find the smallest primes such that n^2 < p < (n + 1)^2 for the first 100 pairs
   of consecutive squares. That is, find the smallest primes in the ranges (1 4),
@@ -339,7 +542,113 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp
+  (loop for x from 1 to 100
+    collect (list (* x x) (* (+ 1 x) (+ 1 x))))
+#+END_SRC
+
+#+RESULTS:
+|     1 |     4 | 2, 3                                                 |
+|     4 |     9 | 5, 7                                                 |
+|     9 |    16 | 11, 13                                               |
+|    16 |    25 | 17, 19, 23                                           |
+|    25 |    36 | 29, 31                                               |
+|    36 |    49 | 37, 41, 43, 47                                       |
+|    49 |    64 | 53, 59, 61                                           |
+|    64 |    81 | 67, 71, 73, 79                                       |
+|    81 |   100 | 83, 89, 97                                           |
+|   100 |   121 | 101, 103, 107, 109, 113                              |
+|   121 |   144 | 127                                                  |
+|   144 |   169 | 149                                                  |
+|   169 |   196 | 173                                                  |
+|   196 |   225 | 199                                                  |
+|   225 |   256 | 227, 229, 233, 239, 241, 251                         |
+|   256 |   289 | 257, 263, 269, 271, 277, 281, 283                    |
+|   289 |   324 | 293, 307, 311, 313, 317                              |
+|   324 |   361 | 331, 337, 347, 349, 353, 359                         |
+|   361 |   400 | 367, 373, 379, 383, 389, 397                         |
+|   400 |   441 | 401, 409, 419, 421, 431, 433, 439                    |
+|   441 |   484 | 443, 449, 457, 461, 463, 467, 479                    |
+|   484 |   529 | 487, 491, 499, 503, 509, 521, 523                    |
+|   529 |   576 | 541, 547, 557, 563, 569, 571                         |
+|   576 |   625 | 577, 587, 593, 599, 601, 607, 613, 617, 619          |
+|   625 |   676 | 631, 641, 643, 647, 653, 659, 661, 673               |
+|   676 |   729 | 677, 683, 691, 701, 709, 719, 727                    |
+|   729 |   784 | 733, 739, 743, 751, 757, 761, 769, 773               |
+|   784 |   841 | 787, 797, 809, 811, 821, 823, 827, 829, 839          |
+|   841 |   900 | 853, 857, 859, 863, 877, 881, 883, 887               |
+|   900 |   961 | 907, 911, 919, 929, 937, 941, 947, 953               |
+|   961 |  1024 | 967, 971, 977, 983, 991, 997, 1009, 1013, 1019, 1021 |
+|  1024 |  1089 | 1031, 1033, 1039, 1049, 1051, 1061, 1063, 1069, 1087 |
+|  1089 |  1156 |                                                      |
+|  1156 |  1225 |                                                      |
+|  1225 |  1296 |                                                      |
+|  1296 |  1369 |                                                      |
+|  1369 |  1444 |                                                      |
+|  1444 |  1521 |                                                      |
+|  1521 |  1600 |                                                      |
+|  1600 |  1681 |                                                      |
+|  1681 |  1764 |                                                      |
+|  1764 |  1849 |                                                      |
+|  1849 |  1936 |                                                      |
+|  1936 |  2025 |                                                      |
+|  2025 |  2116 |                                                      |
+|  2116 |  2209 |                                                      |
+|  2209 |  2304 |                                                      |
+|  2304 |  2401 |                                                      |
+|  2401 |  2500 |                                                      |
+|  2500 |  2601 |                                                      |
+|  2601 |  2704 |                                                      |
+|  2704 |  2809 |                                                      |
+|  2809 |  2916 |                                                      |
+|  2916 |  3025 |                                                      |
+|  3025 |  3136 |                                                      |
+|  3136 |  3249 |                                                      |
+|  3249 |  3364 |                                                      |
+|  3364 |  3481 |                                                      |
+|  3481 |  3600 |                                                      |
+|  3600 |  3721 |                                                      |
+|  3721 |  3844 |                                                      |
+|  3844 |  3969 |                                                      |
+|  3969 |  4096 |                                                      |
+|  4096 |  4225 |                                                      |
+|  4225 |  4356 |                                                      |
+|  4356 |  4489 |                                                      |
+|  4489 |  4624 |                                                      |
+|  4624 |  4761 |                                                      |
+|  4761 |  4900 |                                                      |
+|  4900 |  5041 |                                                      |
+|  5041 |  5184 |                                                      |
+|  5184 |  5329 |                                                      |
+|  5329 |  5476 |                                                      |
+|  5476 |  5625 |                                                      |
+|  5625 |  5776 |                                                      |
+|  5776 |  5929 |                                                      |
+|  5929 |  6084 |                                                      |
+|  6084 |  6241 |                                                      |
+|  6241 |  6400 |                                                      |
+|  6400 |  6561 |                                                      |
+|  6561 |  6724 |                                                      |
+|  6724 |  6889 |                                                      |
+|  6889 |  7056 |                                                      |
+|  7056 |  7225 |                                                      |
+|  7225 |  7396 |                                                      |
+|  7396 |  7569 |                                                      |
+|  7569 |  7744 |                                                      |
+|  7744 |  7921 |                                                      |
+|  7921 |  8100 |                                                      |
+|  8100 |  8281 |                                                      |
+|  8281 |  8464 |                                                      |
+|  8464 |  8649 |                                                      |
+|  8649 |  8836 |                                                      |
+|  8836 |  9025 |                                                      |
+|  9025 |  9216 |                                                      |
+|  9216 |  9409 |                                                      |
+|  9409 |  9604 |                                                      |
+|  9604 |  9801 |                                                      |
+|  9801 | 10000 |                                                      |
+| 10000 | 10201 |                                                      |
+
 #+end_info
 ** TODO IYJ
 #+begin_note
@@ -773,9 +1082,11 @@
 *** Solution
 *** Proof
      Not applicable.
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-06-11 Mon 17:54]
+  :LOGBOOK:
+  CLOCK: [2018-06-11 Mon 17:52]--[2018-06-11 Mon 17:53] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+   - My Self :: I collaborated with no one
