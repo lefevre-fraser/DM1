@@ -8,54 +8,91 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read PQR through PQX from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
-* TODO Answer What is True By Way of Review (and Preview)
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-13 Wed 13:24]
+| Headline                                |   Time |
+|-----------------------------------------+--------|
+| *Total time*                            | *1:23* |
+|-----------------------------------------+--------|
+| Read PQR through PQX from...            |   0:29 |
+| Answer What is True By Way of Review... |   0:15 |
+| Read About Creativity                   |   0:38 |
+| Answer What is True                     |   0:01 |
+#+END:
+
+* DONE Read PQR through PQX from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-06-12 Tue 11:17]
+  :LOGBOOK:
+  CLOCK: [2018-06-12 Tue 10:48]--[2018-06-12 Tue 11:17] =>  0:29
+  :END:
+* DONE Answer What is True By Way of Review (and Preview)
+  CLOSED: [2018-06-13 Wed 00:34]
+  :LOGBOOK:
+  CLOCK: [2018-06-13 Wed 00:19]--[2018-06-13 Wed 00:34] =>  0:15
+  :END:
    You know what to do.
-  - [ ] I know that a prime is an integer greater than 1 that is divisible only
+  - [X] I know that a prime is an integer greater than 1 that is divisible only
     by 1 and itself.
-  - [ ] I know that a prime is an integer greater than 1 that has exactly two
+  - [X] I know that a prime is an integer greater than 1 that has exactly two
     factors.
-  - [ ] I know that a composite is an integer greater than 1 that has three or
+  - [X] I know that a composite is an integer greater than 1 that has three or
     more factors.
-  - [ ] I know that the number 1 is the loneliest number --- it is neither prime
+  - [X] I know that the number 1 is the loneliest number --- it is neither prime
     nor composite.
-  - [ ] I know that every integer greater than 1 can be written uniquely as a
+  - [X] I know that every integer greater than 1 can be written uniquely as a
     prime or as the product of two or more primes where the prime factors are
     written in order of nondecreasing size.
-  - [ ] I know what the theorem mentioned in the previous assertion is called.
-  - [ ] I know why it is that if n is a composite integer, then n has a prime
+  - [X] I know what the theorem mentioned in the previous assertion is called.
+    - Fundamental Theorem of Arithmetic
+  - [X] I know why it is that if n is a composite integer, then n has a prime
     divisor less than or equal to \radic{}n.
-  - [ ] I know why it is *false* to say that the product of any two primes is
+  - [X] I know why it is *false* to say that the product of any two primes is
     odd.
-  - [ ] I know how big or how to find out how big the largest known prime is
+    - 2 is a prime, and any integer times 2 becomes even
+  - [X] I know how big or how to find out how big the largest known prime is
     (big as in how many decimal digits it has).
-  - [ ] I know how ENT meets up with the methods of continuous mathematics
+    - 23,249,425
+  - [X] I know how ENT meets up with the methods of continuous mathematics
     (e.g., calculus) in the statement of the PNT.
-  - [ ] I know what the TLAs ENT and PNT expand to.
-  - [ ] I know how to compute the GCD and the LCM of two numbers.
-  - [ ] I know what the TLAs GCD and LCM expand to.
-  - [ ] I know how to create an efficient =is-prime= predicate (at least up to
+    - Limits
+  - [X] I know what the TLAs ENT and PNT expand to.
+    - Elementry Number Theory and Prime Number Theorem
+  - [X] I know how to compute the GCD and the LCM of two numbers.
+  - [X] I know what the TLAs GCD and LCM expand to.
+    - Greatest Common Divisor, Least Common Multiple
+  - [X] I know how to create an efficient =is-prime= predicate (at least up to
     the prime 179424673) given a vector containing the first ten million primes.
-  - [ ] I am ready to learn how the RSA cryptosystem works.
-  - [ ] I am ready to learn why the RSA cryptosystem works.
-* TODO Read About Creativity
+  - [X] I am ready to learn how the RSA cryptosystem works.
+  - [X] I am ready to learn why the RSA cryptosystem works.
+* DONE Read About Creativity
+  CLOSED: [2018-06-13 Wed 13:24]
+  :LOGBOOK:
+  CLOCK: [2018-06-13 Wed 13:09]--[2018-06-13 Wed 13:24] =>  0:15
+  CLOCK: [2018-06-13 Wed 00:36]--[2018-06-13 Wed 00:59] =>  0:23
+  :END:
   [[https://firstthreeodds.org/17657741833134731255/creativity.html][This excerpt]] from Steve Olson\rsquo{}s book that you first encountered (a different
   excerpt from) in [[file:../week05/05-prepare.org][Week 05]] has some bearing on your last week\rsquo{}s *Teach*
   activity. Ponder what the connection is, and prepare to write what you think
   it is.
-* TODO Answer What is True
+* DONE Answer What is True
+  CLOSED: [2018-06-13 Wed 13:09]
+  :LOGBOOK:
+  CLOCK: [2018-06-13 Wed 13:07]--[2018-06-13 Wed 13:08] =>  0:01
+  :END:
    You know what to do.
-  - [ ] I discovered that the formidable-looking problem that opened the second
+  - [X] I discovered that the formidable-looking problem that opened the second
     day of the 42^{nd} International Mathematical Olympiad is the same problem as
     the one in FDK, which was part of last week\rsquo{}s Ponder/Prove, and was
     optional.
-  - [ ] I discovered that a way to think about creativity is to compare it to
+  - [X] I discovered that a way to think about creativity is to compare it to
     biological evolution.
-  - [ ] I thought about how \ldquo{}[my] mind takes apart old ideas and observations and
+  - [X] I thought about how \ldquo{}[my] mind takes apart old ideas and observations and
     juxtaposes their elements in new ways.\rdquo
-  - [ ] I know what word goes in the blank: \ldquo{}What keeps a lot of people from
-    being creative is that they are too _________. \rdquo
-  - [ ] I know what my personal selection process looks like, as in: \ldquo{}With so
+  - [X] I know what word goes in the blank: \ldquo{}What keeps a lot of people from
+    being creative is that they are too _________. \rdquo  - impatient
+  - [X] I know what my personal selection process looks like, as in: \ldquo{}With so
     many ways of combining things, creators cannot consider every possibility.
     They must go through a selection process by which they first consider the
     most promising options.\rdquo
+    - I like to test different things and find out what I like
+      about each way and then find out how I could do domthing the best way.
