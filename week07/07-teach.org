@@ -8,10 +8,30 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-14 Thu 13:15]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
 * TODO Think, Discuss and Write 
+  :LOGBOOK:
+  CLOCK: [2018-06-15 Fri 11:53]
+  :END:
   Discuss and write a paragraph or two describing what the connection is between
   what Steve Olson wrote about creativity and your last week\rsquo{}s [[file:../week06/06-teach.org][Teach activity]].
 
 #+begin_info
-  Your answer goes here.
+  Creativity and the 'burden' of thought are very similar.
+  David Foster posed the question "what if we could offload the 'burden'?"
+
+  Well if we could offload the 'burden' creativity would cease.
+  Creativity would cease because creativity is individual thought.
+  What would happen if creativity ceased?
+   - if creativity ceased, so would our progression of
+     scciences and technologies.
+
+  In order to have a productive society we must encourage 
+  creativity (ie. individual thought).
 #+end_info
