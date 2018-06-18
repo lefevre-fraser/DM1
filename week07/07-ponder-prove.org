@@ -8,8 +8,35 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-18 Mon 13:45]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *3:27* |      |
+|------------------------+--------+------|
+| Exercises              |   1:03 |      |
+| \_  GMQ                |        | 0:38 |
+| \_  GMY                |        | 0:09 |
+| \_  JQA                |        | 0:09 |
+| \_  GRZ                |        | 0:04 |
+| \_  JYA                |        | 0:02 |
+| \_  GXF                |        | 0:01 |
+| Problems               |   1:20 |      |
+| \_  JPZ                |        | 0:26 |
+| \_  XFO                |        | 0:08 |
+| \_  GYN                |        | 0:36 |
+| \_  XGG                |        | 0:10 |
+| Puzzles                |   1:03 |      |
+| \_  GYI                |        | 1:03 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO GMQ
+** DONE GMQ
+   CLOSED: [2018-06-16 Sat 18:31]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 17:53]--[2018-06-16 Sat 18:31] =>  0:38
+   :END:
 #+begin_note
   First recall (or look up) how the =&rest= keyword works, e.g.:
 
@@ -22,7 +49,7 @@
 
 #+BEGIN_SRC elisp :results silent
   (defun mystery (&rest numbers)
-    (loop for n from 0 to (apply '* numbers)
+    (loop for n from 0 to (apply 'lcm numbers)
           do (printf "%3d <--> %s\n" n
                      (loop for m in numbers collect (mod n m)))))
 #+END_SRC
@@ -31,9 +58,46 @@
   (mystery 3 5)
 #+END_SRC
 
+#+RESULTS:
+#+begin_example
+  0 <--> (0 0)
+  1 <--> (1 1)
+  2 <--> (2 2)
+  3 <--> (0 3)
+  4 <--> (1 4)
+  5 <--> (2 0)
+  6 <--> (0 1)
+  7 <--> (1 2)
+  8 <--> (2 3)
+  9 <--> (0 4)
+ 10 <--> (1 0)
+ 11 <--> (2 1)
+ 12 <--> (0 2)
+ 13 <--> (1 3)
+ 14 <--> (2 4)
+ 15 <--> (0 0)
+#+end_example
+
 #+BEGIN_SRC elisp :results output
   (mystery 4 6)
 #+END_SRC
+
+#+RESULTS:
+#+begin_example
+  0 <--> (0 0)
+  1 <--> (1 1)
+  2 <--> (2 2)
+  3 <--> (3 3)
+  4 <--> (0 4)
+  5 <--> (1 5)
+  6 <--> (2 0)
+  7 <--> (3 1)
+  8 <--> (0 2)
+  9 <--> (1 3)
+ 10 <--> (2 4)
+ 11 <--> (3 5)
+ 12 <--> (0 0)
+#+end_example
 
   Replace ='*= with ='lcm= and do the same calls again. Explain what you
   observed, and come up with a better name for the =mystery= function.
@@ -45,9 +109,21 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  After replacing '* with 'lcm I observed that
+  rather than going to 24 when 4 and 6 were used it went to
+  12, this happend because 4 * 6 = 24 and (lcm 4 6) = 12 
+  the output of 3 and 5 remained the same becasue (lcm 3 5) = 15
+  and 3 * 5 = 15.
+
+  a better name for the =mystery= function would be 
+  mod-loop-till-function where function is replaced with the name
+  of the function that is in place of '* or 'lcm
 #+end_info
-** TODO GMY
+** DONE GMY
+   CLOSED: [2018-06-16 Sat 18:45]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 18:36]--[2018-06-16 Sat 18:45] =>  0:09
+   :END:
 #+begin_note
   Replace the =;;...= line with three lines, binding the values of =y1=, =y2= and
   =y3=. Write a helper function to compute these values.
@@ -74,9 +150,51 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+
+#+BEGIN_SRC elisp
+  (require 'cl) ;; for destructuring-bind
+
+  (defun egcd (a b)
+    "Computes the greatest common divisor of a and b recursively.
+    This extended version returns a list of d, x and y, where
+    d = ax + by = gcd(a, b)."
+    (if (zerop b)
+        (list a 1 0)
+      (let ((q (/ a b))
+            (r (% a b)))
+        (destructuring-bind (d x y) (egcd b r)
+          (list d y (- x (* q y)))))))
+
+  (defun find-y (o m)
+    (second (egcd o m)))
+
+  (let* ((r1 4)
+         (r2 2)
+         (r3 9)
+         (m1 7)
+         (m2 11)
+         (m3 13)
+         (m (* m1 m2 m3))
+         (o1 (/ m m1))
+         (o2 (/ m m2))
+         (o3 (/ m m3))
+         (y1 (find-y o1 m1))
+         (y2 (find-y o2 m2))
+         (y3 (find-y o3 m3))
+         )
+    (mod (+ (* r1 o1 y1) (* r2 o2 y2) (* r3 o3 y3)) m))
+#+END_SRC
+
+#+RESULTS:
+: 893
+
+  
 #+end_info
-** TODO JQA
+** DONE JQA
+   CLOSED: [2018-06-16 Sat 18:54]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 18:45]--[2018-06-16 Sat 18:54] =>  0:09
+   :END:
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -88,9 +206,22 @@
    x \equiv_{13} 4
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp :results output
+  (loop for x from 0 to 1000 do
+    (if (and (= (mod x 7) 3) (= (mod x 11) 5) (= (mod x 13) 4))
+      (and (princ x) (return))
+      nil))
+#+END_SRC
+
+#+RESULTS:
+: 654
+
 #+end_info
-** TODO GRZ
+** DONE GRZ
+   CLOSED: [2018-06-16 Sat 18:58]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 18:54]--[2018-06-16 Sat 18:58] =>  0:04
+   :END:
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -102,9 +233,25 @@
    x \equiv_{13} 1
 #+end_note
 #+begin_info
-  Your answer goes here.
+#+BEGIN_SRC elisp :results output
+  (defun chinese-remainder (x y z)
+    (loop for n from 0 to 1000 do
+      (if (and (= (mod n 7) x) (= (mod n 11) y) (= (mod n 13) z))
+        (and (princ n) (return))
+        nil)))
+  
+  (chinese-remainder 3 2 1)
+#+END_SRC
+
+#+RESULTS:
+: 794
+
 #+end_info
-** TODO JYA
+** DONE JYA
+   CLOSED: [2018-06-16 Sat 19:00]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 18:58]--[2018-06-16 Sat 19:00] =>  0:02
+   :END:
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -116,9 +263,13 @@
    x \equiv_{13} 4
 #+end_note
 #+begin_info
-  Your answer goes here.
+  (chinese-remainder 2 3 4) 212 
 #+end_info
-** TODO GXF
+** DONE GXF
+   CLOSED: [2018-06-16 Sat 19:01]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 19:00]--[2018-06-16 Sat 19:01] =>  0:01
+   :END:
 #+begin_note
    What is a 3-digit positive simultaneous solution to the following system of
    linear congruences?
@@ -130,7 +281,7 @@
    x \equiv_{13} 12
 #+end_note
 #+begin_info
-  Your answer goes here.
+  (chinese-remainder 0 8 12) 987 
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -150,7 +301,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO JPZ
+** DONE JPZ
+   CLOSED: [2018-06-16 Sat 21:46]
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 21:20]--[2018-06-16 Sat 21:46] =>  0:26
+   :END:
 #+begin_note
   If p and q are coprime positive integers, then does a bijection necessarily
   exist between $\mathbb{Z}_{pq}$ and $\mathbb{Z}_{p} \times \mathbb{Z}_{q}$?
@@ -171,9 +326,488 @@
   programming style?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Yes.
+
+  The block of code above works like the code in exercise GMQ
+  first it uses the special let* function to assign the variables
+  p q and z-pq
+  it assigns 
+  p to 3
+  q to 5
+  and
+  z-pq to a list of numbers from 0 to p * q
+
+  It then uses two lambda functions to 
+  calculate the mod of p and q for each value
+  within the number sequencs z-pq and then
+  creates lists of the values in z-pq with
+  the newly calculated mod values, creating a
+  list of lists.
+
+
+#+BEGIN_SRC elisp :results silent
+  (defun magic (p q)
+    (setq z-pq (number-sequence 0 (* p q)))
+    (mapcar* 'list z-pq
+      (mapcar (lambda (n) (mod n p)) z-pq)
+      (mapcar (lambda (n) (mod n q)) z-pq)))
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (magic 3 5) 
+#+END_SRC
+
+#+RESULTS:
+|  0 | 0 | 0 |
+|  1 | 1 | 1 |
+|  2 | 2 | 2 |
+|  3 | 0 | 3 |
+|  4 | 1 | 4 |
+|  5 | 2 | 0 |
+|  6 | 0 | 1 |
+|  7 | 1 | 2 |
+|  8 | 2 | 3 |
+|  9 | 0 | 4 |
+| 10 | 1 | 0 |
+| 11 | 2 | 1 |
+| 12 | 0 | 2 |
+| 13 | 1 | 3 |
+| 14 | 2 | 4 |
+| 15 | 0 | 0 |
+
+I believe the =mystery= funnction would be a better choice
+because it allows for more than just two numbers to be used.
+
+(mystery 4 5 6 7)
+:RESULTS:
+  0 <--> (0 0 0 0)
+  1 <--> (1 1 1 1)
+  2 <--> (2 2 2 2)
+  3 <--> (3 3 3 3)
+  4 <--> (0 4 4 4)
+  5 <--> (1 0 5 5)
+  6 <--> (2 1 0 6)
+  7 <--> (3 2 1 0)
+  8 <--> (0 3 2 1)
+  9 <--> (1 4 3 2)
+ 10 <--> (2 0 4 3)
+ 11 <--> (3 1 5 4)
+ 12 <--> (0 2 0 5)
+ 13 <--> (1 3 1 6)
+ 14 <--> (2 4 2 0)
+ 15 <--> (3 0 3 1)
+ 16 <--> (0 1 4 2)
+ 17 <--> (1 2 5 3)
+ 18 <--> (2 3 0 4)
+ 19 <--> (3 4 1 5)
+ 20 <--> (0 0 2 6)
+ 21 <--> (1 1 3 0)
+ 22 <--> (2 2 4 1)
+ 23 <--> (3 3 5 2)
+ 24 <--> (0 4 0 3)
+ 25 <--> (1 0 1 4)
+ 26 <--> (2 1 2 5)
+ 27 <--> (3 2 3 6)
+ 28 <--> (0 3 4 0)
+ 29 <--> (1 4 5 1)
+ 30 <--> (2 0 0 2)
+ 31 <--> (3 1 1 3)
+ 32 <--> (0 2 2 4)
+ 33 <--> (1 3 3 5)
+ 34 <--> (2 4 4 6)
+ 35 <--> (3 0 5 0)
+ 36 <--> (0 1 0 1)
+ 37 <--> (1 2 1 2)
+ 38 <--> (2 3 2 3)
+ 39 <--> (3 4 3 4)
+ 40 <--> (0 0 4 5)
+ 41 <--> (1 1 5 6)
+ 42 <--> (2 2 0 0)
+ 43 <--> (3 3 1 1)
+ 44 <--> (0 4 2 2)
+ 45 <--> (1 0 3 3)
+ 46 <--> (2 1 4 4)
+ 47 <--> (3 2 5 5)
+ 48 <--> (0 3 0 6)
+ 49 <--> (1 4 1 0)
+ 50 <--> (2 0 2 1)
+ 51 <--> (3 1 3 2)
+ 52 <--> (0 2 4 3)
+ 53 <--> (1 3 5 4)
+ 54 <--> (2 4 0 5)
+ 55 <--> (3 0 1 6)
+ 56 <--> (0 1 2 0)
+ 57 <--> (1 2 3 1)
+ 58 <--> (2 3 4 2)
+ 59 <--> (3 4 5 3)
+ 60 <--> (0 0 0 4)
+ 61 <--> (1 1 1 5)
+ 62 <--> (2 2 2 6)
+ 63 <--> (3 3 3 0)
+ 64 <--> (0 4 4 1)
+ 65 <--> (1 0 5 2)
+ 66 <--> (2 1 0 3)
+ 67 <--> (3 2 1 4)
+ 68 <--> (0 3 2 5)
+ 69 <--> (1 4 3 6)
+ 70 <--> (2 0 4 0)
+ 71 <--> (3 1 5 1)
+ 72 <--> (0 2 0 2)
+ 73 <--> (1 3 1 3)
+ 74 <--> (2 4 2 4)
+ 75 <--> (3 0 3 5)
+ 76 <--> (0 1 4 6)
+ 77 <--> (1 2 5 0)
+ 78 <--> (2 3 0 1)
+ 79 <--> (3 4 1 2)
+ 80 <--> (0 0 2 3)
+ 81 <--> (1 1 3 4)
+ 82 <--> (2 2 4 5)
+ 83 <--> (3 3 5 6)
+ 84 <--> (0 4 0 0)
+ 85 <--> (1 0 1 1)
+ 86 <--> (2 1 2 2)
+ 87 <--> (3 2 3 3)
+ 88 <--> (0 3 4 4)
+ 89 <--> (1 4 5 5)
+ 90 <--> (2 0 0 6)
+ 91 <--> (3 1 1 0)
+ 92 <--> (0 2 2 1)
+ 93 <--> (1 3 3 2)
+ 94 <--> (2 4 4 3)
+ 95 <--> (3 0 5 4)
+ 96 <--> (0 1 0 5)
+ 97 <--> (1 2 1 6)
+ 98 <--> (2 3 2 0)
+ 99 <--> (3 4 3 1)
+100 <--> (0 0 4 2)
+101 <--> (1 1 5 3)
+102 <--> (2 2 0 4)
+103 <--> (3 3 1 5)
+104 <--> (0 4 2 6)
+105 <--> (1 0 3 0)
+106 <--> (2 1 4 1)
+107 <--> (3 2 5 2)
+108 <--> (0 3 0 3)
+109 <--> (1 4 1 4)
+110 <--> (2 0 2 5)
+111 <--> (3 1 3 6)
+112 <--> (0 2 4 0)
+113 <--> (1 3 5 1)
+114 <--> (2 4 0 2)
+115 <--> (3 0 1 3)
+116 <--> (0 1 2 4)
+117 <--> (1 2 3 5)
+118 <--> (2 3 4 6)
+119 <--> (3 4 5 0)
+120 <--> (0 0 0 1)
+121 <--> (1 1 1 2)
+122 <--> (2 2 2 3)
+123 <--> (3 3 3 4)
+124 <--> (0 4 4 5)
+125 <--> (1 0 5 6)
+126 <--> (2 1 0 0)
+127 <--> (3 2 1 1)
+128 <--> (0 3 2 2)
+129 <--> (1 4 3 3)
+130 <--> (2 0 4 4)
+131 <--> (3 1 5 5)
+132 <--> (0 2 0 6)
+133 <--> (1 3 1 0)
+134 <--> (2 4 2 1)
+135 <--> (3 0 3 2)
+136 <--> (0 1 4 3)
+137 <--> (1 2 5 4)
+138 <--> (2 3 0 5)
+139 <--> (3 4 1 6)
+140 <--> (0 0 2 0)
+141 <--> (1 1 3 1)
+142 <--> (2 2 4 2)
+143 <--> (3 3 5 3)
+144 <--> (0 4 0 4)
+145 <--> (1 0 1 5)
+146 <--> (2 1 2 6)
+147 <--> (3 2 3 0)
+148 <--> (0 3 4 1)
+149 <--> (1 4 5 2)
+150 <--> (2 0 0 3)
+151 <--> (3 1 1 4)
+152 <--> (0 2 2 5)
+153 <--> (1 3 3 6)
+154 <--> (2 4 4 0)
+155 <--> (3 0 5 1)
+156 <--> (0 1 0 2)
+157 <--> (1 2 1 3)
+158 <--> (2 3 2 4)
+159 <--> (3 4 3 5)
+160 <--> (0 0 4 6)
+161 <--> (1 1 5 0)
+162 <--> (2 2 0 1)
+163 <--> (3 3 1 2)
+164 <--> (0 4 2 3)
+165 <--> (1 0 3 4)
+166 <--> (2 1 4 5)
+167 <--> (3 2 5 6)
+168 <--> (0 3 0 0)
+169 <--> (1 4 1 1)
+170 <--> (2 0 2 2)
+171 <--> (3 1 3 3)
+172 <--> (0 2 4 4)
+173 <--> (1 3 5 5)
+174 <--> (2 4 0 6)
+175 <--> (3 0 1 0)
+176 <--> (0 1 2 1)
+177 <--> (1 2 3 2)
+178 <--> (2 3 4 3)
+179 <--> (3 4 5 4)
+180 <--> (0 0 0 5)
+181 <--> (1 1 1 6)
+182 <--> (2 2 2 0)
+183 <--> (3 3 3 1)
+184 <--> (0 4 4 2)
+185 <--> (1 0 5 3)
+186 <--> (2 1 0 4)
+187 <--> (3 2 1 5)
+188 <--> (0 3 2 6)
+189 <--> (1 4 3 0)
+190 <--> (2 0 4 1)
+191 <--> (3 1 5 2)
+192 <--> (0 2 0 3)
+193 <--> (1 3 1 4)
+194 <--> (2 4 2 5)
+195 <--> (3 0 3 6)
+196 <--> (0 1 4 0)
+197 <--> (1 2 5 1)
+198 <--> (2 3 0 2)
+199 <--> (3 4 1 3)
+200 <--> (0 0 2 4)
+201 <--> (1 1 3 5)
+202 <--> (2 2 4 6)
+203 <--> (3 3 5 0)
+204 <--> (0 4 0 1)
+205 <--> (1 0 1 2)
+206 <--> (2 1 2 3)
+207 <--> (3 2 3 4)
+208 <--> (0 3 4 5)
+209 <--> (1 4 5 6)
+210 <--> (2 0 0 0)
+211 <--> (3 1 1 1)
+212 <--> (0 2 2 2)
+213 <--> (1 3 3 3)
+214 <--> (2 4 4 4)
+215 <--> (3 0 5 5)
+216 <--> (0 1 0 6)
+217 <--> (1 2 1 0)
+218 <--> (2 3 2 1)
+219 <--> (3 4 3 2)
+220 <--> (0 0 4 3)
+221 <--> (1 1 5 4)
+222 <--> (2 2 0 5)
+223 <--> (3 3 1 6)
+224 <--> (0 4 2 0)
+225 <--> (1 0 3 1)
+226 <--> (2 1 4 2)
+227 <--> (3 2 5 3)
+228 <--> (0 3 0 4)
+229 <--> (1 4 1 5)
+230 <--> (2 0 2 6)
+231 <--> (3 1 3 0)
+232 <--> (0 2 4 1)
+233 <--> (1 3 5 2)
+234 <--> (2 4 0 3)
+235 <--> (3 0 1 4)
+236 <--> (0 1 2 5)
+237 <--> (1 2 3 6)
+238 <--> (2 3 4 0)
+239 <--> (3 4 5 1)
+240 <--> (0 0 0 2)
+241 <--> (1 1 1 3)
+242 <--> (2 2 2 4)
+243 <--> (3 3 3 5)
+244 <--> (0 4 4 6)
+245 <--> (1 0 5 0)
+246 <--> (2 1 0 1)
+247 <--> (3 2 1 2)
+248 <--> (0 3 2 3)
+249 <--> (1 4 3 4)
+250 <--> (2 0 4 5)
+251 <--> (3 1 5 6)
+252 <--> (0 2 0 0)
+253 <--> (1 3 1 1)
+254 <--> (2 4 2 2)
+255 <--> (3 0 3 3)
+256 <--> (0 1 4 4)
+257 <--> (1 2 5 5)
+258 <--> (2 3 0 6)
+259 <--> (3 4 1 0)
+260 <--> (0 0 2 1)
+261 <--> (1 1 3 2)
+262 <--> (2 2 4 3)
+263 <--> (3 3 5 4)
+264 <--> (0 4 0 5)
+265 <--> (1 0 1 6)
+266 <--> (2 1 2 0)
+267 <--> (3 2 3 1)
+268 <--> (0 3 4 2)
+269 <--> (1 4 5 3)
+270 <--> (2 0 0 4)
+271 <--> (3 1 1 5)
+272 <--> (0 2 2 6)
+273 <--> (1 3 3 0)
+274 <--> (2 4 4 1)
+275 <--> (3 0 5 2)
+276 <--> (0 1 0 3)
+277 <--> (1 2 1 4)
+278 <--> (2 3 2 5)
+279 <--> (3 4 3 6)
+280 <--> (0 0 4 0)
+281 <--> (1 1 5 1)
+282 <--> (2 2 0 2)
+283 <--> (3 3 1 3)
+284 <--> (0 4 2 4)
+285 <--> (1 0 3 5)
+286 <--> (2 1 4 6)
+287 <--> (3 2 5 0)
+288 <--> (0 3 0 1)
+289 <--> (1 4 1 2)
+290 <--> (2 0 2 3)
+291 <--> (3 1 3 4)
+292 <--> (0 2 4 5)
+293 <--> (1 3 5 6)
+294 <--> (2 4 0 0)
+295 <--> (3 0 1 1)
+296 <--> (0 1 2 2)
+297 <--> (1 2 3 3)
+298 <--> (2 3 4 4)
+299 <--> (3 4 5 5)
+300 <--> (0 0 0 6)
+301 <--> (1 1 1 0)
+302 <--> (2 2 2 1)
+303 <--> (3 3 3 2)
+304 <--> (0 4 4 3)
+305 <--> (1 0 5 4)
+306 <--> (2 1 0 5)
+307 <--> (3 2 1 6)
+308 <--> (0 3 2 0)
+309 <--> (1 4 3 1)
+310 <--> (2 0 4 2)
+311 <--> (3 1 5 3)
+312 <--> (0 2 0 4)
+313 <--> (1 3 1 5)
+314 <--> (2 4 2 6)
+315 <--> (3 0 3 0)
+316 <--> (0 1 4 1)
+317 <--> (1 2 5 2)
+318 <--> (2 3 0 3)
+319 <--> (3 4 1 4)
+320 <--> (0 0 2 5)
+321 <--> (1 1 3 6)
+322 <--> (2 2 4 0)
+323 <--> (3 3 5 1)
+324 <--> (0 4 0 2)
+325 <--> (1 0 1 3)
+326 <--> (2 1 2 4)
+327 <--> (3 2 3 5)
+328 <--> (0 3 4 6)
+329 <--> (1 4 5 0)
+330 <--> (2 0 0 1)
+331 <--> (3 1 1 2)
+332 <--> (0 2 2 3)
+333 <--> (1 3 3 4)
+334 <--> (2 4 4 5)
+335 <--> (3 0 5 6)
+336 <--> (0 1 0 0)
+337 <--> (1 2 1 1)
+338 <--> (2 3 2 2)
+339 <--> (3 4 3 3)
+340 <--> (0 0 4 4)
+341 <--> (1 1 5 5)
+342 <--> (2 2 0 6)
+343 <--> (3 3 1 0)
+344 <--> (0 4 2 1)
+345 <--> (1 0 3 2)
+346 <--> (2 1 4 3)
+347 <--> (3 2 5 4)
+348 <--> (0 3 0 5)
+349 <--> (1 4 1 6)
+350 <--> (2 0 2 0)
+351 <--> (3 1 3 1)
+352 <--> (0 2 4 2)
+353 <--> (1 3 5 3)
+354 <--> (2 4 0 4)
+355 <--> (3 0 1 5)
+356 <--> (0 1 2 6)
+357 <--> (1 2 3 0)
+358 <--> (2 3 4 1)
+359 <--> (3 4 5 2)
+360 <--> (0 0 0 3)
+361 <--> (1 1 1 4)
+362 <--> (2 2 2 5)
+363 <--> (3 3 3 6)
+364 <--> (0 4 4 0)
+365 <--> (1 0 5 1)
+366 <--> (2 1 0 2)
+367 <--> (3 2 1 3)
+368 <--> (0 3 2 4)
+369 <--> (1 4 3 5)
+370 <--> (2 0 4 6)
+371 <--> (3 1 5 0)
+372 <--> (0 2 0 1)
+373 <--> (1 3 1 2)
+374 <--> (2 4 2 3)
+375 <--> (3 0 3 4)
+376 <--> (0 1 4 5)
+377 <--> (1 2 5 6)
+378 <--> (2 3 0 0)
+379 <--> (3 4 1 1)
+380 <--> (0 0 2 2)
+381 <--> (1 1 3 3)
+382 <--> (2 2 4 4)
+383 <--> (3 3 5 5)
+384 <--> (0 4 0 6)
+385 <--> (1 0 1 0)
+386 <--> (2 1 2 1)
+387 <--> (3 2 3 2)
+388 <--> (0 3 4 3)
+389 <--> (1 4 5 4)
+390 <--> (2 0 0 5)
+391 <--> (3 1 1 6)
+392 <--> (0 2 2 0)
+393 <--> (1 3 3 1)
+394 <--> (2 4 4 2)
+395 <--> (3 0 5 3)
+396 <--> (0 1 0 4)
+397 <--> (1 2 1 5)
+398 <--> (2 3 2 6)
+399 <--> (3 4 3 0)
+400 <--> (0 0 4 1)
+401 <--> (1 1 5 2)
+402 <--> (2 2 0 3)
+403 <--> (3 3 1 4)
+404 <--> (0 4 2 5)
+405 <--> (1 0 3 6)
+406 <--> (2 1 4 0)
+407 <--> (3 2 5 1)
+408 <--> (0 3 0 2)
+409 <--> (1 4 1 3)
+410 <--> (2 0 2 4)
+411 <--> (3 1 3 5)
+412 <--> (0 2 4 6)
+413 <--> (1 3 5 0)
+414 <--> (2 4 0 1)
+415 <--> (3 0 1 2)
+416 <--> (0 1 2 3)
+417 <--> (1 2 3 4)
+418 <--> (2 3 4 5)
+419 <--> (3 4 5 6)
+420 <--> (0 0 0 0)
+:END:
+
 #+end_info
 ** TODO XFO
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 21:50]--[2018-06-16 Sat 21:58] =>  0:08
+   :END:
 #+begin_note
   The Chinese Remainder Theorem makes possible the use of a /residue number
   system/ to do computer arithmetic with \ldquo{}large\rdquo integers, where largeness is
@@ -337,7 +971,12 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO GYN
+** DONE GYN
+   CLOSED: [2018-06-18 Mon 13:00]
+   :LOGBOOK:
+   CLOCK: [2018-06-18 Mon 12:58]--[2018-06-18 Mon 13:00] =>  0:02
+   CLOCK: [2018-06-16 Sat 22:34]--[2018-06-16 Sat 23:08] =>  0:34
+   :END:
 #+begin_note
   Help Abu and Ila out. This version of =mod-expt= gets a /little/ better
   mileage than their simplistic one. It keeps the numbers smaller by reducing
@@ -356,9 +995,13 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The Facts: 1,8,24,25,26,30,31
+  justify this function.
 #+end_info
 ** TODO XGG
+   :LOGBOOK:
+   CLOCK: [2018-06-16 Sat 23:43]--[2018-06-16 Sat 23:53] =>  0:10
+   :END:
 #+begin_note
   Experiment with RSA using the following code. You will need a better modular
   exponentiation function than =mod-expt= or perhaps even =a-better-mod-expt=.
@@ -410,16 +1053,29 @@
        (princ "successfully.\n")
        success))
 #+END_SRC
+
+#+RESULTS:
+: test-rsa
+
 :HINT:
   - Hint :: This will be discussed in class.
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The biggest message you can succesfully round-trip would
+  be a message that is 2^60 characters long.
+#+BEGIN_SRC elisp
+  (round-trip 1000000000000000000000 10 34 2)
+#+END_SRC
 #+end_info
 * Puzzles
   Puzzle, to be precise.
 ** TODO GYI
+   :LOGBOOK:
+   CLOCK: [2018-06-18 Mon 12:36]--[2018-06-18 Mon 12:57] =>  0:21
+   CLOCK: [2018-06-18 Mon 11:41]--[2018-06-18 Mon 12:16] =>  0:35
+   CLOCK: [2018-06-16 Sat 23:53]--[2018-06-17 Sun 00:00] =>  0:07
+   :END:
 #+begin_note
    These eight small-number triples are not random:
 
@@ -436,12 +1092,97 @@
 :END:
 #+end_note
 *** Rephrase
+    Find the connection between the first three primes and the fourth power of two.
+    Hint: use the chinese remainder theorem.
 *** Approach
+(expt 2 4)16
+**** 1 1 3
+(chinese-remainder 1 1 3) 848
+(/ 848.0 16)53.0 
+(is-prime 53)t
+ 16 * 53
+(chinese-remainder 3 1 1)430
+(/ 430.0 5)86.0
+(is-prime 86)nil
+
+**** 1 1 4
+(chinese-remainder 1 1 4) 771
+(/ 771.0 3)257.0
+(/ 257.0 7)
+(is-prime 257)t
+ 3 * 7 * 257
+(chinese-remainder 4 1 1)144
+(/ 144.0 16)9.0
+(/ 9.0 3)3.0
+ 3 * 3 * 16
+
+**** 1 4 3
+(chinese-remainder 1 4 3) 939
+(/ 939.0 3)313.0
+(is-prime 313)t
+ 3 * 313
+(chinese-remainder 3 4 1) 521
+(/ 521.0 7)
+(is-prime 521)t
+
+**** 1 4 4
+(chinese-remainder 1 4 4) 862
+(/ 862.0 3)
+(is-prime 862)nil
+(chinese-remainder 4 4 1) 235
+(/ 235.0 5) 47.0
+(is-prime 47)t
+
+**** 2 1 3
+(chinese-remainder 2 1 3) 562
+(/ 562.0 3)
+(is-prime 562)nil
+(chinese-remainder 3 1 2) 353
+(/ 353.0 3) 
+(is-prime 353)t
+
+**** 2 1 4
+(chinese-remainder 2 1 4) 485
+(/ 485.0 5)97.0
+(is-prime 97)t
+(chinese-remainder 4 1 2) 67
+(/ 67.0 3)
+(is-prime 67)t
+
+**** 2 4 3
+     :LOGBOOK:
+     CLOCK: [2018-06-18 Mon 12:56]--[2018-06-18 Mon 12:56] =>  0:00
+     :END:
+(chinese-remainder 2 4 3) 653
+(/ 653.0 7)
+(is-prime 653)t
+(chinese-remainder 3 4 2) 444
+(/ 444.0 3)148.0
+(is-prime 148)nil 
+
+**** 2 4 4
+(chinese-remainder 2 4 4) 576
+(/ 576.0 16)36.0
+(/ 36.0 3)12.0
+(/ 12.0 3)4.0
+(/ 4.0 2)2.0
+(chinese-remainder 4 4 2) 158
+(/ 158.0 3) 
+(is-prime 158)nil
+
+**** Products of 3 5 7 and 16
+(* 3 5 7 16)1680
+(* 3 5 7)105
+(* 5 7 16)560
+(* 7 16 3)336
+(* 16 3 5)240
 *** Solution
 *** Proof
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-06-18 Mon 13:02]
+  :LOGBOOK:
+  CLOCK: [2018-06-18 Mon 13:00]--[2018-06-18 Mon 13:01] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Tyler Elkington :: Helped me understand and get the solution for Problem: GYN
