@@ -8,38 +8,83 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Answer What is True By Way of Review
-   You know what to do:
-  - [ ] I know what a CSF is.
-  - [ ] I know what \ldquo{}congruence modulo a positive integer\rdquo means.
-  - [ ] I know how to find by inspection MMIs (modular multiplicative inverses)
-    of small positive integers modulo other small positive integers.
-  - [ ] I know how the Euclidean GCD algorithm works.
-  - [ ] I know how the Extended Euclidean GCD algorithm works.
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-19 Tue 16:35]
+| Headline                             |   Time |
+|--------------------------------------+--------|
+| *Total time*                         | *1:51* |
+|--------------------------------------+--------|
+| Answer What is True By Way of Review |   0:25 |
+| Read section THR subsections STU...  |   1:06 |
+| Answer What is True                  |   0:20 |
+#+END:
 
-* TODO Read section THR subsections STU through STD from [[https://rickneff.github.io][The Book]].
-* TODO Answer What is True
+* DONE Answer What is True By Way of Review
+  CLOSED: [2018-06-19 Tue 10:16]
+  :LOGBOOK:
+  CLOCK: [2018-06-19 Tue 09:50]--[2018-06-19 Tue 10:15] =>  0:25
+  :END:
+   You know what to do:
+  - [X] I know what a CSF is.
+    - Complete Standard Form
+  - [X] I know what \ldquo{}congruence modulo a positive integer\rdquo means.
+    - If n is a positive integer, we say the integers a and b are 
+  congruent modulo n, and write a≡b(modn) or a≡_n b, if they 
+  have the same remainder on division by n. 
+  - [X] I know how to find by inspection MMIs (modular multiplicative inverses)
+    of small positive integers modulo other small positive integers.
+    - Calculate A * B mod C for B values 0 through C-1
+    - he modular inverse of A mod C is the B value that makes A * B mod C = 1
+    - Note that the term B mod C can only have an integer value 0 through C-1, 
+  so testing larger values for B is redundant.
+  - [X] I know how the Euclidean GCD algorithm works.
+    - function gcd(a, b)
+        while b ≠ 0
+          t := b; 
+          b := a mod b; 
+          a := t; 
+        return a;
+  - [X] I know how the Extended Euclidean GCD algorithm works.
+    - "Computes the greatest common divisor of a and b recursively.
+  This extended version returns a list of d, x and y, where
+  d = ax + by = gcd(a, b)."
+
+
+* DONE Read section THR subsections STU through STD from [[https://rickneff.github.io][The Book]].
+  CLOSED: [2018-06-19 Tue 13:23]
+  :LOGBOOK:
+  CLOCK: [2018-06-19 Tue 13:04]--[2018-06-19 Tue 13:21] =>  0:17
+  CLOCK: [2018-06-19 Tue 10:18]--[2018-06-19 Tue 11:07] =>  0:49
+  :END:
+* DONE Answer What is True
+  CLOSED: [2018-06-19 Tue 16:35]
+  :LOGBOOK:
+  CLOCK: [2018-06-19 Tue 13:25]--[2018-06-19 Tue 13:45] =>  0:20
+  :END:
   You know what to do:
-  - [ ] I know that a rooted tree is a tree in which one of the nodes is
-    designated as the root.
-  - [ ] I know that in a rooted tree, every link can be viewed as directed away
-    from the root.
-  - [ ] I know that in a rooted tree, the parent of a (non-root) node *n* is the
-    unique node that has a directed link to *n*.
-  - [ ] I know why it is *false* to say that every node in a rooted tree has a
-    parent.
-  - [ ] I know that a child of a node *n* is any node of which *n* is the
-    parent.
-  - [ ] I know that a leaf is a childless node.
-  - [ ] I know that using \ldquo{}leaf\rdquo and \ldquo{}child(less)\rdquo in the same thought is using
-    a mixed metaphor.
-  - [ ] I know that the level of a node is its distance from the root, measured
-    as the number of links in the path from root to node.
-  - [ ] I know why it is *false* to say that a tree is *m*-ary if each node has
-    at least *m* children.
-  - [ ] I know why in a rooted binary tree with 16 nodes, there must be a path
-    of length 4.
-  - [ ] I know in what sense there are only two *different* unrooted trees with
-    four unlabeled nodes.
-  - [ ] I know in what sense there are only four different *rooted* trees with
-    four unlabeled nodes.
+  1) [X] I know that a rooted tree is a tree in which one of the nodes is
+     designated as the root.
+  2) [X] I know that in a rooted tree, every link can be viewed as directed away
+     from the root.
+  3) [X] I know that in a rooted tree, the parent of a (non-root) node *n* is the
+     unique node that has a directed link to *n*.
+  4) [X] I know why it is *false* to say that every node in a rooted tree has a
+     parent.
+     - root does not
+  5) [X] I know that a child of a node *n* is any node of which *n* is the
+     parent.
+  6) [X] I know that a leaf is a childless node.
+  7) [X] I know that using \ldquo{}leaf\rdquo and \ldquo{}child(less)\rdquo in the same thought is using
+     a mixed metaphor.
+  8) [X] I know that the level of a node is its distance from the root, measured
+     as the number of links in the path from root to node.
+  9) [X] I know why it is *false* to say that a tree is *m*-ary if each node has
+     at least *m* children.
+     - At least implies that it is possible for there to be more.
+       There cannot be more than m children in a *m*-ary.
+  10) [X] I know why in a rooted binary tree with 16 nodes, there must be a path
+      of length 4.
+  11) [X] I know in what sense there are only two *different* unrooted trees with
+      four unlabeled nodes.
+  12) [X] I know in what sense there are only four different *rooted* trees with
+      four unlabeled nodes.
