@@ -8,10 +8,220 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-21 Thu 12:54]
+| Headline     | Time   |
+|--------------+--------|
+| *Total time* | *0:00* |
+#+END:
+
 * TODO Discuss and Write 
+  :LOGBOOK:
+  CLOCK: [2018-06-21 Thu 13:23]
+  :END:
   Discuss with a group (new or old) the exercises begun in class on Day 1 of
   this week, and then write your answers to the questions that will be posed.
 
 #+begin_info
-  Your answers go here.
+  ABCD
+  (factorial 4)24
+
+(defun all-permutations (list)
+  (cond ((null list) nil)
+        ((null (cdr list)) (list list))
+        (t (loop for element in list
+             append (mapcar (lambda (l) (cons element l))
+                            (all-permutations (remove element list)))))))
+
+(all-permutations '(A B C D))
+ ((A B C D) 
+  (A B D C) 
+  (A C B D) 
+  (A C D B) 
+  (A D B C) 
+  (A D C B) 
+  (B A C D) 
+  (B A D C) 
+  (B C A D) 
+  (B C D A) 
+  (B D A C) 
+  (B D C A) 
+  (C A B D) 
+  (C A D B) 
+  (C B A D) 
+  (C B D A) 
+  (C D A B) 
+  (C D B A) 
+  (D A B C) 
+  (D A C B) 
+  (D B A C) 
+  (D B C A) 
+  (D C A B) 
+  (D C B A))
 #+end_info
+
+(global-set-key (kbd "C-M-'") '(lambda () (interactive) (princ :) (org-edit-special))
+
+*** A B C D
+:  A
+:   \
+:    B
+:     \
+:      C
+:       \            .
+:        D         .
+*** A B D C
+:A            
+: \ 
+:  B
+:   \
+:    D
+:   /
+:  C
+*** A C B D
+: A
+:  \
+:   C
+:  / \
+: B   D
+*** A C D B - Does Not Work
+: A
+:  \
+:   C  
+:  / \ 
+: B   D
+*** A D B C
+: A
+:  \
+:   D
+:  /   
+: B    
+:  \   
+:   C
+*** A D C B
+:    A 
+:     \
+:      D
+:     /
+:    C
+:   /
+:  B
+*** B A C D 
+:     B 
+:    / \
+:   A   C
+:        \
+:         D
+*** B A D C
+:    B
+:   / \
+:  A   D
+:     / 
+:    C 
+*** B C A D - Does Not Work
+:        B   
+:       / \
+:      A   C
+:           \
+:            D
+*** B C D A - Does Not Work
+:    B  
+:   / \   
+:  A   C  
+:       \ 
+:        D
+*** B D A C - Does Not Work
+:     B
+:    / \
+:   A   D
+:      /
+:     C  
+*** B D C A - Does Not Work
+:     B    
+:    / \
+:   A   D
+:      /
+:     C 
+*** C A B D - Does Not Work
+:    C
+:   / \
+:  A   D
+:   \ 
+:    B
+*** C A D B
+:    C 
+:   / \
+:  A   D
+:   \   
+:    B
+*** C B A D - Does Not Work
+:      C
+:     / \
+:    B   D
+:   /  
+:  A  
+*** C B D A
+:      C
+:     / \ 
+:    B   D
+:   /
+:  A 
+*** C D A B - Does Not Work
+:     C
+:    / \
+:   A   D
+:    \   
+:     B
+*** C D B A - Does Not Work
+:      C
+:     / \ 
+:    B   D
+:   /
+:  A 
+*** D A B C
+:      D
+:     / 
+:    A 
+:     \
+:      B
+:       \
+:        C
+*** D A C B
+:       D
+:      / 
+:     A 
+:      \
+:       C
+:      / 
+:     B
+*** D B A C
+:      D
+:     / 
+:    B 
+:   / \
+:  A   C
+*** D B C A - Does Not Work
+:       D
+:      / 
+:     B 
+:    / \
+:   A   C
+*** D C A B
+:        D
+:       / 
+:      C 
+:     / 
+:    A   
+:     \
+:      B 
+*** D C B A
+:        D
+:       / 
+:      C 
+:     / 
+:    B 
+:   / 
+:  A
+
+Total Number of the Permutations That Follows
+Level Order: 14
