@@ -9,15 +9,18 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-06-21 Thu 12:54]
-| Headline     | Time   |
-|--------------+--------|
-| *Total time* | *0:00* |
+#+CAPTION: Clock summary at [2018-06-22 Fri 13:05]
+| Headline          | Time   |
+|-------------------+--------|
+| *Total time*      | *1:35* |
+|-------------------+--------|
+| Discuss and Write | 1:35   |
 #+END:
 
-* TODO Discuss and Write 
+* DONE Discuss and Write 
+  CLOSED: [2018-06-22 Fri 13:05]
   :LOGBOOK:
-  CLOCK: [2018-06-21 Thu 13:23]
+  CLOCK: [2018-06-22 Fri 11:30]--[2018-06-22 Fri 13:05] =>  1:35
   :END:
   Discuss with a group (new or old) the exercises begun in class on Day 1 of
   this week, and then write your answers to the questions that will be posed.
