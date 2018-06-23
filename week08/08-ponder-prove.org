@@ -8,8 +8,33 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-23 Sat 17:47]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *1:47* |      |
+|------------------------+--------+------|
+| Exercises              |   1:08 |      |
+| \_  LDA                |        | 0:02 |
+| \_  SQI                |        | 0:14 |
+| \_  LJP                |        | 0:38 |
+| \_  YGT                |        | 0:04 |
+| \_  LUM                |        | 0:10 |
+| Problems               |   0:38 |      |
+| \_  SUF                |        | 0:10 |
+| \_  LNR                |        | 0:06 |
+| \_  LDO                |        | 0:04 |
+| \_  YCF                |        | 0:11 |
+| \_  YZU                |        | 0:07 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO LDA
+** DONE LDA
+   CLOSED: [2018-06-23 Sat 00:02]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:00]--[2018-06-23 Sat 00:02] =>  0:02
+   :END:
 #+begin_note
   Alter the following =let= expression so that it creates the same list using
   =cons= rather than =list=.
@@ -18,18 +43,43 @@
   (let ((a 1) (b 2) (c 3) (d 4))
     (list (+ a b) (/ d b) (- d a) (* c d)))
 #+END_SRC
+
+#+RESULTS:
+(3 2 3 12)
+
 #+end_note
 #+begin_info
-  Your answer goes here.
+ (let ((a 1) (b 2) (c 3) (d 4))
+   (cons (+ a b) (cons (/ d b) (cons (- d a) (cons (* c d) nil)))))
+(3 2 3 12)
 #+end_info
-** TODO SQI
+** DONE SQI
+   CLOSED: [2018-06-23 Sat 00:16]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:02]--[2018-06-23 Sat 00:16] =>  0:14
+   :END:
 #+begin_note
   Use =cons= to re-implement the =morphifyr= function more efficiently.
+
+(defun morphify (fun lst)
+  (loop for item in lst
+        collect (funcall fun item)))
 #+end_note
 #+begin_info
-  Your answer goes here.
+(defun cons-morphify (fun lst)
+  (if (= (length lst) 1)
+    (cons (funcall fun (car lst)) nil)
+    (cons (funcall fun (car lst)) (cons-morphify fun (cdr lst)))))
+
+(cons-morphify 'downcase '("THIS" "IS" "TOO" "LOUD"))
+
+("this" "is" "too" "loud")
 #+end_info
-** TODO LJP
+** DONE LJP
+   CLOSED: [2018-06-23 Sat 01:48]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 01:10]--[2018-06-23 Sat 01:48] =>  0:38
+   :END:
 #+begin_note
   Use =car=, =cdr=, and =cons= to re-implement the =prime-list-from-rle-list=
   function more efficiently.
@@ -38,10 +88,46 @@
             when the passed-in rle-list is null.
 :END:
 #+end_note
+(defun prime-list-from-rle-list (rle-list limit)
+  (mapcar 'first
+          (remove-if
+           (lambda (x)
+             (zerop (second x)))
+           (mapcar* 'list
+                    (number-sequence 2 limit)
+                    (apply 'append
+                           (mapcar (lambda (x)
+                                     (if (> x 1)
+                                         (make-list x 0)
+                                       (list x)))
+                                   rle-list))))))
+
+(require 'first-ten-million-primes)
+(elt first-ten-million-primes 9999999)
+(setq limit (elt first-ten-million-primes 9999999)
+      p100rle (list 1 1 0 1 0 1 3 1 0 1 3 1 0 1 3 1 5 1 0 1 5 1 3 1 0 1 3 1 5 1 5 1 0 1 5 1 3 1 0 1 5 1 3 1 5 1 7 1 3)
+      result (prime-list-from-rle-list p100rle limit))
+
+(2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97)
 #+begin_info
-  Your answer goes here.
+(setq p100rle (list 1 1 0 1 0 1 3 1 0 1 3 1 0 1 3 1 5 1 0 1 5 1 3 1 0 1 3 1 5 1 5 1 0 1 5 1 3 1 0 1 5 1 3 1 5 1 7 1 3))
+
+(defun prime-list-from-rle-list (start rle-list)
+  (cond ((null rle-list) nil)
+        ((zerop (car rle-list)) (prime-list-from-rle-list (+ start 1) (cdr rle-list)))
+        ((= 1 (car rle-list)) (cons start (prime-list-from-rle-list (+ start 1) (cdr rle-list))))
+        (t (prime-list-from-rle-list (+ start (car rle-list)) (cdr rle-list)))))
+
+"Start value is initialized with the first prime number"
+(prime-list-from-rle-list 2 p100rle)
+
+(2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97)
 #+end_info
-** TODO YGT
+** DONE YGT
+   CLOSED: [2018-06-23 Sat 00:20]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:16]--[2018-06-23 Sat 00:20] =>  0:04
+   :END:
 #+begin_note
   Construct a binary search tree from the *words* (not the letters) of the phrase
 
@@ -53,21 +139,54 @@
   What is the *height* of this tree?
 #+end_note
 #+begin_info
-  Your answer goes here.
+:            time
+:            /  \
+:        flies  wings
+:            \       
+:            on      
+:            /
+:           of
+:          / 
+:      lightning
+
+
+The height of the tree is 5.
 #+end_info
-** TODO LUM
+** DONE LUM
+   CLOSED: [2018-06-23 Sat 00:34]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:24]--[2018-06-23 Sat 00:34] =>  0:10
+   :END:
 #+begin_note
   Which of the above balanced BSTs is represented by the following list?
 #+BEGIN_SRC elisp :results silent
   (so (cool (are (and) (binary)) (search (kind))) (trees (the) (wonderfully)))))
 #+END_SRC
 #+end_note
+#+BEGIN_SRC elisp
+  (cons '(so (cool (are (and) (binary)) (search (kind))) (trees (the) (wonderfully))) nil)
+#+END_SRC
+
+#+RESULTS:
+| so | (cool (are (and) (binary)) (search (kind))) | (trees (the) (wonderfully)) |
+
 #+begin_info
-  Your answer goes here.
+This is the Binary tree that matches above list.
+:                         so
+:                  +-------+--------+
+:                cool              trees
+:        +---------+-------+         +-------------+
+:       are              search     the       wonderfully
+:  +-----+------+      +----+             
+: and         binary  kind
 #+end_info
 * Problems
   No optional problems this week.
-** TODO SUF
+** DONE SUF
+   CLOSED: [2018-06-23 Sat 00:45]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:34]--[2018-06-23 Sat 00:44] =>  0:10
+   :END:
 #+begin_note
   How would you write (using map /not/ a loop) an elisp function
   =number-of-factors= that takes the CSF of a positive integer (in
@@ -81,9 +200,25 @@
 #+END_SRC
 #+end_note
 #+begin_info
-  Your answer goes here.
+This is how I would write the elisp function:
+
+(defun number-of-factors (csf)
+  "Takes a CSF like '((2 . 3) (3 . 1) (5 . 2)) and returns 24."
+  ;; ... your ONE line of code goes here
+  (apply '* (mapcar '(lambda (x) (1+ (cdr x))) csf))
+  )
+
+(number-of-factors '((2 . 3) (3 . 1) (5 . 2)))
+24
+
+(number-of-factors '((2 . 3) (3 . 1) (5 . 2) (6 . 5)))
+144
 #+end_info
-** TODO LNR
+** DONE LNR
+   CLOSED: [2018-06-23 Sat 00:51]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 00:45]--[2018-06-23 Sat 00:51] =>  0:06
+   :END:
 #+begin_note
   How would you write (using map /not/ a loop) another elisp function
   =number-of-factors-alt= that takes the CSF of a positive integer (in
@@ -98,38 +233,116 @@
 #+END_SRC
 #+end_note
 #+begin_info
-  Your answer goes here.
+This is how I would write the alternate number-of-factors version.
+
+(defun number-of-factors-alt (csf)
+  "Takes a CSF like [(2 3) (3 1) (5 2)] and returns 24."
+  ;; ... your ONE line of code goes here
+  (apply '* (mapcar '(lambda (x) (1+ (elt x 1))) csf))
+  )
+
+(number-of-factors-alt [(2 3) (3 1) (5 2)])
+24
+
+(number-of-factors-alt [(2 3) (3 1) (5 2) (6 5)])
+144
 #+end_info
-** TODO LDO
+** DONE LDO
+   CLOSED: [2018-06-23 Sat 09:06]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 09:02]--[2018-06-23 Sat 09:06] =>  0:04
+   :END:
 #+begin_note
   Investigate what must happen to delete a key from a BST. Is deletion always as
   fast as insertion?
 #+end_note
 #+begin_info
-  Your answer goes here.
+In order to delete a node, you must check if it has children.
+there is a different process for if it has 0, 1, or 2.
+
+Depending on how the deletion is implimented it can happen
+quicker or slower.
+
+If we are trying to delete a node with children,
+then deletion can take longer than insertion.
 #+end_info
-** TODO YCF
+** DONE YCF
+   CLOSED: [2018-06-23 Sat 17:39]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 17:29]--[2018-06-23 Sat 17:39] =>  0:10
+   CLOCK: [2018-06-23 Sat 09:13]--[2018-06-23 Sat 09:14] =>  0:01
+   :END:
 #+begin_note
   Compare and contrast the different nuances in the precise definitions of the
   terms *full*, *complete* and *balanced* used to describe trees.
 #+end_note
 #+begin_info
-  Your answer goes here.
+Full:
+A full binary tree is a tree where every node has 
+two children except the last level which should be
+made up of only leaves.
+Example:
+:                  right
+:                  /    \
+:              and        so
+:             /   \     /   \
+:           abe   as  seen   zeebra
+
+Complete:
+In a complete tree all levels of the tree
+are completely filled out, except possibly
+the last is completely filled, and the last
+layer must be filled from left to right.
+Example:
+:                  right
+:                  /    \
+:              and        so
+:             /   \     /   
+:           abe   as  seen   
+
+Balanced:
+A balanced tree is one whose nodes
+have balance factors of either 1, 0, or -1.
+These numbers are a calcutlation based
+off the height of a node's left pointer,
+and the node's right pointer.
+
 #+end_info
-** TODO YZU
+** DONE YZU
+   CLOSED: [2018-06-23 Sat 17:46]
+   :LOGBOOK:
+   CLOCK: [2018-06-23 Sat 17:39]--[2018-06-23 Sat 17:46] =>  0:07
+   :END:
 #+begin_note
   Investigate various techniques to rebuild unbalanced BSTs to make them
   balanced. Note that this rebuilding can happen on-the-fly (as items are
   inserted) or at-the-end (after all initial items are inserted).
 #+end_note
 #+begin_info
-  Your answer goes here.
+One technique for balancing a BST is the insertion module
+used by AVL trees.
+The operations are as follows:
+Sinlge Rotation:
+Right or
+Left
+Double Rotation:
+Right-Left or
+Left-Right
+
+This technique is used for balancing a
+BST "on-the-fly."
+But, it could also be used for balancing it 
+once all items were inserted. It would probably
+take longer to do it this way, but that just
+depends on the insertion order of the items.
 #+end_info
 * Puzzles
   No puzzles this week.
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-06-23 Sat 01:49]
+  :LOGBOOK:
+  CLOCK: [2018-06-23 Sat 01:48]--[2018-06-23 Sat 01:49] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Tyler Elkington :: Worked with me on LJP and LNR and YZU
