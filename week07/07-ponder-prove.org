@@ -9,10 +9,10 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 #+BEGIN: clocktable :scope file :maxlevel 2
-#+CAPTION: Clock summary at [2018-06-18 Mon 13:45]
+#+CAPTION: Clock summary at [2018-06-23 Sat 19:22]
 | Headline               |   Time |      |
 |------------------------+--------+------|
-| *Total time*           | *3:27* |      |
+| *Total time*           | *3:58* |      |
 |------------------------+--------+------|
 | Exercises              |   1:03 |      |
 | \_  GMQ                |        | 0:38 |
@@ -21,9 +21,9 @@
 | \_  GRZ                |        | 0:04 |
 | \_  JYA                |        | 0:02 |
 | \_  GXF                |        | 0:01 |
-| Problems               |   1:20 |      |
+| Problems               |   1:51 |      |
 | \_  JPZ                |        | 0:26 |
-| \_  XFO                |        | 0:08 |
+| \_  XFO                |        | 0:39 |
 | \_  GYN                |        | 0:36 |
 | \_  XGG                |        | 0:10 |
 | Puzzles                |   1:03 |      |
