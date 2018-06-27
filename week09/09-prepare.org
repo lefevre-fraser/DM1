@@ -8,24 +8,50 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read section THR subsections STE through STK from [[https://rickneff.github.io][The Book]].
-* TODO Answer What is True
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-27 Wed 01:10]
+| Headline                            |   Time |
+|-------------------------------------+--------|
+| *Total time*                        | *1:16* |
+|-------------------------------------+--------|
+| Read section THR subsections STE... |   0:21 |
+| Answer What is True                 |   0:02 |
+| Answer a Question About Tree...     |   0:01 |
+| Answer a Question About Huffman...  |   0:13 |
+| Watch a Video About Pi, Complex...  |   0:27 |
+| Read, Consider and Write            |   0:12 |
+#+END:
+
+* DONE Read section THR subsections STE through STK from [[https://rickneff.github.io][The Book]].
+  CLOSED: [2018-06-26 Tue 13:34]
+  :LOGBOOK:
+  CLOCK: [2018-06-26 Tue 13:13]--[2018-06-26 Tue 13:34] =>  0:21
+  :END:
+* DONE Answer What is True
+  CLOSED: [2018-06-26 Tue 13:36]
+  :LOGBOOK:
+  CLOCK: [2018-06-26 Tue 13:34]--[2018-06-26 Tue 13:36] =>  0:02
+  :END:
   You know what to do:
-  - [ ] I know that a full binary tree with /n/ leaves always has /2n - 1/
+  - [X] I know that a full binary tree with /n/ leaves always has /2n - 1/
     total nodes.
-  - [ ] I know that a *complete* binary tree is a binary tree in which every
+  - [X] I know that a *complete* binary tree is a binary tree in which every
     level, except possibly the last, is completely filled, and all nodes are as
     far left as possible.
-  - [ ] I know why it is *false* to say that a Huffman tree is always complete.
-  - [ ] I know why it is *false* to say that a Huffman tree is always balanced.
-  - [ ] I know that a lisp symbol is a data structure that is even more
+  - [X] I know why it is *false* to say that a Huffman tree is always complete.
+  - [X] I know why it is *false* to say that a Huffman tree is always balanced.
+  - [X] I know that a lisp symbol is a data structure that is even more
     versatile than a string.
-  - [ ] I know that a symbol\rsquo{}s function can be used to \ldquo{}store a value\rdquo in that
+  - [X] I know that a symbol\rsquo{}s function can be used to \ldquo{}store a value\rdquo in that
     symbol.
-  - [ ] I know that a symbol\rsquo{}s value can be a =cons= cell of two other symbols,
+  - [X] I know that a symbol\rsquo{}s value can be a =cons= cell of two other symbols,
     representing the two children of this tree-node-as-symbol.
 
-* TODO Answer a Question About Tree Construction
+* DONE Answer a Question About Tree Construction
+  CLOSED: [2018-06-26 Tue 12:53]
+  :LOGBOOK:
+  CLOCK: [2018-06-26 Tue 12:52]--[2018-06-26 Tue 12:53] =>  0:01
+  :END:
    In the tree constructed by the code block below, is it true that =A= is the
    root of the tree, =B= is its left child, and =C= is its right child?
 
@@ -36,10 +62,14 @@
 #+END_SRC
 
 #+begin_info
-  Your answer goes here.
+  Yes, it is true.
 #+end_info
 
-* TODO Answer a Question About Huffman Encoding/Decoding
+* DONE Answer a Question About Huffman Encoding/Decoding
+  CLOSED: [2018-06-26 Tue 13:08]
+  :LOGBOOK:
+  CLOCK: [2018-06-26 Tue 12:55]--[2018-06-26 Tue 13:08] =>  0:13
+  :END:
    Decoding the Huffman-encoded bitstring
 
    "0010000111110011010111011010111110011"
@@ -49,7 +79,7 @@
    =encode= function (implemented below) is which of the following?
 
   - [ ] (("f" . "001") ("i" . "011") ("s" . "010") ("h" . "000") ("r" . "100") ("t" . "101") ("e" . "11"))
-  - [ ] (("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "11"))
+  - [X] (("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "11"))
   - [ ] (("f" . "010") ("i" . "000") ("s" . "011") ("h" . "001") ("r" . "101") ("t" . "100") ("e" . "00"))
   - [ ] (("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "00"))
 
@@ -59,15 +89,76 @@
 #+END_SRC
 
 #+begin_info
-  Your answer goes here.
+  "0010000111110011010111011010111110011"
+     f  h  i e   r  t  i  t  t  i e  r e
+     non-sense
+  "0010000111110011010111011010111110011"
+     i  f  h e  r e  s e  t  t  h e  r e
+     if here set there
+  The second option is the answer.
+  (encode "ifheresetthere" '(("f" . "000") ("i" . "001") ("s" . "010") ("h" . "011") ("r" . "100") ("t" . "101") ("e" . "11")))
+  "0010000111110011010111011010111110011"
+  The answer is verified by the function.
 #+end_info
 
-* TODO Watch a Video About Pi, Complex Numbers and Prime Numbers
+* DONE Watch a Video About Pi, Complex Numbers and Prime Numbers
+  CLOSED: [2018-06-27 Wed 00:57]
+  :LOGBOOK:
+  CLOCK: [2018-06-27 Wed 00:30]--[2018-06-27 Wed 00:57] =>  0:27
+  :END:
    In celebration of Tau Day (!), watch and take notes on: [[https://www.youtube.com/watch?v=NaL_Cb42WyY][Pi hiding in prime regularities]].
 #+begin_info
-  Insert your notes here.
+  Primes and PI
+  
+  Formula for calculating pi
+  proofs
+  
+1. count lattice points (integer points inside the circle)
+2. things like 17 = 4^2 + 1^2
+3. things like 17 = (4 + i)(4 - i)
+4. Introduce chi
+
+lattice points (a, b)
+lattice points for different radii
+
+\radic0 \rArr 1
+\radic1 \rArr 4
+\radic2 \rArr 4
+\radic3 \rArr 0
+\radic4 \rArr 4
+\radic5 \rArr 8
+\radic6 \rArr 0
+\radic7 \rArr 7
+\radic8 \rArr 4
+
+25 = 3^2 + 4^2 = (3 + 4i)(3 - 4i)
+
+a + bi \rArr Gaussian Integers
+
+prime numbers one more than a multiple of four
+
+prime numbers one more than a multiple of three
+cannot be factored for Gaussian Integers 
+
+recipe for all Gaussian Integers
+25 = 5 * 5
+  = (-1 + 2i)(-1 - 2i)(2 + i)(2 - i)
+
+  recipe = (-4 + 3i) and (-4 - 3i)
+
+then multiply recipe by i
+
+odd exponents of primes, excluding 2, 
+suggests that there are no lattice points that
+intersect a circle with some radius 'n'.
+
+Algebraic Number Systems
 #+end_info
-* TODO Read, Consider and Write
+* DONE Read, Consider and Write
+  CLOSED: [2018-06-27 Wed 01:09]
+  :LOGBOOK:
+  CLOCK: [2018-06-27 Wed 00:57]--[2018-06-27 Wed 01:09] =>  0:12
+  :END:
   Remember [[file:../week07/07-prepare.org][Steve Olson]] and [[file:../week02/exercises-versus-problems.org][Paul Zietz]]? Here is an excerpt from Steve Olson\rsquo{}s
   book where he introduces Paul Zietz and quotes him on his approach to teaching
   /creative problem solving/, which Paul Zietz believes *can be taught* --- but
@@ -109,5 +200,18 @@
 #+END_QUOTE
 
 #+begin_info
-  Insert your response here.
+In part I believe and understand what Zeitz has said.
+Rewiring the brains of students is an ambitious goal,
+and all teachers of any course should strive to to do
+just that.
+But, I don't believe that to be good at math you have 
+to be both rigorous and a good explorer; it deffinately
+helps to do so, but it is not necessary. I myself have
+been blessed at being naturally good at math; as a 
+general rule I do not have to study or work hard in
+order to do well in my math subjects.
+While I feel this way, I do wish to recognise that when
+we are both rigorous and good explorers then our talents
+increase and so does the 'capacity' of brain to understand
+and to 'invent' connections between seemingly unrelated things.
 #+end_info
