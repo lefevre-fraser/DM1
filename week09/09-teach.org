@@ -8,7 +8,20 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Think and Discuss 
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-06-29 Fri 09:46]
+| Headline          | Time   |
+|-------------------+--------|
+| *Total time*      | *1:00* |
+|-------------------+--------|
+| Think and Discuss | 1:00   |
+#+END:
+
+* DONE Think and Discuss 
+  CLOSED: [2018-06-29 Fri 09:45]
+  :LOGBOOK:
+  CLOCK: [2018-06-28 Thu 12:45]--[2018-06-28 Thu 13:45] =>  1:00
+  :END:
   Think about and come prepared to discuss with your group (old or new) what you
   learned about problem solving from the video, and relate it to what Paul Zietz
   said about problem solving.
@@ -17,5 +30,17 @@
   thoughts.
 
 #+begin_info
-  Your answer goes here.
+  In our group, we found it interesting that as time has passed, people have
+  become lazier when faced with a challenge. We expect to solve the problem
+  within a matter of minutes and if we can't solve it fast enough, we give up.
+  From the video, the mathematician continued to learn and develop solutions
+  to math problems.
+
+  Along with Paul Zietz giving a challenging book to develop better problem
+  solving skills, we don't necessarily need to search for 1 singular solution.
+  After we have found the right answer, we ought to continue to learn and develop
+  a better understanding of the problem. Another thing that we discussed in our
+  group, is that as humans, we have developed technology to make our lives
+  easier. If we did not have this technology, we would be more challenged
+  to use our minds to come up with a solution.
 #+end_info
