@@ -8,19 +8,48 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-02 Mon 01:17]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *0:40* |      |
+|------------------------+--------+------|
+| Exercises              |   0:04 |      |
+| \_  LND                |        | 0:04 |
+| Problems               |   0:35 |      |
+| \_  LTI                |        | 0:12 |
+| \_  YDQ                |        | 0:05 |
+| \_  YTR                |        | 0:05 |
+| \_  LGO                |        | 0:01 |
+| \_  YIV                |        | 0:12 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
   Exercise, to be precise:
-** TODO LND
+** DONE LND
+   CLOSED: [2018-07-02 Mon 00:38]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 00:34]--[2018-07-02 Mon 00:38] =>  0:04
+   :END:
 #+begin_note
   Why do 17 characters require 5 bits per character for a fixed-length encoding.
   What in general is required for /n/ different characters?
 #+end_note
 #+begin_info
-  Your answer goes here.
+ The number of requred bits can be represented as 2^n
+ the value of 2^n must be larger or equal to the number
+that it must represent. So, to represent 17 we require
+ 5 bits because 2^5 = 32, while 2^4 is only 16, which is
+ insufficient for 17 charaters.
 #+end_info
 * Problems
   No optional problems this week.
-** TODO LTI
+** DONE LTI
+   CLOSED: [2018-07-02 Mon 00:52]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 00:40]--[2018-07-02 Mon 00:52] =>  0:12
+   :END:
 #+begin_note
   Use the tree and the code given below to decode the message
   =00010010000111010111011011010111100110000010111101100011101011110=.
@@ -59,9 +88,21 @@
 #+END_SRC
 #+end_note
 #+begin_info
-  Your answer goes here.
+(defun decode (encoded tree)
+   (destructuring-bind (leaf . encoded )
+     (find-leaf encoded tree)
+     ( if (zerop (length encoded))
+           leaf
+        (concat leaf (decode encoded tree)))))
+
+(decode "00010010000111010111011011010111100110000010111101100011101011110" tree)
+"neither here nor there"
 #+end_info
-** TODO YDQ
+** DONE YDQ
+   CLOSED: [2018-07-02 Mon 00:57]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 00:52]--[2018-07-02 Mon 00:57] =>  0:05
+   :END:
 #+begin_note
   What is the tie-breaking rule used when deciding where to insert into the
   queue in this Huffman tree construction? Implement this rule in elisp code,
@@ -69,9 +110,18 @@
   rule you use? Why or why not?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The tie breaking rule for huffman encoding is
+  "which letter comes first alphabetically"
+
+  It does not matter what tie-breaking rule is
+  used, so long as thmethod used for encrypting
+  and decrypting is the same.
 #+end_info
-** TODO YTR
+** DONE YTR
+   CLOSED: [2018-07-02 Mon 01:04]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 00:58]--[2018-07-02 Mon 01:03] =>  0:05
+   :END:
 #+begin_note
   Construct the Huffman tree for and build the bitstring encoding the string
   "cookbooknook".
@@ -82,29 +132,158 @@
   the string?
 #+end_note
 #+begin_info
-  Your answer goes here.
+"COOKBOOKNOOK" - 12 CHARACTERS
+ C: 1
+ O: 6
+ K: 3
+ B: 1
+ N: 1
+/MUST BE REPRESENTED BY 2^3 = 8, BECAUSE THERE ARE MORE 5 DIFFERENT CHARACTERS./
+1. b1 c1 n1 k3 o6
+2. n1 bc2 k3 o6
+3. k3 nbc3 o6
+4. o6 knbc6
+5. oknbc12
+
+:     12
+:   0/  \1
+:   o    6
+:      0/ \1
+:      k   3 
+:        0/ \1 
+:        n   2
+:          0/ \1
+:          b   c
+| CHARACTER | CODE | LENGTH | WEIGHTED |
+|-----------+------+--------+----------|
+| N         |  110 |      3 |        3 |
+| K         |   10 |      2 |        6 |
+| B         | 1110 |      4 |        4 |
+| C         | 1111 |      4 |        4 |
+| O         |    0 |      1 |        6 |
+
+(/ 23 12.0)1.9166666666666667 = 1.92
+: Average Number of Bits per character is 1.92
+(* (/ (- 3.0 1.92) 3.0) 100.0)36.00000000000001 = 36%
+: The compression ratio achieved is 36%
+: The bitstring is 11110010111000101100010
 #+end_info
-** TODO LGO
+** DONE LGO
+   CLOSED: [2018-07-02 Mon 01:04]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 01:03]--[2018-07-02 Mon 01:04] =>  0:01
+   :END:
 #+begin_note
   Using the "cookbooknook" encoding, the bitstring =1011001110= decodes into one
   English word. What word is it?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  KNOB
 #+end_info
-** TODO YIV
+** DONE YIV
+   CLOSED: [2018-07-02 Mon 01:16]
+   :LOGBOOK:
+   CLOCK: [2018-07-02 Mon 01:04]--[2018-07-02 Mon 01:16] =>  0:12
+   :END:
 #+begin_note
    Draw the trees created by calling the =try-it-out= and the =build-tree=
    functions, the latter called with at least three different height arguments.
 #+end_note
+#+BEGIN_SRC elisp
+(require 'cl)
+
+(defun get-value (node)
+  (and (symbolp node) (symbol-value node)))
+
+(defun set-value (node new-value)
+  (and (symbolp node) (set node new-value)))
+
+(defun get-parent (node)
+  (and (symbolp node) (get node :parent)))
+
+(defun set-parent (node parent)
+  (and (symbolp node) (symbolp parent) (put node :parent parent)))
+
+(defun get-left (node)
+  (and (symbolp node) (get node :left)))
+
+(defun set-left (node left)
+  (and (symbolp node) (symbolp left) (put node :left left)))
+
+(defun get-right (node)
+  (and (symbolp node) (get node :right)))
+
+(defun set-right (node right)
+  (and (symbolp node) (symbolp right) (put node :right right)))
+
+(defun try-it-out ()
+  (setq a 1 b 2 c 3)
+  (put 'a :right 'b)
+  (put 'a :left 'c)
+  (put 'c :parent 'a)
+  (put 'b :parent 'a)
+  (list a (symbol-plist 'a)))
+
+(defvar node-counter 0)
+
+(defun make-node ()
+  (let ((symbol (intern (concat "n" (number-to-string node-counter)))))
+    (set symbol node-counter)
+    (incf node-counter)
+    (setf (symbol-plist symbol) nil)
+    symbol))
+
+(defun build-tree (height)
+  (let ((root (make-node)))
+    (if (> height 0)
+        (let ((left (build-tree (1- height)))
+              (right (build-tree (1- height))))
+          (set-left root left)
+          (set-right root right)
+          (set-parent left root)
+          (set-parent right root)))
+    root))
+#+END_SRC
+
+#+RESULTS:
+: build-tree
+
 #+begin_info
-  Your answer goes here.
+(try-it-out)
+(1 (:right b :left c))
+:   1
+:  / \
+: c   b
+
+=build-tree height 1=
+:   3
+:  / \
+: 2   1
+=build-tree height 2=
+:      7
+:    /   \
+:   6     5
+:  / \   / \
+: 4   3  2  1
+=build-tree height 3=
+:          15
+:       /       \
+:     14         13
+:    /   \      /   \
+:  12    11   10     9
+:  / \   / \  / \   / \
+: 8  7  6   5 4  3 2   1  
+
 #+end_info
 * Puzzles
   No puzzles this week.
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-07-02 Mon 00:40]
+  :LOGBOOK:
+  CLOCK: [2018-07-02 Mon 00:39]--[2018-07-02 Mon 00:40] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Tyler Elkington :: Helped me through the problems and 
+       exercises in order for me to move more quickly through
+       this assignment
