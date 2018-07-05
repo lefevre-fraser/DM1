@@ -8,8 +8,27 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read section THR subsections VWX through VWO from [[https://rickneff.github.io][The Book]].
-* TODO Answer What is True
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-05 Thu 00:37]
+| Headline                            |   Time |      |
+|-------------------------------------+--------+------|
+| *Total time*                        | *2:34* |      |
+|-------------------------------------+--------+------|
+| Read section THR subsections VWX... |   1:13 |      |
+| Answer What is True                 |   1:21 |      |
+| \_  Watch a Video                   |        | 0:22 |
+#+END:
+
+* DONE Read section THR subsections VWX through VWO from [[https://rickneff.github.io][The Book]].
+  CLOSED: [2018-07-04 Wed 20:32]
+  :LOGBOOK:
+  CLOCK: [2018-07-04 Wed 19:19]--[2018-07-04 Wed 20:32] =>  1:13
+  :END:
+* DONE Answer What is True
+  CLOSED: [2018-07-05 Thu 00:18]
+  :LOGBOOK:
+  CLOCK: [2018-07-04 Wed 20:32]--[2018-07-04 Wed 21:31] =>  0:59
+  :END:
     Unlike those of previous weeks, the assertions below are not about your
     knowledge of facts, but are instead about the facts (or non-facts)
     themselves. If true, check the box (, ,) and cite a reference in the book or
@@ -17,61 +36,126 @@
     the box unchecked, and insert a short explanation of why it is false, or
     give a counterexample.
   - [ ] A node/vertex is an intersection between lines in a graph.
+    - False - 
+      A node is a representation of a data point, the lines
+      connecting the nodes show a relationship between the nodes.
+      There may be some nodes "with degree 0 [which are called] isolated"
   - [ ] A complete graph is one where each node is connected to every other
     node.
-  - [ ] A cycle graph is one with n \ge 3 nodes where every node is connected to
+    - False -
+      VWM - node is adjacent to every other node
+  - [X] A cycle graph is one with n \ge 3 nodes where every node is connected to
     exactly two other nodes.
-  - [ ] The connection between nodes in a graph is called a link or an edge.
+    - VWN - exactly two other nodes
+  - [X] The connection between nodes in a graph is called a link or an edge.
+    - VWD - Simple Graphs
   - [ ] In a directed graph, the links only go one way.
-  - [ ] Graphs can be represented as sets of pairs.
+    - False - 
+      The book says Directed Graphs "Correspond to arbitrary binary
+      relations R, which need not be symmetric."
+      
+      The emphasis is placed on "need not"
+      This implies that while symmetry is not needed,
+      it is also not forbiden, meaning that there may exist a
+      link that goes both ways.
+  - [X] Graphs can be represented as sets of pairs.
+    - VWD - Simple Graphs
   - [ ] The pairs need to be ordered for directed graphs, but they do not need
     to be ordered for undirected graphs.
+    - False -
+      VWH - To be ordered for undirected graphs
   - [ ] A path in a graph is an unbroken series of nodes connected by vertices.
-  - [ ] A cycle in a graph is a path that reconnects to itself.
-  - [ ] You can calculate how many edges are in different kinds of graphs if you
+    - False - 
+      Verticies are nodes, so, in other words:
+      A path is not an unbroken series of nodes
+      connected by nodes.
+      That would just be silly, links connect nodes,
+      not nodes themselves.
+  - [X] A cycle in a graph is a path that reconnects to itself.
+    - VWC -
+  - [X] You can calculate how many edges are in different kinds of graphs if you
     know how many nodes there are.
-  - [ ] A wheel graph is created by taking a cycle, adding another node, and
+    - VWM - Know how many nodes there are
+  - [X] A wheel graph is created by taking a cycle, adding another node, and
     adding an edge between that node and every other node.
-  - [ ] In a directed graph, the in-degree of a node is the number of edges
+    - VWO - Wheel
+  - [X] In a directed graph, the in-degree of a node is the number of edges
     going into that node.
-  - [ ] In a directed graph, the out-degree of a node is the number of edges
+    - VWK - Directed Degree
+  - [X] In a directed graph, the out-degree of a node is the number of edges
     going out of that node.
+    - VWK - Directed Degree
   - [ ] In a directed graph, the degree of a node is the number of edges going
     into or out of that node.
-  - [ ] Adjacent, neighbors and connected are synonymous terms in graph theory.
+    - False - Unless by saying 'or' you mean the sum of the two
+      in which case see VWK - Directed Degree
+      
+      Otherwise this would be incorrect because the degree of a 
+      node is the number of edges that go in and out of that node
+      added together.
+  - [X] Adjacent, neighbors and connected are synonymous terms in graph theory.
+    - VWH - Adjacency
   - [ ] Undirected graphs map pairs of members of symmetric binary relations.
-  - [ ] In a multigraph, more than one edge can connect two given nodes.
-  - [ ] In a simple graph, there cannot be more than one edge between two given
+    - False -
+      VWD - It should be a simple graph
+  - [X] In a multigraph, more than one edge can connect two given nodes.
+    - VWE - Multigraphs
+  - [X] In a simple graph, there cannot be more than one edge between two given
     nodes.
-  - [ ] In pseudographs, there can be loops (edges connecting nodes to
+    - VWE - Multigraphs
+  - [X] In pseudographs, there can be loops (edges connecting nodes to
     themselves).
-  - [ ] In directed graphs, the relation between nodes need not be symmetric.
-  - [ ] In directed multigraphs, it is allowed to have more than one edge
+    - VWE - Pseudographs
+  - [X] In directed graphs, the relation between nodes need not be symmetric.
+    - VWF - Derected Graphs
+  - [X] In directed multigraphs, it is allowed to have more than one edge
     between two nodes.
+    - VWG - Directed Multigraphs
 
-** TODO Watch a Video                                                 :crypt:
+** DONE Watch a Video     
+   CLOSED: [2018-07-05 Thu 00:36]
    :PROPERTIES:
    :CRYPTKEY: dm1prepare10
    :END:
------BEGIN PGP MESSAGE-----
+   :LOGBOOK:
+   CLOCK: [2018-07-05 Thu 00:00]--[2018-07-05 Thu 00:22] =>  0:22
+   :END:
+   In celebration of *cerebration*, watch and take notes on what the creator
+   says is \ldquo{}[a talk that] announces the most ambitious software project [he\rsquo{}s]
+   ever undertaken, then considers why its existence is so surprising (and in
+   some cases frustrating) to people\rdquo --- [[https://www.destroyallsoftware.com/talks/a-whole-new-world][a talk by Gary Bernhardt]].
 
-hQIMA8rsHOfNGk1VAQ//Vs+tbFyaJsRPFjkPKgo8WHiDDroEnMmmrPLMnr415mkv
-UFwQbqvYXaiL819b5IHkxHm/sf7fjF5j0f3HZlH0AcvtBYnQV7fB5aAKBiFCaXl0
-aUOmmzZ4S9CWWwr1Yq6ghhKU/HpUCMi0tMz2s3W7mSMBlX1XMlgTCr39Koq35LLq
-U9g4f1573rZbhm01Nw18TUu5Ai8VUVLAm7gHOnduYjEe/La8Wtm5lETrHGiNTh5w
-pa72BDz4mFTVcKlu9Hm8Vrz5I/97umqMrlEmrhw1JFEv7Gmh3c+6pe4DV+Qwznie
-Pwk4p/mIlatVcHV5v80RWjJoNTCFSTpsBNwh2xeSuzbP2CG1r1OVnZ6n7y85e+oV
-xZhmd3+ehs7utUPop2CC5+P2bFM4mCoa9DxUbqzFDThZT8B/w2SISuD0KICdpg1H
-zdb+a1Fm5XoEgszkt5Q83khWEWV+6mttEpXPlf7KikwvldJtXPpZbWVQ7+3zjOH9
-d9jGwfyVIPcuxJk2vcUzfo42v68PLpHeyotzmSL4peQTHLA0D8evTjdBD3kjGOjo
-vRmPNp2lPCOBFPfF/CKL4/DLyhH832GdQ0mPQ9fxTZNzQY2qry1IlUQX9Vt3xPO1
-d758wxBXHA5UdpZj75ghJ9Drcys0nc4eZtGw5Xqi0A4NcmXhEUYrgKbxJRSDlJfS
-wIUBctugCN2YjgvTrPuDXknIn0u8EBJrc5tEafP/KZcFsFRizjIVg0M5nT8ubBKs
-3So8rPFTp5f/+cZoWETHto6/GI5YI5RZxOiWjkW2VKr+F5OdNxAMUX4KZo+ruLlJ
-4bvi4z5/mFOTQvGwloARnE8giFaJOxIJDZ3j1oUd5LNBFzfEBPLeEMb0NNwURSaK
-gkq98GGRfYKB3iUX60CpKcfo9L7KmDWVk2cZ4yXENe5A/Z+HdTtVCjcZZOdfDtdT
-2iSkde3EvCqSC8jdACk2H3Mqt2ro/4JP66a88yJmEirW2bXya76w2AeOoqqU/DNJ
-V/opNk9uZIylewfnPTDtam4I3nQRfbGmWOlm+MPQyUWXjwvZCLaEcfI0m+1xGTI2
-EwbXg/vJVSv/IeElXKsQ5ZkhH/W3cHpl8GLXJ4oRI8K3cuFH8A5n
-=cNgC
------END PGP MESSAGE-----
+:Notes:
+  "A Whole New World"
+  
+     How
+  do it do it
+
+  Raster Graphics on the grid
+  24-bit color
+  
+  Layers
+    - Diff Layer
+    - Crash Layer
+    - Perf Layer
+    - Type Layer
+    - Type Annotation
+
+  Want?
+  Yes!
+
+  An Editor
+  An Terminal
+  An lies.....
+
+  Surprising - Why?
+  1. shipping culture
+     1. often
+     2. lousy, but ship
+     3. contstantly
+  2. Legacy & Paralysis
+     
+  Restructure base
+  
+  closure & lisp
+:END:
