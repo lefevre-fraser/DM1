@@ -8,7 +8,20 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Think and Discuss 
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-05 Thu 23:33]
+| Headline          | Time   |
+|-------------------+--------|
+| *Total time*      | *0:08* |
+|-------------------+--------|
+| Think and Discuss | 0:08   |
+#+END:
+
+* DONE Think and Discuss 
+  CLOSED: [2018-07-05 Thu 23:33]
+  :LOGBOOK:
+  CLOCK: [2018-07-05 Thu 23:25]--[2018-07-05 Thu 23:33] =>  0:08
+  :END:
   Think about and come prepared to discuss with your group (old or new) what you
   learned about problem solving from the video, and relate it to what you have 
   already learned about problem solving.
@@ -17,5 +30,28 @@
   thoughts.
 
 #+begin_info
-  Your answer goes here.
+  In my group today we talked about how people
+  do not like to change.
+
+  There are many problems that we face in the world;
+  many of which could be solved, if someone just took
+  the time to do so.
+
+  But that is jsut the problem.
+  In the movie, the presentor talked about
+  having created 'An Editor' and 'An Terminal,'
+  both of these were lies, but when he asked
+  everybody if they wanted what he had "made"
+  everyone said 'Yes!' (raised their hands).
+
+  In order to be effective in problem solving,
+  we actually need to do things, not just be
+  satisfied whith what we already have.
+
+  The things he talked about, while not easy, 
+  are doable things, if someone just took the
+  time to "do it."
+
+       How
+   do it? do it?
 #+end_info
