@@ -8,53 +8,170 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-07 Sat 22:39]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *2:59* |      |
+|------------------------+--------+------|
+| Exercises              |   2:07 |      |
+| \_  HST                |        | 0:19 |
+| \_  HTC                |        | 0:02 |
+| \_  KWD                |        | 0:16 |
+| \_  KOV                |        | 1:09 |
+| \_  AGA                |        | 0:04 |
+| \_  KNF                |        | 0:17 |
+| Problems               |   0:51 |      |
+| \_  HRR                |        | 0:20 |
+| \_  KEO                |        | 0:05 |
+| \_  HMO                |        | 0:13 |
+| \_  HAB                |        | 0:13 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO HST
+** DONE HST
+   CLOSED: [2018-07-07 Sat 19:37]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 19:17]--[2018-07-07 Sat 19:36] =>  0:19
+   :END:
 #+begin_note
   How does allowing cycles imply the existence of more than one path from one
   graph node to another?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  :CycleDeffinition:
+    In a graph with at least two nodes, a cycle is a path 
+    from a node back to itself. In other words, the 
+    designated node is both the first node of L_1 and the 
+    second node of L_n.
+
+    L_1 ... L_n represents a sequence of connected links 
+  :END:
+
+  By the definition of a cycle, it is a graph with at least two nodes, which
+  has a path from a node back to itself. This can also be recognized when
+  there are duplications within a set, representing the paths.
 #+end_info
-** TODO HTC
+** DONE HTC
+   CLOSED: [2018-07-07 Sat 17:31]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 17:30]--[2018-07-07 Sat 17:31] =>  0:01
+   CLOCK: [2018-07-07 Sat 17:14]--[2018-07-07 Sat 17:15] =>  0:01
+   :END:
 #+begin_note
   Which node in the directed graph below represents Abu in the ping-pong
   tournament he was in?
   [[file:../img/fig-tournament-graph.png]]
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Abu won as many games as he lost, so
+  Abu should have same number of links 
+  going out as he did going in, so
+  he is represented by node 'D' which
+  has 3 out and 3 in.
 #+end_info
-** TODO KWD
+** DONE KWD
+   CLOSED: [2018-07-07 Sat 17:35]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 17:31]--[2018-07-07 Sat 17:35] =>  0:04
+   CLOCK: [2018-07-07 Sat 17:18]--[2018-07-07 Sat 17:30] =>  0:12
+   :END:
 #+begin_note
   What is the degree sequence of a full, complete, level-3 binary tree?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  A full, complete, level-3 binary tree looks like this:
+:           L
+:         /   \
+:        B     O
+:       / \   / \
+:      A   C M   P
+  The degree of a node is the number
+  of ingoing and outgoing links.
+  The degree sequence would then be
+  [3 3 2 1 1 1 1]
+
 #+end_info
-** TODO KOV
+** DONE KOV
+   CLOSED: [2018-07-07 Sat 19:42]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 19:37]--[2018-07-07 Sat 19:41] =>  0:04
+   CLOCK: [2018-07-07 Sat 17:37]--[2018-07-07 Sat 18:42] =>  1:05
+   :END:
 #+begin_note
   Choose a link in the directed (tournament) graph above (figure 62 in HTC). Use
   all of the /directed adjacency/ vocabulary to describe it.
 #+end_note
+  [[file:../img/fig-tournament-graph.png]]
 #+begin_info
-  Your answer goes here.
+  I will describe the link 'k' between A and D using 
+  all of the /directed adjency/vocabulary to describe it.
+  
+  :PassageFromBook:
+  Directed Adjacency:
+    Let G be a directed (possibly multi-) graph and let k be a link of G that is (or maps to) [u v].
+      u is adjacent to v.
+      v is adjacent from u.
+      k comes from u.
+      k goes to v.
+      k connects u to v.
+      k goes from u to v.
+      u is the initial node of k.
+      v is the terminal node of k.
+  :END:
+
+  A is adjacent to D.
+  D is adjacent from A.
+  k comes from A.
+  k goes to D.
+  k connects A to D.
+  k goes from A to D.
+  A is the initial node of k.
+  D is the terminal node of k.
 #+end_info
-** TODO AGA
+** DONE AGA
+   CLOSED: [2018-07-07 Sat 18:59]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 18:55]--[2018-07-07 Sat 18:59] =>  0:04
+   :END:
 #+begin_note
   What can you say about /K_0/?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  A K_0 graph is a complete graph, also it
+  has zero nodes, and therefor zero links 
+  also.
 #+end_info
-** TODO KNF
+** DONE KNF
+   CLOSED: [2018-07-07 Sat 19:16]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 18:59]--[2018-07-07 Sat 19:16] =>  0:17
+   :END:
 #+begin_note
   What is the degree sequence of the wheel graph W_5? What is it in general for a
   W_n?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  degree sequence of W_5 wheel graph
+  [5 3 3 3 3 3]
+
+  the degree sequence in general for a W_n 
+  wheel graph can be represented by this 
+  lisp function:
+
+  (defun wheel-graph-degree-sequence (n)
+    (vconcat (vector n) (make-list n 3)))
+
+  (wheel-graph-degree-sequence 5)
+  [5 3 3 3 3 3]
+  (wheel-graph-degree-sequence 8)
+  [8 3 3 3 3 3 3 3 3]
+  (wheel-graph-degree-sequence 20)
+  [20 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3]
+
+  You may also say that the sequence is 'n'
+  followed by 'n' threes.
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
@@ -96,7 +213,12 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO HRR
+** DONE HRR
+   CLOSED: [2018-07-07 Sat 22:23]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 22:07]--[2018-07-07 Sat 22:23] =>  0:16
+   CLOCK: [2018-07-07 Sat 19:43]--[2018-07-07 Sat 19:47] =>  0:04
+   :END:
 #+begin_note
   In another multigraph example, what is the connection between this graph and
   the \ldquo{}birth of graph theory\rdquo?
@@ -109,17 +231,62 @@
   necessary and sufficient conditions for a graph to be Eulerian.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  This graph is the graph of the Seven Bridges of Königsberg.
+  The was introduced by Ila in VWZ of the reading for this week.
+
+  :IlaSaid:
+    And it was a social activity that sparked the idea
+    of graphs in the first place. I love this story 
+    about none other than Euler, who came to the aid of 
+    the people of Königsberg, who enjoyed long Sunday walks 
+    across the bridges in their city. Seven bridges to be 
+    exact, four of which crossed the river running through 
+    the city to land on an island in the river, two others 
+    crossed to land on an adjacent island, and one connecting 
+    the two islands.
+
+    So these Sunday strollers wondered as they walked, is it 
+    possible to cross each bridge exactly once and come back 
+    to the place we started? Euler took on the challenge, and 
+    soon settled the question in the negative, giving birth to 
+    graph theory in the process.
+  :END:
+
+  And that is how the birth of graph theory began with the above graph.
+
+  The nodes represent the Königsberg which is on either side of
+  a river, and two small islands in the river.
+  The links represent the bridges that connect the different 
+  parts of Königsberg.
+
+  The degree sequence of the graph is:
+  [5 3 3 3]
+
+  :HelpFromMyFriend:
+    This graph contains the graph property "Eulerian" as it
+    must be a finite graph in which it visits every link once. It is sufficient
+    if the Eulerian Trail starts and ends on the same node.
 #+end_info
-** TODO KEO
+** DONE KEO
+   CLOSED: [2018-07-07 Sat 19:52]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 19:47]--[2018-07-07 Sat 19:52] =>  0:05
+   :END:
 #+begin_note
   Explore the question: Does a graph\rsquo{}s degree sequence alone contain enough
   information to reconstruct the graph?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  No, you can make many graphs with the same degree sequence,
+  and even if you reconstruct a graph with a given degree sequence
+  you would not know what data should go in any of the nodes. So,
+  the graph might look right, but who's to say the data is.
 #+end_info
-** TODO HMO
+** DONE HMO
+   CLOSED: [2018-07-07 Sat 22:37]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 22:24]--[2018-07-07 Sat 22:37] =>  0:13
+   :END:
 #+begin_note
   Draw the graphs of these ten 2d degree sequences:
 
@@ -138,7 +305,76 @@
   |   | 1 |   |   |   | 2 | 2 |   |   | 2 | 2 |   |   | 0 |
 #+end_note
 #+begin_info
-  Your answer goes here.
+:GraphOne:
+:   1
+:   |
+:   2 - 1
+:END:
+
+:GraphTwo:        
+:   2 - 2
+:   |   |
+:   2 - 2
+:END:
+
+:GraphThree:
+:   2 - 2
+:   |   |
+:   2 - 2
+:END:
+
+:GraphFour:
+:   1  1
+:   | /  
+:   4
+:   | \
+:   1  1
+:END:
+
+:GraphFive:
+:   2 - 2
+:   |   |
+:   3 - 3
+:   |   |
+:   1   1
+:END:
+
+:GraphSix:
+:   1 - 3 - 1
+:       |    
+:       1
+:END:
+
+:GraphSeven:
+:   1   1
+:    \ / 
+:     3 
+:     |
+:     1
+:END:
+
+:GraphEight:
+:   2 - 2
+:   |   |
+:   2 - 2
+:END:
+
+:GraphNine:
+:   1   1
+:   |   |
+:   2 - 2
+:END:
+
+:GraphTen:
+:   1    
+:   |
+:   1
+:    
+:   0
+:END:
+
+These graphs spell out the phrase:
+"Look At You!"
 #+end_info
 ** TODO HIJ *
 #+begin_note
@@ -161,13 +397,21 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO HAB
+** DONE HAB
+   CLOSED: [2018-07-07 Sat 20:05]
+   :LOGBOOK:
+   CLOCK: [2018-07-07 Sat 19:52]--[2018-07-07 Sat 20:05] =>  0:13
+   :END:
 #+begin_note
   Is there (can there exist) a simple graph with degree sequence =[3 2 1 0]=?
   Justify your answer.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  No, there cannot. if there is a node whith degree 3,
+  and there are 4 total nodes then the node of degree
+  three connects to Every other node. This means that
+  there cannot be a node of degree 0 unless cycles 
+  were to be introduced.
 #+end_info
 ** TODO HBT *
 #+begin_note
@@ -180,9 +424,12 @@
 #+end_info
 * Puzzles
   No puzzles again this week. Next week!
-* TODO Identify Collaborators
+* DONE Identify Collaborators
+  CLOSED: [2018-07-07 Sat 22:39]
+  :LOGBOOK:
+  CLOCK: [2018-07-07 Sat 22:37]--[2018-07-07 Sat 22:38] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Tyler Elkington :: Helped me on a few problems to understand what the question was asking
+       and helped me figure out the answer on a few questions.
