@@ -8,12 +8,36 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read section THR subsections VWP through VWW from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
-* TODO Study the Traveling Salesperson Problem 
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-11 Wed 13:48]
+| Headline                                |   Time |      |
+|-----------------------------------------+--------+------|
+| *Total time*                            | *1:03* |      |
+|-----------------------------------------+--------+------|
+| Read section THR subsections VWP...     |   0:18 |      |
+| Study the Traveling Salesperson Problem |   0:45 |      |
+| \_  Study the gist of it                |        | 0:04 |
+| \_  Study the following code            |        | 0:06 |
+#+END:
+
+* DONE Read section THR subsections VWP through VWW from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-07-11 Wed 13:00]
+  :LOGBOOK:
+  CLOCK: [2018-07-11 Wed 12:42]--[2018-07-11 Wed 13:00] =>  0:18
+  :END:
+* DONE Study the Traveling Salesperson Problem 
+  CLOSED: [2018-07-11 Wed 13:36]
+  :LOGBOOK:
+  CLOCK: [2018-07-11 Wed 13:01]--[2018-07-11 Wed 13:36] =>  0:35
+  :END:
    Here, for python fans everywhere, is [[https://github.com/norvig/pytudes/blob/master/ipynb/TSP.ipynb][a \ldquo{}pytude\rdquo]] by Peter Norvig,
    Director of Research for Google.
 
-** TODO Study the gist of it
+** DONE Study the gist of it
+   CLOSED: [2018-07-11 Wed 13:40]
+   :LOGBOOK:
+   CLOCK: [2018-07-11 Wed 13:36]--[2018-07-11 Wed 13:40] =>  0:04
+   :END:
    Given a list of cities and the distances between them, what tour through all
    the cities that returns to the starting city is the shortest?
 
@@ -38,7 +62,11 @@
   The problem with this approach is \ldquo{}combinatorial explosion\rdquo --- how quickly
   the number of permutations grows!
   
-** TODO Study the following code
+** DONE Study the following code
+   CLOSED: [2018-07-11 Wed 13:47]
+   :LOGBOOK:
+   CLOCK: [2018-07-11 Wed 13:41]--[2018-07-11 Wed 13:47] =>  0:06
+   :END:
 #+BEGIN_SRC elisp :results silent
   (require 'cl)
   (require 'dash)
