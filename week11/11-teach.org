@@ -8,53 +8,266 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Supply and Test                                                :crypt:
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-12 Thu 23:59]
+| Headline                | Time   |      |
+|-------------------------+--------+------|
+| *Total time*            | *0:50* |      |
+|-------------------------+--------+------|
+| Supply and Test         | 0:50   |      |
+| \_  Heed Hint           |        | 0:01 |
+| \_  Enjoy a Bonus!      |        | 0:01 |
+| \_  Go above and beyond |        | 0:47 |
+#+END:
+
+* DONE Supply and Test            
+  CLOSED: [2018-07-12 Thu 13:32]
   :PROPERTIES:
   :CRYPTKEY: dm1teach11
   :END:
------BEGIN PGP MESSAGE-----
+  :LOGBOOK:
+  CLOCK: [2018-07-12 Thu 13:30]--[2018-07-12 Thu 13:31] =>  0:01
+  :END:
+  The only function definition missing from the above code block is =distance=.
 
-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
-=ZHzx
------END PGP MESSAGE-----
+  After your group discussion, supply this missing function so that you can
+  evaluate the following block to test this =TSP-solver=:
+
+#+BEGIN_SRC elisp :results silent
+  (require 'cl)
+  (require 'dash)
+
+  (defun TSP-solver (distance-matrix)
+     (let* ((num-cities (length distance-matrix))
+            (cities (number-sequence 1 num-cities))
+            (permutations (-permutations cities))
+            (results (mapcar
+                      (lambda (perm)
+                        (cons
+                         (apply '+ (mapcar (lambda (city)
+                                             (dist (nth (1- city) perm)
+                                                   (nth (mod city num-cities) perm)
+                                                   distance-matrix))
+                                           cities))
+                         perm))
+                      permutations)))
+       (assoc (apply 'min (mapcar 'car results)) results)))
+
+  (defun dist (i j d-matrix)
+    (elt (elt d-matrix (1- i)) (1- j)))
+
+  (defun build-cities-coords (n width height seed)
+     (random seed)
+     (loop repeat n collect (cons (random width) (random height))))
+
+   (defun build-distance-matrix (cities-coords)
+     (apply 'vector
+            (mapcar (lambda (c1)
+                      (apply 'vector
+                             (mapcar (lambda (c2)
+                                       (distance c1 c2))
+                                     cities-coords)))
+                    cities-coords)))
+#+END_SRC
+
+
+#+BEGIN_SRC elisp :results raw
+  (setq cities-coords-20 (build-cities-coords 20 900 600 "twentysomething")
+        cities-coords (subseq cities-coords-20 0 9) ;; change 9 to a smaller integer (> 3) to save time
+        start (float-time)
+        results (TSP-solver (build-distance-matrix cities-coords))
+        timed-results (cons (- (float-time) start) results))
+#+END_SRC
+
+#+RESULTS:
+(4.113947868347168 2083.567653450519 1 6 4 3 5 9 7 2 8)
+
+#+BEGIN_SRC elisp
+  (defun distance (c1 c2)
+    (sqrt (+ (expt (- (car c1) (car c2)) 2) (expt (- (cdr c1) (cdr c2)) 2))))
+#+END_SRC
+
+#+RESULTS:
+: distance
+
+** DONE Heed Hint
+   CLOSED: [2018-07-12 Thu 13:29]
+   :LOGBOOK:
+   CLOCK: [2018-07-12 Thu 13:28]--[2018-07-12 Thu 13:29] =>  0:01
+   :END:
+  You may find this python code helpful:
+
+#+BEGIN_SRC python :results output
+  from math import sqrt
+
+  class City:
+    def __init__(self, x, y):
+      self.x = x
+      self.y = y
+
+  def distance(c1, c2):
+    return sqrt((c1.x - c2.x)**2 + (c1.y - c2.y)**2)
+
+  print distance(City(300, 270), City(450, 109))
+#+END_SRC
+
+#+RESULTS:
+  
+  This code, borrowed from Norvig\rsquo{}s pytude, may also come in handy:
+#+BEGIN_SRC python :results file
+  import matplotlib.pyplot as plt
+
+  def plot_tour(tour):
+      "Plot the cities as circles and the tour as lines between them."
+      plot_lines(list(tour) + [tour[0]])
+
+  def plot_lines(points, style='bo-'):
+      "Plot lines to connect a series of points."
+      plt.plot([p.real for p in points], [p.imag for p in points], style)
+      plt.axis('scaled')
+      plt.axis('off')
+
+  plot_tour(((6+546j),
+   (199+147j),
+   (350+65j),
+   (737+26j),
+   (847+187j),
+   (891+465j),
+   (554+374j),
+   (505+548j)))
+
+  plt.savefig('pyplot-tour.png')
+  return 'pyplot-tour.png'
+#+END_SRC
+
+#+RESULTS:
+[[file:]]
+
+** DONE Enjoy a Bonus!
+   CLOSED: [2018-07-12 Thu 13:30]
+   :LOGBOOK:
+   CLOCK: [2018-07-12 Thu 13:29]--[2018-07-12 Thu 13:30] =>  0:01
+   :END:
+   Graphics are always good for helping us visualize problem results. The bonus
+   is found in the interaction between org-mode-enabled elisp code and python
+   code!
+
+#+BEGIN_SRC elisp :results value
+  (setq winning-tour (cdr results) 
+        coords (mapcar (lambda (i)
+                         (let ((city (nth (1- i) cities-coords)))
+                           (list (car city) (cdr city))))
+                        winning-tour))
+#+END_SRC
+
+  In the table produced by evaluating the above code block, replace \ldquo{}#+RESULTS\rdquo
+  with \ldquo{}#+name: points-to-plot\rdquo so that evaluating the following code block will
+  work.
+
+#+BEGIN_SRC python :var pts=points-to-plot :results file
+  import matplotlib.pyplot as plt
+
+  def plot_tour(tour):
+      "Plot the cities as circles and the tour as lines between them."
+      plot_lines(tour + [tour[0]])
+
+  def plot_lines(points, style='bo-'):
+      "Plot lines to connect a series of points."
+      plt.plot([p[0] for p in points], [p[1] for p in points], style)
+
+  plot_tour(pts)
+  plt.savefig('pyplot-tour.png')
+  return 'pyplot-tour.png'
+#+END_SRC
+
+** TODO Go above and beyond
+   :LOGBOOK:
+   CLOCK: [2018-07-12 Thu 14:10]--[2018-07-12 Thu 14:57] =>  0:47
+   :END:
+  To show you *really understand* this brute-force algorithm, write four new
+  functions corresponding to the four steps outlined above, such that the
+  following code block will evaluate:
+
+#+BEGIN_SRC elisp :results silent
+  (defun distance (c1 c2)
+    (sqrt (+ (expt (- (car c1) (car c2)) 2) (expt (- (cdr c1) (cdr c2)) 2))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (require 'dash)
+
+  (defun produce-every-permutation-of-cities (distance-matrix)
+    (setq num-cities (length distance-matrix)
+          cities (number-sequence 1 num-cities)
+          permutations (-permutations cities)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun create-circuit-for-each-permutation (permutations)
+    (setq circuits (mapcar
+                     (lambda (perm)
+                       (cons
+                         (mapcar (lambda (city)
+                                   (dist (nth (1- city) perm)
+                                         (nth (mod city num-cities) perm)
+                                         distance-matrix))
+                                 cities)
+                         perm))
+                   permutations)))
+   ;; (setq results (mapcar
+     ;;               (lambda (perm)
+       ;;               (cons
+         ;;               (apply '+ (mapcar (lambda (city)
+           ;;                                 (dist (nth (1- city) perm)
+             ;;                                     (nth (mod city num-cities) perm)
+               ;;                                   distance-matrix))
+                 ;;                         cities))
+                   ;;     perm))
+                    ;;permutations)))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun calculate-circuit-distances (circuits permutations)
+    (setq results (cons (apply '+ (car circuits)) (cdr circuits))))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun find-circuit-with-shortest-distance (results)
+    (assoc (apply 'min (mapcar 'car results)) results))
+#+END_SRC
+
+#+BEGIN_SRC elisp :results silent
+  (defun dist (i j d-matrix)
+    (elt (elt d-matrix (1- i)) (1- j)))
+
+  (defun build-cities-coords (n width height seed)
+    (random seed)
+    (loop repeat n collect (cons (random width) (random height))))
+
+  (defun build-distance-matrix (cities-coords)
+     (apply 'vector
+            (mapcar (lambda (c1)
+                      (apply 'vector
+                             (mapcar (lambda (c2)
+                                       (distance c1 c2))
+                                     cities-coords)))
+                    cities-coords)))
+  (setq cities-coords-20 (build-cities-coords 20 900 600 "twentysomething")
+        cities-coords (subseq cities-coords-20 0 9)) ;; change 9 to a smaller integer (> 3) to save time
+
+#+END_SRC
+
+#+BEGIN_SRC elisp :results raw
+  (setq distance-matrix (build-distance-matrix cities-coords)
+        step-1-results (produce-every-permutation-of-cities distance-matrix)
+        step-2-results (create-circuit-for-each-permutation step-1-results)
+        step-3-results (calculate-circuit-distances step-2-results step-1-results)
+        step-4-results (find-circuit-with-shortest-distance step-3-results))
+#+END_SRC
+
+#+RESULTS:
+(2083.567653450519 1 6 4 3 5 9 7 2 8)
+
+  All the code you need is found in the =TSP-solver= function. You only need to
+  reorganize it!
+  
