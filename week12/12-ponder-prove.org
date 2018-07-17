@@ -9,6 +9,80 @@
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
 * Exercises
+  The preamble to exercises BAO, NCO and PDQ in YZH says: \ldquo{}Using the above example as a
+  guide, exercise your knowledge to produce derivations for several sentences,
+  and verify each by giving the sequence of values returned from calls to =random=
+  and using that to override the =random= function: \dots The following derivation
+  would result if the sequence of values returned from calls to random were [1 1
+  0 0 0 1 1 1 1 1 1]: \dots .\rdquo So to \lsquo{}derive-verify\rsquo each sentence, you must provide the
+  sequence of 1s and 0s you would need to enter to derive that sentence.
+
+  For your convenience, here is the PSG-implementing code from YZH:
+
+#+BEGIN_SRC elisp :results silent
+  (setq the t es "" hungry t sleepy t cat t dog t
+        chases t runs t slowly t quickly t
+        productions
+        '((SENTENCE NOUN-PHRASE VERB-PHRASE NOUN-PHRASE)
+          (SENTENCE NOUN-PHRASE VERB-PHRASE)
+          (NOUN-PHRASE ARTICLE ADJECTIVE NOUN)
+          (NOUN-PHRASE ARTICLE NOUN)
+          (VERB-PHRASE VERB ADVERB)
+          (VERB-PHRASE VERB)
+          (ARTICLE the es)
+          (ADJECTIVE hungry sleepy)
+          (NOUN cat dog)
+          (VERB chases runs)
+          (ADVERB slowly quickly))
+        reverse-productions (reverse productions))
+
+  (defun is-terminal (sym)
+    (and (symbolp sym) (boundp sym)))
+
+  (defun nonterminals-remain (derivation)
+    (notevery 'is-terminal derivation))
+
+  (defun derive (LHS)
+    (let* ((rules (if (zerop (random 2)) productions reverse-productions))
+           (RHS (cdr (assoc LHS rules))))
+      (if (null RHS)
+          (list LHS)
+        (if (nonterminals-remain RHS)
+            RHS
+          (list (nth (random (length RHS)) RHS))))))
+
+  (defun transform-terminal (terminal)
+    (or (and (boundp terminal)
+             (stringp (symbol-value terminal))
+             (symbol-value terminal))
+        (symbol-name terminal)))
+
+  (defun find-derivation (start-symbol)
+    (let ((derivation (list start-symbol)))
+      (while (nonterminals-remain derivation)
+        (setq derivation (apply 'append (mapcar 'derive derivation))))
+      (mapconcat 'transform-terminal derivation " ")))
+#+END_SRC
+
+  Note that overriding the =random= function, which evaluating this next code
+  block will do, is not the only way to get the correct sequence of 1s and 0s.
+  Can you find a better (easier) way?
+#+BEGIN_SRC elisp :results silent
+  (add-function :override
+                (symbol-function 'random)
+                (lambda (&rest args)
+                  (string-to-number
+                   (read-from-minibuffer
+                    (format "Enter random value less than %d: " (car args)))))
+                '((name . interactive-random)))
+#+END_SRC
+
+  If you do override =random=, before you try to use it as you normally would,
+  be sure to evaluate the following to undo the override:
+#+BEGIN_SRC elisp :results silent
+  (remove-function (symbol-function 'random) 'interactive-random)
+#+END_SRC
+
 ** TODO BAO
 #+begin_note
    Derive-verify =the sleepy cat runs slowly=.
