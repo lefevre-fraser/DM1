@@ -8,6 +8,25 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
-* TODO Read section THR subsections YZ@ through YZQ from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
-* TODO Learn What You Can
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-17 Tue 13:17]
+| Headline                            |   Time |
+|-------------------------------------+--------|
+| *Total time*                        | *1:35* |
+|-------------------------------------+--------|
+| Read section THR subsections YZ@... |   1:28 |
+| Learn What You Can                  |   0:07 |
+#+END:
+
+* DONE Read section THR subsections YZ@ through YZQ from [[https://rickneff.github.io/metaphors-be-with-you.html][The Book]].
+  CLOSED: [2018-07-17 Tue 13:09]
+  :LOGBOOK:
+  CLOCK: [2018-07-17 Tue 12:38]--[2018-07-17 Tue 13:09] =>  0:31
+  CLOCK: [2018-07-17 Tue 10:18]--[2018-07-17 Tue 11:15] =>  0:57
+  :END:
+* DONE Learn What You Can
+  CLOSED: [2018-07-17 Tue 13:16]
+  :LOGBOOK:
+  CLOCK: [2018-07-17 Tue 13:09]--[2018-07-17 Tue 13:16] =>  0:07
+  :END:
    from this not-created-by-me [[https://firstthreeodds.org/17657741833134731255/GrammarsAndLanguages.pdf][presentation about Grammars and Languages]].

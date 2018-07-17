@@ -8,31 +8,81 @@
 [[elisp:(find-file-other-window%20"../week00/00-prepare.org")][Read Instructions]]
 [[elisp:(browse-url-of-file%20(org-html-export-to-html))][Export to HTML and Browse]]
 [[elisp:(org-clock-report%201)][Insert/Update Clock Summary Report]]
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2018-07-14 Sat 23:32]
+| Headline               |   Time |      |
+|------------------------+--------+------|
+| *Total time*           | *2:36* |      |
+|------------------------+--------+------|
+| Exercises              |   1:03 |      |
+| \_  HAX                |        | 0:10 |
+| \_  HKE                |        | 0:05 |
+| \_  KBB                |        | 0:05 |
+| \_  HRL                |        | 0:37 |
+| \_  KHO                |        | 0:01 |
+| \_  HLX                |        | 0:01 |
+| \_  HBE                |        | 0:04 |
+| Problems               |   0:57 |      |
+| \_  HJS                |        | 0:10 |
+| \_  KHQ                |        | 0:01 |
+| \_  KSI                |        | 0:31 |
+| \_  KSQ                |        | 0:15 |
+| Puzzles                |   0:35 |      |
+| \_  HTR                |        | 0:35 |
+| Identify Collaborators |   0:01 |      |
+#+END:
+
 * Exercises
-** TODO HAX
+** DONE HAX
+   CLOSED: [2018-07-14 Sat 18:20]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 18:10]--[2018-07-14 Sat 18:20] =>  0:10
+   :END:
 #+begin_note
   What are /m/ and /n/ for the three /K_{m,n}/ graphs in figures 87, 88 and 89,
   in VWQ?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Figure 87 is a K_1,2
+  Figure 88 is a K_3,3
+  Figure 89 is a K_3,4
 #+end_info
-** TODO HKE
+** DONE HKE
+   CLOSED: [2018-07-14 Sat 22:44]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 22:39]--[2018-07-14 Sat 22:44] =>  0:05
+   :END:
 #+begin_note
   Investigate bipartite graphs and complete bipartite graphs. What kinds of
   applications fit these types of graphs?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  An example of a bipartite graph could be a sports leage. A link connects a
+  player to every team that he has played for.
+
+  Another example could be bus route optimizing. The input is a schedule of the
+  buses and their stops. We would have to find a set of bus stops as small as
+  possible, so that every bus visits at least one of the chosen stops.
 #+end_info
-** TODO KBB
+** DONE KBB
+   CLOSED: [2018-07-14 Sat 22:47]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 22:45]--[2018-07-14 Sat 22:47] =>  0:02
+   CLOCK: [2018-07-14 Sat 18:26]--[2018-07-14 Sat 18:29] =>  0:03
+   :END:
 #+begin_note
   What would a /tri/-partite graph look like? An /n/-partite graph?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Since a bipartite graph consist of 2 levels of nodes, a tripartite graph
+  will consist of 3 levels of nodes. An /n/-partite graph will continue
+  to consist of n levels of nodes.
 #+end_info
-** TODO HRL
+** DONE HRL
+   CLOSED: [2018-07-14 Sat 19:32]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 18:55]--[2018-07-14 Sat 19:32] =>  0:37
+   :END:
 #+begin_note
   Draw this small graph having 8 nodes and 13 links:
 
@@ -42,9 +92,21 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  3 connections to p
+  3 to q
+  3 to e
+  3 to m
+  3 to c
+  3 to d
+  4 to t
+  4 to n
+[[file:../img/8node13link.png]]
 #+end_info
-** TODO KHO
+** DONE KHO
+   CLOSED: [2018-07-14 Sat 22:54]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 22:54]--[2018-07-14 Sat 22:55] =>  0:01
+   :END:
 #+begin_note
   Describe /H/ in terms of subsets of /G/ if /G/ = =[[a b c d e f g h i j]
              [[a b] [a c] [a g] [b d] [b f] [b e] [c d] [c f] [c g] [c h]=
@@ -53,17 +115,56 @@
   Graph /H/ is shown in figure 93 in VWS.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  a: b \rightarrow c \rightarrow g
+  b: d \rightarrow f \rightarrow e
+  c: d \rightarrow f \rightarrow g \rightarrow h
+  d: e \rightarrow g \rightarrow h
+  e: i \rightarrow j
+  f: i
+  g: h
+  h: i
+  i: j
+  j:
+
+  H = {[a b],
+      [a c],
+      [a g],
+      [b d],
+      [b f],
+      [b e],
+      [c d],
+      [c f],
+      [c g],
+      [c h],
+      [d e],
+      [d g],
+      [d h],
+      [e i],
+      [e j],
+      [f i],
+      [g h],
+      [h i],
+      [i j]}
 #+end_info
-** TODO HLX
+** DONE HLX
+   CLOSED: [2018-07-14 Sat 22:57]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 22:55]--[2018-07-14 Sat 22:56] =>  0:01
+   :END:
 #+begin_note
   Since graphs are defined in terms of sets, define *graph intersection*
   accordingly. Give an example.
 #+end_note
 #+begin_info
-  Your answer goes here.
+  Graph intersection can be considered of having multiple graphs found
+  within another graph, or in other words, having a subgraph. An example
+  of this could be K_5 and C_5 being its subgraph.
 #+end_info
-** TODO HBE
+** DONE HBE
+   CLOSED: [2018-07-14 Sat 19:40]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 19:36]--[2018-07-14 Sat 19:40] =>  0:04
+   :END:
 #+begin_note
   A *planar graph* is a graph that can be embedded in the plane, i.e., it can be
   drawn on the plane in such a way that its links intersect only at their
@@ -78,11 +179,24 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  True:
+:     c - m    
+:    / \ / \ 
+:   /   n   \
+:  |   / \   |
+:  |  p   q  |
+:  |   \ /   |    
+:   \   t   / 
+:    \ / \ / 
+:     d   e
 #+end_info
 * Problems
   Note: * means optional. If it\rsquo{}s not starred, it\rsquo{}s required.
-** TODO HJS
+** DONE HJS
+   CLOSED: [2018-07-14 Sat 20:54]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 20:43]--[2018-07-14 Sat 20:53] =>  0:10
+   :END:
 #+begin_note
   /Q_n/ graphs have /2^n/ nodes. How many links do /Q_n/ graphs have?
 :HINT:
@@ -90,9 +204,21 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  The funtion representing the number of links in Q_n graphs is:
+  2^(n-1)n
+
+  In lisp:
+  (defun qn-links (n)
+    (* (expt 2 (1- n)) n))
+
+  (qn-links 3)12
+  (qn-links 2)4
 #+end_info
-** TODO KHQ
+** DONE KHQ
+   CLOSED: [2018-07-14 Sat 22:58]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 22:57]--[2018-07-14 Sat 22:58] =>  0:01
+   :END:
 #+begin_note
   In what sense is a /K_{3,3}/ like a /K_5/?
 :HINT:
@@ -101,7 +227,8 @@
 :END:
 #+end_note
 #+begin_info
-  Your answer goes here.
+  /K_{3,3}/ is like a /K_5/ graph, because they are both not planar. This
+  means that the links cannot be redrawn without none of them overlapping.
 #+end_info
 ** TODO AGD *
 #+begin_note
@@ -196,7 +323,11 @@
 #+begin_info
   Your answer goes here.
 #+end_info
-** TODO KSI
+** DONE KSI
+   CLOSED: [2018-07-14 Sat 23:31]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 23:00]--[2018-07-14 Sat 23:31] =>  0:31
+   :END:
 #+begin_note
   Not to be confused with *graph intersection*, the *intersection graph* of a
   collection of sets A_1, A_2, \dots, A_n is the graph that has a node for each of
@@ -216,9 +347,16 @@
   Draw this graph. What is its degree sequence?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  [[file:../img/intersection.png]]
+
+  The degree sequence is:
+  [4 4 4 3 3]
 #+end_info
-** TODO KSQ
+** DONE KSQ
+   CLOSED: [2018-07-14 Sat 21:53]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 21:35]--[2018-07-14 Sat 21:50] =>  0:15
+   :END:
 #+begin_note
   Construct a graph using the following list of eight words as node labels:
 
@@ -233,7 +371,26 @@
   a link between those two nodes?
 #+end_note
 #+begin_info
-  Your answer goes here.
+  [[file:../img/wordgame.png]]
+
+  (defun num-comb (n k)
+    (if (= k 1)
+      (+ (- n k) 1)
+      (/ (* n (num-comb (1- n) (1- k))) k)))
+
+  (num-comb 8 2)28
+  
+  There are 28 total possibilities
+
+  There are 10 combinations that result in 
+  a link between two randommly chosen nodes
+
+  The probability then that there is a link 
+  between the two nodes is:
+
+  (/ 10.0 28)0.35714285714285715
+  That's roughly 35.71%
+  
 #+end_info
 ** TODO KSC *
 #+begin_note
@@ -254,19 +411,41 @@
 #+end_info
 * Puzzles
   Puzzle, to be precise.
-** TODO HTR
+** DONE HTR
+   CLOSED: [2018-07-14 Sat 22:30]
+   :LOGBOOK:
+   CLOCK: [2018-07-14 Sat 21:55]--[2018-07-14 Sat 22:30] =>  0:35
+   :END:
 #+begin_note
   What does it mean to say that \({\sf VWX}\) has
 : ([2 1 1] [2 2 2 1 1] [4 1 1 1 1])
   as its list of degree sequences?
 #+end_note
 *** Rephrase
+    How can VWX be categorized as having a 
+    degree sequence of:
+    [2 1 1] [2 2 2 1 1] [4 1 1 1 1]
 *** Approach
+    Look at all the subsections of VWX
+    This yielded no result
+    
+    Look at the letters of VWX themselves
 *** Solution
+    The letters of VWX can be represented as a graph
 *** Proof
-* TODO Identify Collaborators
+
+: 1   1  1   2   1  1   1
+:  \ /    \ / \ /    \ / 
+:   2      2   2      4  
+:                    / \ 
+:                   1   1
+
+* DONE Identify Collaborators
+  CLOSED: [2018-07-14 Sat 22:31]
+  :LOGBOOK:
+  CLOCK: [2018-07-14 Sat 22:30]--[2018-07-14 Sat 22:31] =>  0:01
+  :END:
   Identify your collaborators and the contribution of each, in the following way:
 
-  - Joseph Smith :: In particular, he helped me understand \dots.
-  - Benjamin Franklin :: He helped brainstorm ideas for \dots. 
-  -  :: etc. 
+  - Tyler Elkins :: Helped me with some Exercises, Problems, and the Puzzle 
+                    
